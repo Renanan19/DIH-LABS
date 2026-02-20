@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">DIH <span>LABS</span></div>
+            <a href="#accueil" class="logo">DIH <span>LABS</span></a>
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#objet">Notre Objet</a></li>
@@ -26,11 +26,11 @@
 
     <main>
         <section id="accueil" class="hero">
-            <div class="container">
-                <h1>Concevoir le futur numérique.</h1>
-                <p>DIH LABS est une association dédiée à l'innovation, au développement d'applications mobiles et web, et à la promotion des contenus numériques de demain.</p>
+            <div class="container reveal">
+                <h1>L'innovation digitale,<br>façonnée par le collectif.</h1>
+                <p>Association à but non lucratif dédiée à la conception d'applications mobiles et web de nouvelle génération. Nous développons, nous apprenons, nous diffusons.</p>
                 <div class="cta-group">
-                    <a href="#activites" class="btn btn-primary">Découvrir nos projets</a>
+                    <a href="#activites" class="btn btn-primary">Nos axes de développement</a>
                     <a href="#adhesion" class="btn btn-secondary">Nous rejoindre</a>
                 </div>
             </div>
@@ -38,19 +38,22 @@
 
         <section id="objet" class="section">
             <div class="container">
-                <h2 class="section-title">Notre Objet Social</h2>
+                <h2 class="section-title reveal">Un ADN d'Expérimentation</h2>
                 <div class="grid">
-                    <div class="card">
-                        <h3>Développement</h3>
-                        <p>Conception, édition et exploitation d'applications mobiles, web et logicielles sur toutes les plateformes (App Store, Google Play).</p>
+                    <div class="card reveal" style="transition-delay: 0.1s;">
+                        <div class="icon-placeholder">📱</div>
+                        <h3>Ingénierie Mobile</h3>
+                        <p>Nous concevons des applications robustes pour iOS et Android, de la première ligne de code à la mise en ligne sur les stores (App Store & Google Play).</p>
                     </div>
-                    <div class="card">
-                        <h3>Promotion</h3>
-                        <p>Mise en valeur et animation de projets numériques innovants et de contenus digitaux originaux.</p>
+                    <div class="card reveal" style="transition-delay: 0.2s;">
+                        <div class="icon-placeholder">⚡</div>
+                        <h3>Contenus Innovants</h3>
+                        <p>Plus que des outils, nous créons des expériences numériques riches, axées sur l'ergonomie et la valeur ajoutée pour l'utilisateur final.</p>
                     </div>
-                    <div class="card">
-                        <h3>Événementiel</h3>
-                        <p>Organisation d'actions de communication, de formation et d'événements en ligne ou en présentiel.</p>
+                    <div class="card reveal" style="transition-delay: 0.3s;">
+                        <div class="icon-placeholder">🌐</div>
+                        <h3>Diffusion & Partage</h3>
+                        <p>Nous organisons des événements, des sessions de formation et des actions de communication pour faire vivre nos projets.</p>
                     </div>
                 </div>
             </div>
@@ -58,49 +61,56 @@
 
         <section id="activites" class="section bg-light">
             <div class="container">
-                <h2 class="section-title">Activités & Services</h2>
-                <div class="feature-list">
+                <h2 class="section-title reveal">Expertise & Moyens</h2>
+                <div class="feature-list reveal">
                     <div class="feature-item">
-                        <h4>Expertise Multi-plateforme</h4>
-                        <p>Nous développons des solutions logicielles robustes pour répondre aux besoins diversifiés du marché numérique actuel.</p>
+                        <span class="feature-number">01</span>
+                        <div>
+                            <h4>Cycle de Vie Logiciel</h4>
+                            <p>Nous couvrons l'intégralité du cycle de vie des produits : conception UI/UX, développement full-stack, exploitation et maintenance évolutive.</p>
+                        </div>
                     </div>
                     <div class="feature-item">
-                        <h4>Formation & Partage</h4>
-                        <p>Nous partageons notre savoir-faire à travers des sessions d'information et des programmes de formation spécialisés.</p>
+                        <span class="feature-number">02</span>
+                        <div>
+                            <h4>Économie Circulaire Numérique</h4>
+                            <p>Nos revenus (publicité, in-app, abonnements) sont réinvestis pour financer nos futurs projets et soutenir l'objet social de l'association.</p>
+                        </div>
                     </div>
                     <div class="feature-item">
-                        <h4>Diffusion Globale</h4>
-                        <p>Nos applications sont diffusées via les principaux stores mondiaux, garantissant un impact maximal pour nos projets.</p>
+                        <span class="feature-number">03</span>
+                        <div>
+                            <h4>Collaboration Ouverte</h4>
+                            <p>Nous accueillons membres actifs et bienfaiteurs pour enrichir notre laboratoire de nouvelles compétences et perspectives.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="adhesion" class="section">
-            <div class="container text-center">
-                <h2 class="section-title">Soutenir DIH LABS</h2>
-                <p class="lead">L'association se compose de membres actifs et bienfaiteurs. Rejoignez-nous pour contribuer à l'écosystème numérique.</p>
-                <div class="membership-info">
-                    <p>Pour faire partie de l'association, chaque demande d'admission est agréée par le bureau. Les ressources de l'association (cotisations, dons, revenus d'exploitation) sont intégralement dédiées à la réalisation de notre objet social.</p>
-                    <a href="mailto:contact@dih-labs.fr" class="btn btn-primary">Demander une adhésion</a>
+            <div class="container">
+                <div class="membership-info reveal">
+                    <h2>Devenir membre de DIH LABS</h2>
+                    <p>Que vous soyez développeur, designer, ou simplement passionné par l'innovation, votre contribution peut faire la différence. Notre bureau étudie chaque demande pour garantir une vision commune de l'innovation.</p>
+                    <a href="mailto:contact@dih-labs.fr" class="btn btn-primary">Envoyer une candidature</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section bg-dark text-white">
+        <section id="contact" class="section bg-dark">
             <div class="container">
-                <div class="grid contact-grid">
+                <div class="grid contact-grid reveal">
                     <div>
-                        <h3>DIH LABS</h3>
-                        <p>Association régie par la loi du 1er juillet 1901.</p>
-                        <p><strong>Siège social :</strong><br>
-                        31Bis Rue Linné<br>
-                        75005 Paris</p>
+                        <h3 class="text-white">DIH LABS</h3>
+                        <p style="color: #94a3b8; margin-top: 1rem;">Association (Loi 1901) fondée à Paris le 18/02/2026.</p>
+                        <p style="color: #94a3b8; margin-top: 1rem;"><strong>Siège social :</strong><br>
+                        31Bis Rue Linné, 75005 Paris</p>
                     </div>
-                    <div>
-                        <h3>Nous contacter</h3>
-                        <p>Pour toute question relative à nos projets ou pour nous proposer une collaboration :</p>
-                        <p>Email : <a href="mailto:contact@dih-labs.fr" class="text-white">contact@dih-labs.fr</a></p>
+                    <div style="text-align: right;">
+                        <h3 class="text-white">Connexion</h3>
+                        <p style="color: #94a3b8; margin-top: 1rem;">Des questions sur nos statuts ou nos projets ?</p>
+                        <p style="margin-top: 1rem;"><a href="mailto:contact@dih-labs.fr" style="color: var(--primary-light); text-decoration: none; font-weight: 600; font-size: 1.2rem;">contact@dih-labs.fr</a></p>
                     </div>
                 </div>
             </div>
@@ -109,8 +119,30 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 DIH LABS. Tous droits réservés.</p>
+            <p>&copy; 2026 DIH LABS | Laboratoire d'Innovation Digitale. Développé avec passion.</p>
         </div>
     </footer>
+
+    <script>
+        // Système de révélation au défilement (Scroll Reveal)
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Animation d'entrée pour le Hero dès le chargement
+        window.addEventListener('load', () => {
+            document.querySelector('.hero .reveal').classList.add('active');
+        });
+    </script>
 </body>
 </html>
