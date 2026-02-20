@@ -95,6 +95,35 @@
                     <p>Que vous soyez développeur, designer, ou simplement passionné par l'innovation, votre contribution peut faire la différence. Notre bureau étudie chaque demande pour garantir une vision commune de l'innovation.</p>
                     <a href="mailto:contact@dih-labs.com" class="btn btn-primary">Envoyer une candidature</a>
                 </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-container reveal">
+                    <h3 class="text-center" style="margin-bottom: 2.5rem;">Foire Aux Questions</h3>
+                    <div class="faq-item">
+                        <div class="faq-question">Comment adhérer à l'association ? <span class="faq-icon"></span></div>
+                        <div class="faq-answer">
+                            <p>Selon l'article 6 de nos statuts, toute demande d'adhésion doit être agréée par le bureau. Il vous suffit d'envoyer votre candidature par email en précisant vos motivations et vos compétences (développement, design, gestion de projet, etc.).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Quelles sont les catégories de membres ? <span class="faq-icon"></span></div>
+                        <div class="faq-answer">
+                            <p>DIH LABS se compose de membres fondateurs (signataires initiaux), de membres actifs (adhérents à jour de cotisation) et de membres bienfaiteurs qui soutiennent nos projets par des dons ou des contributions exceptionnelles.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Y a-t-il une cotisation annuelle ? <span class="faq-icon"></span></div>
+                        <div class="faq-answer">
+                            <p>Oui, le montant de la cotisation annuelle est fixé chaque année par l'assemblée générale. Cette ressource permet de financer les infrastructures techniques nécessaires au développement de nos applications.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Les dirigeants sont-ils bénévoles ? <span class="faq-icon"></span></div>
+                        <div class="faq-answer">
+                            <p>Conformément à l'article 13, les fonctions de membre du bureau sont exercées à titre bénévole par défaut. Toutefois, l'assemblée générale peut décider d'une rémunération proportionnée si les responsabilités du dirigeant l'exigent, dans le strict respect de la réglementation.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -138,6 +167,23 @@
         });
 
         revealElements.forEach(el => observer.observe(el));
+
+        // FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Fermer tous les autres items
+                faqItems.forEach(i => i.classList.remove('active'));
+                
+                // Ouvrir l'item actuel s'il n'était pas actif
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
 
         // Animation d'entrée pour le Hero dès le chargement
         window.addEventListener('load', () => {
