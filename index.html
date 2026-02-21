@@ -5,16 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIH LABS | Laboratoire d'Innovation Digitale</title>
     <meta name="description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dih-labs.com/">
+    <meta property="og:title" content="DIH LABS | Laboratoire d'Innovation Digitale">
+    <meta property="og:description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web.">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="DIH LABS">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="DIH LABS | Laboratoire d'Innovation Digitale">
+    <meta name="twitter:description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web.">
+
+    <!-- JSON-LD Organisation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DIH LABS",
+      "alternateName": "Laboratoire d'Innovation Digitale",
+      "url": "https://dih-labs.com",
+      "email": "contact@dih-labs.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "31Bis Rue Linné",
+        "addressLocality": "Paris",
+        "postalCode": "75005",
+        "addressCountry": "FR"
+      },
+      "foundingDate": "2026-02-18",
+      "description": "Association loi 1901 dédiée à la conception, au développement et à l'édition d'applications mobiles et web."
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main" class="skip-link">Passer au contenu principal</a>
     <header>
         <nav class="container">
             <a href="#accueil" class="logo">DIH <span>LABS</span></a>
-            <ul>
+            <button type="button" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="main-nav">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#objet">Notre Objet</a></li>
                 <li><a href="#activites">Activités</a></li>
@@ -24,7 +65,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section id="accueil" class="hero">
             <div class="container reveal">
                 <h1>L'innovation digitale,<br>façonnée par le collectif.</h1>
@@ -40,19 +81,19 @@
             <div class="container">
                 <h2 class="section-title reveal">Un ADN d'Expérimentation</h2>
                 <div class="grid">
-                    <div class="card reveal" style="transition-delay: 0.1s;">
-                        <div class="icon-placeholder">📱</div>
+                    <div class="card reveal delay-1">
+                        <div class="icon-placeholder" role="img" aria-label="Application mobile">📱</div>
                         <h3>Ingénierie Mobile</h3>
-                        <p>Nous concevons des applications robustes pour iOS et Android, de la première ligne de code à la mise en ligne sur les stores (App Store & Google Play).</p>
+                        <p>Nous concevons des applications robustes pour iOS et Android, de la première ligne de code à la mise en ligne sur les stores (App Store &amp; Google Play).</p>
                     </div>
-                    <div class="card reveal" style="transition-delay: 0.2s;">
-                        <div class="icon-placeholder">⚡</div>
+                    <div class="card reveal delay-2">
+                        <div class="icon-placeholder" role="img" aria-label="Innovation">⚡</div>
                         <h3>Contenus Innovants</h3>
                         <p>Plus que des outils, nous créons des expériences numériques riches, axées sur l'ergonomie et la valeur ajoutée pour l'utilisateur final.</p>
                     </div>
-                    <div class="card reveal" style="transition-delay: 0.3s;">
-                        <div class="icon-placeholder">🌐</div>
-                        <h3>Diffusion & Partage</h3>
+                    <div class="card reveal delay-3">
+                        <div class="icon-placeholder" role="img" aria-label="Diffusion et partage">🌐</div>
+                        <h3>Diffusion &amp; Partage</h3>
                         <p>Nous organisons des événements, des sessions de formation et des actions de communication pour faire vivre nos projets.</p>
                     </div>
                 </div>
@@ -61,7 +102,7 @@
 
         <section id="activites" class="section bg-light">
             <div class="container">
-                <h2 class="section-title reveal">Expertise & Moyens</h2>
+                <h2 class="section-title reveal">Expertise &amp; Moyens</h2>
                 <div class="feature-list reveal">
                     <div class="feature-item">
                         <span class="feature-number">01</span>
@@ -96,30 +137,40 @@
                         <h2>Rejoindre le Lab</h2>
                         <p>DIH LABS est avant tout un collectif. Que vous soyez développeur, designer ou stratège, venez transformer vos idées en applications concrètes.</p>
                         <a href="mailto:contact@dih-labs.com" class="btn btn-primary">Envoyer une candidature</a>
-                        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">Siège social : 31Bis Rue Linné, 75005 Paris</p>
+                        <p class="address-note">Siège social : 31Bis Rue Linné, 75005 Paris</p>
                     </div>
 
                     <!-- Colonne Droite : FAQ Intégrée -->
                     <div class="faq-integrated">
                         <div class="faq-item">
-                            <div class="faq-question">Comment fonctionne l'admission ? <span class="faq-icon"></span></div>
-                            <div class="faq-answer">L'admission est soumise à l'agrément du bureau (Art. 6). Envoyez-nous un court mail avec vos motivations.</div>
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1">
+                                Comment fonctionne l'admission ? <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <section class="faq-answer" id="faq-answer-1" aria-labelledby="faq-btn-1">L'admission est soumise à l'agrément du bureau (Art. 6). Envoyez-nous un court mail avec vos motivations.</section>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-question">Quelles sont les ressources ? <span class="faq-icon"></span></div>
-                            <div class="faq-answer">Cotisations, dons et revenus des applications (pub/achats in-app) sont réinvestis dans nos projets (Art. 8).</div>
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2">
+                                Quelles sont les ressources ? <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <section class="faq-answer" id="faq-answer-2" aria-labelledby="faq-btn-2">Cotisations, dons et revenus des applications (pub/achats in-app) sont réinvestis dans nos projets (Art. 8).</section>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-question">Rémunération des membres ? <span class="faq-icon"></span></div>
-                            <div class="faq-answer">Les fonctions sont bénévoles par défaut. Des rémunérations spécifiques peuvent être votées par l'AG (Art. 13).</div>
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3">
+                                Rémunération des membres ? <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <section class="faq-answer" id="faq-answer-3" aria-labelledby="faq-btn-3">Les fonctions sont bénévoles par défaut. Des rémunérations spécifiques peuvent être votées par l'AG (Art. 13).</section>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-question">Sur quels stores publiez-vous ? <span class="faq-icon"></span></div>
-                            <div class="faq-answer">Prioritairement App Store et Google Play, conformément à notre objet social de diffusion globale (Art. 2).</div>
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-btn-4">
+                                Sur quels stores publiez-vous ? <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <section class="faq-answer" id="faq-answer-4" aria-labelledby="faq-btn-4">Prioritairement App Store et Google Play, conformément à notre objet social de diffusion globale (Art. 2).</section>
                         </div>
                         <div class="faq-item">
-                            <div class="faq-question">Puis-je devenir bienfaiteur ? <span class="faq-icon"></span></div>
-                            <div class="faq-answer">Oui, toute personne peut soutenir l'association par un don ou un apport exceptionnel (Art. 5).</div>
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-btn-5">
+                                Puis-je devenir bienfaiteur ? <span class="faq-icon" aria-hidden="true"></span>
+                            </button>
+                            <section class="faq-answer" id="faq-answer-5" aria-labelledby="faq-btn-5">Oui, toute personne peut soutenir l'association par un don ou un apport exceptionnel (Art. 5).</section>
                         </div>
                     </div>
                 </div>
@@ -131,14 +182,14 @@
                 <div class="grid contact-grid reveal">
                     <div>
                         <h3 class="text-white">DIH LABS</h3>
-                        <p style="color: #94a3b8; margin-top: 1rem;">Association (Loi 1901) fondée à Paris le 18/02/2026.</p>
-                        <p style="color: #94a3b8; margin-top: 1rem;"><strong>Siège social :</strong><br>
+                        <p class="contact-muted">Association (Loi 1901) fondée à Paris le 18/02/2026.</p>
+                        <p class="contact-muted"><strong>Siège social :</strong><br>
                         31Bis Rue Linné, 75005 Paris</p>
                     </div>
-                    <div style="text-align: right;">
+                    <div class="contact-right">
                         <h3 class="text-white">Connexion</h3>
-                        <p style="color: #94a3b8; margin-top: 1rem;">Des questions sur nos statuts ou nos projets ?</p>
-                        <p style="margin-top: 1rem;"><a href="mailto:contact@dih-labs.com" style="color: var(--primary-light); text-decoration: none; font-weight: 600; font-size: 1.2rem;">contact@dih-labs.com</a></p>
+                        <p class="contact-muted">Des questions sur nos statuts ou nos projets ?</p>
+                        <p class="contact-link-wrap"><a href="mailto:contact@dih-labs.com" class="contact-email">contact@dih-labs.com</a></p>
                     </div>
                 </div>
             </div>
@@ -152,34 +203,76 @@
     </footer>
 
     <script>
-        // Système de révélation au défilement (Scroll Reveal)
+        // Scroll Reveal
         const revealElements = document.querySelectorAll('.reveal');
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, {
-            threshold: 0.1
-        });
-
+        }, { threshold: 0.1 });
         revealElements.forEach(el => observer.observe(el));
 
-        // FAQ Accordion Logic
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(i => i.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
+        // Hero animation on load
+        window.addEventListener('load', () => {
+            document.querySelector('.hero .reveal').classList.add('active');
+        });
+
+        // Hamburger Menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mainNav.classList.toggle('open');
+            menuToggle.classList.toggle('open', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('open');
+                menuToggle.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+                document.body.style.overflow = '';
             });
         });
 
-        // Animation d'entrée pour le Hero dès le chargement
-        window.addEventListener('load', () => {
-            document.querySelector('.hero .reveal').classList.add('active');
+        // FAQ Accordion avec accessibilité clavier
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach((item, index) => {
+            const btn = item.querySelector('.faq-question');
+
+            btn.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                if (!isActive) {
+                    item.classList.add('active');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            btn.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    item.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
+                    btn.focus();
+                }
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const next = faqItems[index + 1];
+                    if (next) next.querySelector('.faq-question').focus();
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prev = faqItems[index - 1];
+                    if (prev) prev.querySelector('.faq-question').focus();
+                }
+            });
         });
     </script>
 </body>

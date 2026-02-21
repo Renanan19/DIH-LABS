@@ -58,6 +58,30 @@ body {
 .bg-light { background: var(--light); }
 .bg-dark { background: var(--dark); color: var(--white); }
 
+/* Reveal transition delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+/* Skip to content */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 /* Header & Nav */
 header {
     background: var(--glass);
@@ -314,6 +338,7 @@ h1 {
 
 .membership-text h2 { color: var(--white); margin-bottom: 1.5rem; font-size: 2.5rem; }
 .membership-text p { color: #94a3b8; font-size: 1.1rem; margin-bottom: 2.5rem; }
+.address-note { margin-top: 2rem; font-size: 0.9rem; opacity: 0.7; }
 
 /* FAQ Intégrée */
 .faq-integrated {
@@ -339,6 +364,12 @@ h1 {
     font-weight: 500;
     font-size: 1rem;
     color: #e2e8f0;
+    /* Button reset */
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: inherit;
 }
 
 .faq-question:hover {
@@ -381,6 +412,42 @@ h1 {
     opacity: 1;
 }
 
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: var(--transition);
+    transform-origin: center;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 992px) {
     .membership-info {
         grid-template-columns: 1fr;
@@ -393,6 +460,12 @@ h1 {
     }
 }
 
+/* Contact section */
+.contact-muted { color: #94a3b8; margin-top: 1rem; }
+.contact-right { text-align: right; }
+.contact-link-wrap { margin-top: 1rem; }
+.contact-email { color: var(--primary-light); text-decoration: none; font-weight: 600; font-size: 1.2rem; }
+
 /* Footer */
 footer {
     padding: 4rem 0;
@@ -404,7 +477,35 @@ footer {
 @media (max-width: 768px) {
     h1 { font-size: 2.8rem; }
     .hero { padding: 6rem 0; }
-    nav ul { display: none; } /* On pourrait ajouter un menu burger pour un projet complet */
     .section { padding: 5rem 0; }
     .membership-info { padding: 2rem; }
+    .cta-group { flex-wrap: wrap; gap: 1rem; }
+
+    .menu-toggle { display: flex; }
+
+    nav ul {
+        position: fixed;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 1001;
+    }
+
+    nav ul.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
 }
