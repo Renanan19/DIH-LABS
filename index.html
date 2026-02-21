@@ -41,6 +41,7 @@
     </script>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -82,17 +83,23 @@
                 <h2 class="section-title reveal">Un ADN d'Expérimentation</h2>
                 <div class="grid">
                     <div class="card reveal delay-1">
-                        <div class="icon-placeholder" role="img" aria-label="Application mobile">📱</div>
+                        <div class="icon-placeholder" role="img" aria-label="Application mobile">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        </div>
                         <h3>Ingénierie Mobile</h3>
                         <p>Nous concevons des applications robustes pour iOS et Android, de la première ligne de code à la mise en ligne sur les stores (App Store &amp; Google Play).</p>
                     </div>
                     <div class="card reveal delay-2">
-                        <div class="icon-placeholder" role="img" aria-label="Innovation">⚡</div>
+                        <div class="icon-placeholder" role="img" aria-label="Innovation">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        </div>
                         <h3>Contenus Innovants</h3>
                         <p>Plus que des outils, nous créons des expériences numériques riches, axées sur l'ergonomie et la valeur ajoutée pour l'utilisateur final.</p>
                     </div>
                     <div class="card reveal delay-3">
-                        <div class="icon-placeholder" role="img" aria-label="Diffusion et partage">🌐</div>
+                        <div class="icon-placeholder" role="img" aria-label="Diffusion et partage">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
                         <h3>Diffusion &amp; Partage</h3>
                         <p>Nous organisons des événements, des sessions de formation et des actions de communication pour faire vivre nos projets.</p>
                     </div>
@@ -199,81 +206,33 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 DIH LABS | Laboratoire d'Innovation Digitale. Développé avec passion.</p>
+            <p class="footer-links"><a href="#" id="mentions-legales-trigger">Mentions Légales</a></p>
         </div>
     </footer>
 
-    <script>
-        // Scroll Reveal
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, { threshold: 0.1 });
-        revealElements.forEach(el => observer.observe(el));
+    <!-- Modal Mentions Légales -->
+    <div id="mentions-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
+            <h2>Mentions Légales</h2>
+            <div class="modal-body">
+                <h3>Éditeur du site</h3>
+                <p>Le site dih-labs.com est édité par l'association <strong>DIH</strong> (sigle DIH LABS), association régie par la loi du 1er juillet 1901.</p>
+                <p><strong>Siège social :</strong> 31Bis Rue Linné, 75005 Paris.</p>
+                <p><strong>Email :</strong> contact@dih-labs.com</p>
 
-        // Hero animation on load
-        window.addEventListener('load', () => {
-            document.querySelector('.hero .reveal').classList.add('active');
-        });
+                <h3>Hébergement</h3>
+                <p>Le site est hébergé par <strong>GitHub Inc.</strong><br>
+                88 Colin P. Kelly Jr. Street<br>
+                San Francisco, CA 94107, USA</p>
 
-        // Hamburger Menu
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mainNav = document.getElementById('main-nav');
+                <h3>Propriété intellectuelle</h3>
+                <p>Tous les contenus présents sur le site (logos, textes, graphiques) sont la propriété exclusive de l'association DIH LABS, sauf mention contraire.</p>
+            </div>
+        </div>
+    </div>
 
-        menuToggle.addEventListener('click', () => {
-            const isOpen = mainNav.classList.toggle('open');
-            menuToggle.classList.toggle('open', isOpen);
-            menuToggle.setAttribute('aria-expanded', String(isOpen));
-            menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('open');
-                menuToggle.classList.remove('open');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
-                document.body.style.overflow = '';
-            });
-        });
-
-        // FAQ Accordion avec accessibilité clavier
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach((item, index) => {
-            const btn = item.querySelector('.faq-question');
-
-            btn.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-                if (!isActive) {
-                    item.classList.add('active');
-                    btn.setAttribute('aria-expanded', 'true');
-                }
-            });
-
-            btn.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    item.classList.remove('active');
-                    btn.setAttribute('aria-expanded', 'false');
-                    btn.focus();
-                }
-                if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    const next = faqItems[index + 1];
-                    if (next) next.querySelector('.faq-question').focus();
-                }
-                if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    const prev = faqItems[index - 1];
-                    if (prev) prev.querySelector('.faq-question').focus();
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
