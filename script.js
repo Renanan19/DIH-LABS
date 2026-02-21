@@ -89,21 +89,15 @@ const modalClose = modal ? modal.querySelector('.modal-close') : null;
 if (modalTrigger && modal) {
     modalTrigger.addEventListener('click', (e) => {
         e.preventDefault();
-        modal.style.display = 'flex'; // Forcer l'affichage flex
-        setTimeout(() => {
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-        }, 10);
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
     });
 
     const closeModal = () => {
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
-        setTimeout(() => {
-            modal.style.display = 'none'; // Cacher complètement après l'animation
-        }, 500); // Temps de la transition CSS
     };
 
     if (modalClose) {
