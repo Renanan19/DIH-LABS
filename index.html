@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIH LABS | Laboratoire d'Innovation Digitale</title>
-    <meta name="description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web.">
+    <title data-i18n="head_title">DIH LABS | Laboratoire d'Innovation Digitale</title>
+    <meta name="description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web." data-i18n-meta="description">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dih-labs.com/">
-    <meta property="og:title" content="DIH LABS | Laboratoire d'Innovation Digitale">
-    <meta property="og:description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web.">
+    <meta property="og:title" content="DIH LABS | Laboratoire d'Innovation Digitale" data-i18n-meta="og:title">
+    <meta property="og:description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web." data-i18n-meta="og:description">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="DIH LABS">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="DIH LABS | Laboratoire d'Innovation Digitale">
-    <meta name="twitter:description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web.">
+    <meta name="twitter:title" content="DIH LABS | Laboratoire d'Innovation Digitale" data-i18n-meta="twitter:title">
+    <meta name="twitter:description" content="DIH LABS - Association de conception, développement et édition d'applications mobiles et web." data-i18n-meta="twitter:description">
 
     <!-- JSON-LD Organisation -->
     <script type="application/ld+json">
@@ -47,21 +47,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#main" class="skip-link">Passer au contenu principal</a>
+    <a href="#main" class="skip-link" data-i18n="skip_link">Passer au contenu principal</a>
     <header>
         <nav class="container">
             <a href="#accueil" class="logo">DIH <span>LABS</span></a>
+            
+            <div class="lang-switch">
+                <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en français">FR</button>
+                <span aria-hidden="true">/</span>
+                <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+            </div>
+
             <button type="button" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul id="main-nav">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#objet">Notre Objet</a></li>
-                <li><a href="#activites">Activités</a></li>
-                <li><a href="#adhesion">Adhésion</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="#objet" data-i18n="nav_purpose">Notre Objet</a></li>
+                <li><a href="#streamvision" data-i18n="nav_streamvision">StreamVision</a></li>
+                <li><a href="#activites" data-i18n="nav_activities">Activités</a></li>
+                <li><a href="#adhesion" data-i18n="nav_membership">Adhésion</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -69,67 +77,93 @@
     <main id="main">
         <section id="accueil" class="hero">
             <div class="container reveal">
-                <h1>L'innovation digitale,<br>façonnée par le collectif.</h1>
-                <p>Association à but non lucratif dédiée à la conception d'applications mobiles et web de nouvelle génération. Nous développons, nous apprenons, nous diffusons.</p>
+                <h1 data-i18n="hero_title">L'innovation digitale,<br>façonnée par le collectif.</h1>
+                <p data-i18n="hero_desc">Association à but non lucratif dédiée à la conception d'applications mobiles et web de nouvelle génération. Nous développons, nous apprenons, nous diffusons.</p>
                 <div class="cta-group">
-                    <a href="#activites" class="btn btn-primary">Nos axes de développement</a>
-                    <a href="#adhesion" class="btn btn-secondary">Nous rejoindre</a>
+                    <a href="#streamvision" class="btn btn-primary" data-i18n="hero_btn_1">Découvrir StreamVision</a>
+                    <a href="#adhesion" class="btn btn-secondary" data-i18n="hero_btn_2">Nous rejoindre</a>
                 </div>
             </div>
         </section>
 
         <section id="objet" class="section">
             <div class="container">
-                <h2 class="section-title reveal">Un ADN d'Expérimentation</h2>
+                <h2 class="section-title reveal" data-i18n="purpose_title">Un ADN d'Expérimentation</h2>
                 <div class="grid">
                     <div class="card reveal delay-1">
                         <div class="icon-placeholder" role="img" aria-label="Application mobile">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                         </div>
-                        <h3>Ingénierie Mobile</h3>
-                        <p>Nous concevons des applications robustes pour iOS et Android, de la première ligne de code à la mise en ligne sur les stores (App Store &amp; Google Play).</p>
+                        <h3 data-i18n="purpose_card_1_title">Ingénierie Mobile</h3>
+                        <p data-i18n="purpose_card_1_desc">Nous concevons des applications robustes pour iOS et Android, de la première ligne de code à la mise en ligne sur les stores (App Store &amp; Google Play).</p>
                     </div>
                     <div class="card reveal delay-2">
                         <div class="icon-placeholder" role="img" aria-label="Innovation">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                         </div>
-                        <h3>Contenus Innovants</h3>
-                        <p>Plus que des outils, nous créons des expériences numériques riches, axées sur l'ergonomie et la valeur ajoutée pour l'utilisateur final.</p>
+                        <h3 data-i18n="purpose_card_2_title">Contenus Innovants</h3>
+                        <p data-i18n="purpose_card_2_desc">Plus que des outils, nous créons des expériences numériques riches, axées sur l'ergonomie et la valeur ajoutée pour l'utilisateur final.</p>
                     </div>
                     <div class="card reveal delay-3">
                         <div class="icon-placeholder" role="img" aria-label="Diffusion et partage">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                         </div>
-                        <h3>Diffusion &amp; Partage</h3>
-                        <p>Nous organisons des événements, des sessions de formation et des actions de communication pour faire vivre nos projets.</p>
+                        <h3 data-i18n="purpose_card_3_title">Diffusion &amp; Partage</h3>
+                        <p data-i18n="purpose_card_3_desc">Nous organisons des événements, des sessions de formation et des actions de communication pour faire vivre nos projets.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="activites" class="section bg-light">
+        <!-- StreamVision Section -->
+        <section id="streamvision" class="section bg-light">
             <div class="container">
-                <h2 class="section-title reveal">Expertise &amp; Moyens</h2>
+                <div class="app-promo reveal">
+                    <div class="app-content">
+                        <span class="badge" data-i18n="streamvision_badge">Nouveau Projet</span>
+                        <h2 data-i18n="streamvision_title">StreamVision</h2>
+                        <p data-i18n="streamvision_desc">L'application mobile incontournable pour les passionnés de streaming. Gérez vos listes de lecture, explorez de nouveaux horizons et optimisez votre expérience de visionnage en toute simplicité.</p>
+                        <div class="store-buttons">
+                            <a href="https://play.google.com/store/apps/details?id=com.antoine.streamvisionapp" target="_blank" class="store-btn google-play">
+                                <svg viewBox="0 0 512 512" width="24" height="24"><path fill="#fff" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-10.3 18-28.5-1.2-40.8zM325.3 277.7l-52.6 52.6 232 133.2L325.3 277.7z"/></svg>
+                                <span>Google Play</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-visual">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <img src="favicon.svg" alt="StreamVision Logo" class="app-logo-inside">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activites" class="section">
+            <div class="container">
+                <h2 class="section-title reveal" data-i18n="activities_title">Expertise &amp; Moyens</h2>
                 <div class="feature-list reveal">
                     <div class="feature-item">
                         <span class="feature-number">01</span>
                         <div>
-                            <h4>Cycle de Vie Logiciel</h4>
-                            <p>Nous couvrons l'intégralité du cycle de vie des produits : conception UI/UX, développement full-stack, exploitation et maintenance évolutive.</p>
+                            <h4 data-i18n="activities_item_1_title">Cycle de Vie Logiciel</h4>
+                            <p data-i18n="activities_item_1_desc">Nous couvrons l'intégralité du cycle de vie des produits : conception UI/UX, développement full-stack, exploitation et maintenance évolutive.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-number">02</span>
                         <div>
-                            <h4>Économie Circulaire Numérique</h4>
-                            <p>Nos revenus (publicité, in-app, abonnements) sont réinvestis pour financer nos futurs projets et soutenir l'objet social de l'association.</p>
+                            <h4 data-i18n="activities_item_2_title">Économie Circulaire Numérique</h4>
+                            <p data-i18n="activities_item_2_desc">Nos revenus (publicité, in-app, abonnements) sont réinvestis pour financer nos futurs projets et soutenir l'objet social de l'association.</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <span class="feature-number">03</span>
                         <div>
-                            <h4>Collaboration Ouverte</h4>
-                            <p>Nous accueillons membres actifs et bienfaiteurs pour enrichir notre laboratoire de nouvelles compétences et perspectives.</p>
+                            <h4 data-i18n="activities_item_3_title">Collaboration Ouverte</h4>
+                            <p data-i18n="activities_item_3_desc">Nous accueillons membres actifs et bienfaiteurs pour enrichir notre laboratoire de nouvelles compétences et perspectives.</p>
                         </div>
                     </div>
                 </div>
@@ -141,43 +175,43 @@
                 <div class="membership-info reveal">
                     <!-- Colonne Gauche : Appel à l'action -->
                     <div class="membership-text">
-                        <h2>Rejoindre le Lab</h2>
-                        <p>DIH LABS est avant tout un collectif. Que vous soyez développeur, designer ou stratège, venez transformer vos idées en applications concrètes.</p>
-                        <a href="mailto:contact@dih-labs.com" class="btn btn-primary">Envoyer une candidature</a>
-                        <p class="address-note">Siège social : 31 Rue Linné, 75005 Paris</p>
+                        <h2 data-i18n="membership_title">Rejoindre le Lab</h2>
+                        <p data-i18n="membership_desc">DIH LABS est avant tout un collectif. Que vous soyez développeur, designer ou stratège, venez transformer vos idées en applications concrètes.</p>
+                        <a href="mailto:contact@dih-labs.com" class="btn btn-primary" data-i18n="membership_btn">Envoyer une candidature</a>
+                        <p class="address-note" data-i18n="membership_address">Siège social : 31 Rue Linné, 75005 Paris</p>
                     </div>
 
                     <!-- Colonne Droite : FAQ Intégrée -->
                     <div class="faq-integrated">
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1">
-                                Comment fonctionne l'admission ? <span class="faq-icon" aria-hidden="true"></span>
+                                <span data-i18n="faq_q1">Comment fonctionne l'admission ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-1" aria-labelledby="faq-btn-1">L'admission est soumise à l'agrément du bureau (Art. 6). Envoyez-nous un court mail avec vos motivations.</section>
+                            <section class="faq-answer" id="faq-answer-1" aria-labelledby="faq-btn-1" data-i18n="faq_a1">L'admission est soumise à l'agrément du bureau (Art. 6). Envoyez-nous un court mail avec vos motivations.</section>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2">
-                                Quelles sont les ressources ? <span class="faq-icon" aria-hidden="true"></span>
+                                <span data-i18n="faq_q2">Quelles sont les ressources ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-2" aria-labelledby="faq-btn-2">Cotisations, dons et revenus des applications (pub/achats in-app) sont réinvestis dans nos projets (Art. 8).</section>
+                            <section class="faq-answer" id="faq-answer-2" aria-labelledby="faq-btn-2" data-i18n="faq_a2">Cotisations, dons et revenus des applications (pub/achats in-app) sont réinvestis dans nos projets (Art. 8).</section>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3">
-                                Rémunération des membres ? <span class="faq-icon" aria-hidden="true"></span>
+                                <span data-i18n="faq_q3">Rémunération des membres ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-3" aria-labelledby="faq-btn-3">Les fonctions sont bénévoles par défaut. Des rémunérations spécifiques peuvent être votées par l'AG (Art. 13).</section>
+                            <section class="faq-answer" id="faq-answer-3" aria-labelledby="faq-btn-3" data-i18n="faq_a3">Les fonctions sont bénévoles par défaut. Des rémunérations spécifiques peuvent être votées par l'AG (Art. 13).</section>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-btn-4">
-                                Sur quels stores publiez-vous ? <span class="faq-icon" aria-hidden="true"></span>
+                                <span data-i18n="faq_q4">Sur quels stores publiez-vous ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-4" aria-labelledby="faq-btn-4">Prioritairement App Store et Google Play, conformément à notre objet social de diffusion globale (Art. 2).</section>
+                            <section class="faq-answer" id="faq-answer-4" aria-labelledby="faq-btn-4" data-i18n="faq_a4">Prioritairement App Store et Google Play, conformément à notre objet social de diffusion globale (Art. 2).</section>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-btn-5">
-                                Puis-je devenir bienfaiteur ? <span class="faq-icon" aria-hidden="true"></span>
+                                <span data-i18n="faq_q5">Puis-je devenir bienfaiteur ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-5" aria-labelledby="faq-btn-5">Oui, toute personne peut soutenir l'association par un don ou un apport exceptionnel (Art. 5).</section>
+                            <section class="faq-answer" id="faq-answer-5" aria-labelledby="faq-btn-5" data-i18n="faq_a5">Oui, toute personne peut soutenir l'association par un don ou un apport exceptionnel (Art. 5).</section>
                         </div>
                     </div>
                 </div>
@@ -189,13 +223,12 @@
                 <div class="grid contact-grid reveal">
                     <div>
                         <h3 class="text-white">DIH LABS</h3>
-                        <p class="contact-muted">Association (Loi 1901) fondée à Paris le 18/02/2026.</p>
-                        <p class="contact-muted"><strong>Siège social :</strong><br>
-                        31 Rue Linné, 75005 Paris</p>
+                        <p class="contact-muted" data-i18n="contact_desc">Association (Loi 1901) fondée à Paris le 18/02/2026.</p>
+                        <p class="contact-muted" data-i18n="contact_address"><strong>Siège social :</strong><br>31 Rue Linné, 75005 Paris</p>
                     </div>
                     <div class="contact-right">
-                        <h3 class="text-white">Connexion</h3>
-                        <p class="contact-muted">Des questions sur nos statuts ou nos projets ?</p>
+                        <h3 class="text-white" data-i18n="contact_title_right">Connexion</h3>
+                        <p class="contact-muted" data-i18n="contact_desc_right">Des questions sur nos statuts ou nos projets ?</p>
                         <p class="contact-link-wrap"><a href="mailto:contact@dih-labs.com" class="contact-email">contact@dih-labs.com</a></p>
                     </div>
                 </div>
@@ -205,8 +238,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 DIH LABS | Laboratoire d'Innovation Digitale. Développé avec passion.</p>
-            <p class="footer-links"><a href="#" id="mentions-legales-trigger">Mentions Légales</a></p>
+            <p data-i18n="footer_copy">&copy; 2026 DIH LABS | Laboratoire d'Innovation Digitale. Développé avec passion.</p>
+            <p class="footer-links"><a href="#" id="mentions-legales-trigger" data-i18n="footer_legal">Mentions Légales</a></p>
         </div>
     </footer>
 
@@ -214,24 +247,24 @@
     <div id="mentions-modal" class="modal" aria-hidden="true">
         <div class="modal-content">
             <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
-            <h2>Mentions Légales</h2>
+            <h2 data-i18n="modal_title">Mentions Légales</h2>
             <div class="modal-body">
-                <h3>Éditeur du site</h3>
-                <p>Le site dih-labs.com est édité par l'association <strong>DIH</strong> (sigle DIH LABS), association déclarée régie par la loi du 1er juillet 1901.</p>
+                <h3 data-i18n="modal_h1">Éditeur du site</h3>
+                <p data-i18n="modal_p1">Le site dih-labs.com est édité par l'association <strong>DIH</strong> (sigle DIH LABS), association déclarée régie par la loi du 1er juillet 1901.</p>
                 <p><strong>N° RNA :</strong> W751283013<br>
                 <strong>SIREN :</strong> 101 704 369<br>
                 <strong>SIRET :</strong> 101 704 369 00012<br>
                 <strong>Code APE :</strong> 58.29C (Édition de logiciels applicatifs)</p>
-                <p><strong>Siège social :</strong> 31 Rue Linné, 75005 Paris.</p>
+                <p data-i18n="modal_address"><strong>Siège social :</strong> 31 Rue Linné, 75005 Paris.</p>
                 <p><strong>Email :</strong> contact@dih-labs.com</p>
 
-                <h3>Hébergement</h3>
-                <p>Le site est hébergé par <strong>GitHub Inc.</strong><br>
+                <h3 data-i18n="modal_h2">Hébergement</h3>
+                <p data-i18n="modal_p2">Le site est hébergé par <strong>GitHub Inc.</strong><br>
                 88 Colin P. Kelly Jr. Street<br>
                 San Francisco, CA 94107, USA</p>
 
-                <h3>Propriété intellectuelle</h3>
-                <p>Tous les contenus présents sur le site (logos, textes, graphiques) sont la propriété exclusive de l'association DIH LABS, sauf mention contraire.</p>
+                <h3 data-i18n="modal_h3">Propriété intellectuelle</h3>
+                <p data-i18n="modal_p3">Tous les contenus présents sur le site (logos, textes, graphiques) sont la propriété exclusive de l'association DIH LABS, sauf mention contraire.</p>
             </div>
         </div>
     </div>
@@ -239,4 +272,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
