@@ -305,6 +305,65 @@ h1 {
     display: block;
 }
 
+/* Store Buttons - Official Premium Design */
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.store-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #000;
+    color: #fff !important;
+    padding: 10px 24px;
+    border-radius: 14px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 190px;
+    gap: 14px;
+    text-align: left;
+}
+
+.store-btn:hover {
+    background: #0a0a0a;
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(43, 89, 195, 0.25);
+}
+
+.store-btn svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    fill: currentColor;
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.btn-text-top {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+    margin-bottom: 2px;
+}
+
+.btn-text-main {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
 /* Hamburger Menu & Mobile Optimization */
 .menu-toggle {
     display: none;
@@ -371,6 +430,17 @@ h1 {
     }
     
     .contact-right { text-align: center; }
+    
+    .store-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .store-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
 }
 
 /* Modal Styling */
