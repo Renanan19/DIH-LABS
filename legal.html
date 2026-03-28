@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations Légales | DIH LABS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --accent: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .legal-container {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 40px 20px;
+        }
+        .lang-toggle {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .lang-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        section {
+            margin-bottom: 60px;
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 1.5rem; background: linear-gradient(to right, #fff, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); border-bottom: 1px solid rgba(139, 92, 246, 0.2); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.8rem; color: #fff; }
+        p, li { color: var(--text-muted); margin-bottom: 1rem; }
+        ul { margin-left: 20px; margin-bottom: 1rem; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .legal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .legal-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="legal-container">
+        <a href="index.html" class="back-link">← Retour / Back</a>
+        
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="showLang('fr')">Français</button>
+            <button class="lang-btn" onclick="showLang('en')">English</button>
+        </div>
+
+        <!-- VERSION FRANCAISE -->
+        <section id="fr-content" class="active">
+            <h1>Informations Légales</h1>
+            
+            <div id="mentions-legales">
+                <h2>1. Mentions Légales</h2>
+                <p><strong>Éditeur :</strong> Association DIH (sigle DIH LABS)</p>
+                <p><strong>Forme :</strong> Association déclarée (Loi 1901)</p>
+                <p><strong>N° RNA :</strong> W751283013</p>
+                <p><strong>SIREN :</strong> 101 704 369</p>
+                <p><strong>Siège Social :</strong> 31 Rue Linné, 75005 Paris, France</p>
+                <p><strong>Email :</strong> contact@dih-labs.com</p>
+                <p><strong>Hébergeur :</strong> GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
+            </div>
+
+            <div id="privacy-policy">
+                <h2>2. Politique de Confidentialité</h2>
+                <p>Dernière mise à jour : 28 mars 2026</p>
+                
+                <h3>Collecte des données</h3>
+                <p>L'application <strong>StreamVision</strong> et le site <strong>dih-labs.com</strong> sont conçus pour respecter votre vie privée :</p>
+                <ul>
+                    <li><strong>Aucune donnée personnelle</strong> n'est collectée par DIH LABS lors de l'utilisation de l'application.</li>
+                    <li><strong>Aucun compte</strong> n'est requis pour utiliser nos services.</li>
+                    <li><strong>Aucun suivi (tracking)</strong> de votre activité ou de votre historique de visionnage n'est effectué.</li>
+                    <li>Vos listes de lecture (M3U, Xtream) sont stockées localement sur votre appareil et ne sont jamais transmises à nos serveurs.</li>
+                </ul>
+
+                <h3>Services tiers</h3>
+                <p>Nous n'utilisons aucun service de publicité ou d'analyse tiers collectant des données identifiables au sein de l'application StreamVision.</p>
+
+                <h3>Vos droits (RGPD)</h3>
+                <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données. Puisque nous ne collectons aucune donnée, ces droits s'exercent par la simple suppression de l'application de votre appareil.</p>
+            </div>
+
+            <div id="tos">
+                <h2>3. Conditions Générales d'Utilisation</h2>
+                <h3>Objet</h3>
+                <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition des services de DIH LABS.</p>
+                
+                <h3>Responsabilité</h3>
+                <p>StreamVision est un <strong>lecteur multimédia pur</strong>. DIH LABS ne fournit, n'héberge, ni ne diffuse aucun contenu audiovisuel. L'utilisateur est seul responsable du contenu qu'il charge dans l'application via des listes M3U ou codes Xtream. L'utilisateur s'engage à respecter les droits de propriété intellectuelle et les législations en vigueur dans son pays.</p>
+                
+                <h3>Propriété Intellectuelle</h3>
+                <p>Le logiciel, les logos et les éléments graphiques sont la propriété exclusive de DIH LABS.</p>
+            </div>
+        </section>
+
+        <!-- ENGLISH VERSION -->
+        <section id="en-content">
+            <h1>Legal Information</h1>
+            
+            <div id="legal-notice">
+                <h2>1. Legal Notice</h2>
+                <p><strong>Publisher:</strong> DIH Association (aka DIH LABS)</p>
+                <p><strong>Legal Status:</strong> Non-profit Association (French Law 1901)</p>
+                <p><strong>RNA No.:</strong> W751283013</p>
+                <p><strong>SIREN No.:</strong> 101 704 369</p>
+                <p><strong>Registered Office:</strong> 31 Rue Linné, 75005 Paris, France</p>
+                <p><strong>Email:</strong> contact@dih-labs.com</p>
+                <p><strong>Host:</strong> GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
+            </div>
+
+            <div id="privacy-policy-en">
+                <h2>2. Privacy Policy</h2>
+                <p>Last updated: March 28, 2026</p>
+                
+                <h3>Data Collection</h3>
+                <p>The <strong>StreamVision</strong> app and <strong>dih-labs.com</strong> website are designed to respect your privacy:</p>
+                <ul>
+                    <li><strong>No personal data</strong> is collected by DIH LABS during the use of the application.</li>
+                    <li><strong>No account</strong> is required to use our services.</li>
+                    <li><strong>No tracking</strong> of your activity or viewing history is performed.</li>
+                    <li>Your playlists (M3U, Xtream) are stored locally on your device and are never transmitted to our servers.</li>
+                </ul>
+
+                <h3>Third-party Services</h3>
+                <p>We do not use any third-party advertising or analytics services that collect identifiable data within the StreamVision application.</p>
+
+                <h3>Your Rights (GDPR)</h3>
+                <p>In accordance with the GDPR, you have the right to access, rectify, and delete your data. Since we do not collect any data, these rights are exercised by simply deleting the application from your device.</p>
+            </div>
+
+            <div id="tos-en">
+                <h2>3. Terms of Service</h2>
+                <h3>Purpose</h3>
+                <p>These TOS define the terms and conditions for using DIH LABS services.</p>
+                
+                <h3>Liability</h3>
+                <p>StreamVision is a <strong>pure media player</strong>. DIH LABS does not provide, host, or broadcast any audiovisual content. The user is solely responsible for the content they load into the application via M3U lists or Xtream codes. The user agrees to respect intellectual property rights and the laws in force in their country.</p>
+                
+                <h3>Intellectual Property</h3>
+                <p>The software, logos, and graphic elements are the exclusive property of DIH LABS.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showLang(lang) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            
+            if (lang === 'fr') {
+                document.getElementById('fr-content').classList.add('active');
+                document.querySelector('button[onclick="showLang(\'fr\')"]').classList.add('active');
+            } else {
+                document.getElementById('en-content').classList.add('active');
+                document.querySelector('button[onclick="showLang(\'en\')"]').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
