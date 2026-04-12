@@ -1,0 +1,47 @@
+@import url('../streamvision/style.css');
+
+:root {
+    --primary: #C9A96E;
+    --primary-light: #E0C896;
+    --primary-dark: #8B7340;
+    --accent: #5DADE2;
+    --bg-dark: #0A0E1F;
+    --bg-card: rgba(26, 42, 74, 0.55);
+    --text-main: #F0F4F8;
+    --text-muted: #A8B2C8;
+    --glass: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(201, 169, 110, 0.18);
+}
+
+body {
+    background: radial-gradient(ellipse at top, #1A2A4A 0%, #0A0E1F 60%) fixed;
+}
+
+.badge {
+    background: rgba(201, 169, 110, 0.12);
+    border: 1px solid rgba(201, 169, 110, 0.35);
+    color: var(--primary-light);
+}
+
+.feature-icon {
+    background: linear-gradient(145deg, rgba(201, 169, 110, 0.15), rgba(93, 173, 226, 0.08));
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    color: var(--primary-light);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #0A0E1F;
+}
+
+.cta-section {
+    background: linear-gradient(145deg, rgba(201, 169, 110, 0.08), rgba(93, 173, 226, 0.05));
+    border: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+h1 span, h2 span {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
