@@ -1,123 +1,71 @@
-@import url('../style.css');
+@import url('../streamvision/style.css');
 
 :root {
-    --primary: #1a5e3a;
-    --primary-light: #2d8a56;
-    --primary-dark: #0f3d26;
-    --secondary: #8ec44d;
-    --dark: #0a1f14;
-    --light: #f4f9f6;
-    --text-main: #1e2924;
-    --text-muted: #5e7067;
-    --white: #ffffff;
-    --shadow: 0 10px 30px rgba(26, 94, 58, 0.1);
+    --primary: #22c55e; /* Emerald Golf */
+    --primary-light: #4ade80;
+    --primary-dark: #166534;
+    --accent: #2dd4bf;
+    --bg-dark: #050a06; /* Deep Forest Black */
+    --bg-card: rgba(20, 30, 20, 0.6);
+    --text-main: #f0fdf4;
+    --text-muted: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(34, 197, 94, 0.2);
 }
 
 body {
-    background-color: var(--light);
+    background: radial-gradient(ellipse at top, #0d2818 0%, #050a06 70%) fixed;
+}
+
+/* Header Ultra-Pro */
+header {
+    background: rgba(5, 10, 6, 0.8);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .logo span {
-    color: var(--primary);
-}
-
-.btn-primary {
-    background: var(--primary);
-    box-shadow: 0 4px 15px rgba(26, 94, 58, 0.3);
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-    box-shadow: 0 8px 25px rgba(26, 94, 58, 0.4);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(26, 94, 58, 0.08);
-    border: 1px solid rgba(26, 94, 58, 0.15);
-    border-radius: 50px;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 1.5rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: var(--primary-light);
 }
 
 .feature-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba(26, 94, 58, 0.05);
-    border: 1px solid rgba(26, 94, 58, 0.1);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
 }
 
 .cta-section {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    padding: 5rem;
-    border-radius: 40px;
-    color: var(--white);
-    text-align: center;
+    background: linear-gradient(145deg, rgba(34, 197, 94, 0.1), rgba(45, 212, 191, 0.05));
+    border: 1px solid var(--glass-border);
 }
 
-.cta-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero h1 span {
-    color: var(--primary);
-}
-
-.content-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.content-list {
-    list-style: none;
-    margin-top: 2rem;
-}
-
-.content-list li {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+h1 span {
+    background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .check-icon {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
     background: var(--primary);
     color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-@media (max-width: 992px) {
-    h1 { font-size: 3.5rem; }
-    .content-showcase { grid-template-columns: 1fr; gap: 4rem; }
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; letter-spacing: -1px; }
-    .hero { padding: 8rem 0 4rem; }
-    .section { padding: 5rem 0; }
-    .section-header h2 { font-size: 2rem; }
-    .cta-section { padding: 3rem 1.5rem; border-radius: 24px; }
-    .cta-section h2 { font-size: 1.8rem; }
-    .store-buttons { flex-direction: column; align-items: stretch; max-width: 320px; margin: 0 auto; }
+    h1 { font-size: 3rem; }
+    .cta-section h2 { font-size: 2.2rem; }
 }
-
