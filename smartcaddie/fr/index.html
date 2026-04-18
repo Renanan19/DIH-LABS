@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyseur de Swing de Golf | Coach IA & Suivi de Trajectoire | SmartCaddie</title>
+    <meta name="description" content="Améliorez votre jeu de golf avec le meilleur analyseur de swing IA. Suivi du chemin de club en temps réel, analyse du plan et coaching personnalisé sur iPhone et Android.">
+    <meta name="keywords" content="analyseur swing golf, coach golf IA, suivi trajectoire golf, application golf, SmartCaddie, améliorer son golf, analyse plan de swing, IA golf">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dih-labs.com/smartcaddie/fr/">
+    <meta property="og:title" content="Analyseur de Swing de Golf | Amélioration par l'IA">
+    <meta property="og:description" content="Maîtrisez votre swing avec l'IA. Suivi en temps réel, analyse du plan et coaching intelligent. Le compagnon de golf ultime pour iOS et Android.">
+    <meta property="og:image" content="../img/hero.png">
+
+    <link rel="canonical" href="https://dih-labs.com/smartcaddie/fr/">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/smartcaddie/en/">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/smartcaddie/fr/">
+    <link rel="alternate" hreflang="x-default" href="https://dih-labs.com/smartcaddie/">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "SmartCaddie",
+      "alternateName": "Analyseur de Swing de Golf IA",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "SportsApplication",
+      "applicationSubCategory": "Instruction & Analyse de Golf",
+      "description": "Analyseur de swing de golf de niveau professionnel utilisant l'IA et la vision par ordinateur. Suit la trajectoire, le plan et les positions du système P en temps réel sans capteurs.",
+      "featureList": [
+        "Suivi de trajectoire en temps réel",
+        "Estimation de pose par IA",
+        "Détection automatique des positions P1-P10",
+        "Analyse du plan de swing",
+        "Comparaison de tempo professionnel",
+        "Recommandations d'exercices personnalisées"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "125"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DIH LABS",
+        "url": "https://dih-labs.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Quelle est la meilleure application gratuite d'analyse de swing de golf sur iPhone ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SmartCaddie par DIH LABS est une application gratuite d'analyse de swing de golf de premier plan pour iPhone qui utilise l'IA pour suivre votre trajectoire sans capteurs externes."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Comment l'IA améliore-t-elle mon swing de golf ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'IA analyse votre swing image par image via la vision par ordinateur pour identifier des défauts comme un chemin extérieur-intérieur, offrant des données objectives invisibles à l'œil nu."
+        }
+      }]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#ai-coach">Coach IA</a></li>
+                <li><a href="#download">Télécharger</a></li>
+            </ul>
+            <div class="lang-switch">
+                <a href="../en/" class="lang-btn">EN</a>
+                <a href="#" class="lang-btn active">FR</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="badge reveal">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Propulsé par l'IA · Analyse Professionnelle
+                </div>
+                <h1 class="reveal">Smart<span>Caddie</span></h1>
+                <p class="reveal">Votre coach de golf personnel dans votre poche. Capturez votre swing, obtenez une analyse instantanée de votre trajectoire et découvrez les exercices qui feront baisser votre handicap — sans capteurs coûteux.</p>
+
+                <div class="store-buttons reveal">
+                    <a href="https://apps.apple.com/fr/app/smartcaddie/id6762388404" class="store-btn">
+                        <div class="btn-text">
+                            <span class="btn-text-top">Télécharger dans l'</span>
+                            <span class="btn-text-main">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.golfswingai.app" class="store-btn android">
+                        <div class="btn-text">
+                            <span class="btn-text-top">Disponible sur</span>
+                            <span class="btn-text-main">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Maîtrisez votre <span>Plan de Swing</span></h2>
+                    <p>SmartCaddie utilise la vision par ordinateur pour suivre chaque détail de votre mouvement, vous offrant les mêmes analyses que les radars professionnels.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3>Suivi en Temps Réel</h3>
+                        <p>Détection et enregistrement automatique. Posez simplement votre téléphone et swinguez.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+                        </div>
+                        <h3>Analyse du Plan</h3>
+                        <p>Visualisez vos plans de backswing et de downswing pour identifier instantanément les mouvements "over the top".</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20v-8m0 0V4m0 8h8m-8 0H4"/></svg>
+                        </div>
+                        <h3>Positions Clés</h3>
+                        <p>L'IA identifie automatiquement les positions P1 à P10, permettant une comparaison image par image.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <h3>Bibliothèque d'Exercices</h3>
+                        <p>Recommandations personnalisées basées sur vos défauts de swing spécifiques.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>Comparaison Pro</h3>
+                        <p>Superposez votre swing avec des modèles professionnels pour voir la différence de tempo et de posture.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h3>Historique des Sessions</h3>
+                        <p>Suivez vos progrès dans le temps avec un historique complet de vos séances de practice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-coach" class="section">
+            <div class="container">
+                <div class="content-showcase">
+                    <div class="content-text reveal">
+                        <h2>L'avantage de <span>l'IA</span></h2>
+                        <ul class="content-list">
+                            <li>
+                                <div class="check-icon">✓</div>
+                                <div>
+                                    <h4>Retour Instantané</h4>
+                                    <p>Plus besoin de deviner au practice. Obtenez un retour visuel et audio immédiat après chaque swing.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-icon">✓</div>
+                                <div>
+                                    <h4>Amélioration Basée sur les Données</h4>
+                                    <p>Identifiez des motifs dans votre swing que l'œil humain rate, comme des problèmes subtils de transfert de poids.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-icon">✓</div>
+                                <div>
+                                    <h4>L'Excellence Abordable</h4>
+                                    <p>Obtenez une analyse de niveau professionnel pour une fraction du coût d'une leçon privée ou d'un trackman.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="check-icon">✓</div>
+                                <div>
+                                    <h4>Créé par DIH LABS</h4>
+                                    <p>Développé avec un accent sur la facilité d'utilisation et l'efficacité, tout en protégeant vos données.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Améliorez votre <span>Jeu</span></h2>
+                    <p>Ressources d'experts pour vous aider à comprendre la mécanique du swing et l'analyse par l'IA.</p>
+                </div>
+                <div class="features-grid">
+                    <a class="feature-card reveal" href="comment-corriger-slice-golf-ia.html" style="text-decoration:none;color:inherit;">
+                        <h3>Corriger votre Slice avec l'IA</h3>
+                        <p>Comment SmartCaddie identifie le chemin 'Extérieur-Intérieur' et le corrige.</p>
+                    </a>
+                    <a class="feature-card reveal" href="positions-swing-golf-p1-p10.html" style="text-decoration:none;color:inherit;">
+                        <h3>Les 10 Positions du Swing</h3>
+                        <p>Un guide du système P utilisé par SmartCaddie pour l'analyse image par image.</p>
+                    </a>
+                    <a class="feature-card reveal" href="pourquoi-utiliser-coach-golf-ia.html" style="text-decoration:none;color:inherit;">
+                        <h3>Pourquoi l'IA est le Futur du Coaching</h3>
+                        <p>Comparaison entre les leçons traditionnelles et l'analyse de swing IA en temps réel.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="container reveal">
+            <div class="cta-section">
+                <h2>Prêt à baisser votre handicap ?</h2>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 3rem; font-size: 1.2rem;">Téléchargez SmartCaddie gratuitement et commencez votre voyage vers un meilleur swing dès aujourd'hui.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/fr/app/smartcaddie/id6762388404" class="store-btn">
+                        <div class="btn-text">
+                            <span class="btn-text-top">Télécharger dans l'</span>
+                            <span class="btn-text-main">App Store</span>
+                        </div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.golfswingai.app" class="store-btn android">
+                        <div class="btn-text">
+                            <span class="btn-text-top">Disponible sur</span>
+                            <span class="btn-text-main">Google Play</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="../../" class="footer-logo">DIH <span>LABS</span></a>
+            <div class="footer-links" style="margin-bottom: 2rem;">
+                <a href="comment-corriger-slice-golf-ia.html">Corriger le Slice</a>
+                <a href="positions-swing-golf-p1-p10.html">Positions du Swing</a>
+                <a href="pourquoi-utiliser-coach-golf-ia.html">Coaching IA</a>
+                <a href="../../legal.html">Mentions Légales & Confidentialité</a>
+            </div>
+            <p class="copyright">&copy; 2026 DIH LABS. SmartCaddie est un outil IA pour l'amélioration sportive.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

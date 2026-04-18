@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de Swing IA vs. Radars Professionnels (Trackman) | SmartCaddie</title>
+    <meta name="description" content="L'IA peut-elle remplacer un Trackman à 20 000€ ? Découvrez les avantages de l'analyse de swing par IA comparée aux radars matériels.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Analyse de Swing IA vs. Radars Professionnels",
+      "description": "Une comparaison technique entre l'IA basée sur la vidéo et les radars de golf.",
+      "author": {"@type": "Organization", "name": "DIH LABS"}
+    }
+    </script>
+    <style>
+        .article-content { max-width: 800px; margin: 12rem auto 8rem; padding: 0 2rem; }
+        .article-content h1 { font-size: 3rem; margin-bottom: 2rem; }
+        .article-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: var(--primary); }
+        .article-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; }
+        .comp-box { background: #f8fafc; padding: 2rem; border-radius: 20px; border: 1px solid #e2e8f0; margin: 2rem 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links"><li><a href="index.html">Retour à l'App</a></li></ul>
+        </div>
+    </header>
+    <main class="article-content">
+        <h1 class="reveal">IA vs. <span>Radars de Golf</span></h1>
+        <p class="reveal">Dans la technologie du golf, des noms comme Trackman ou GCQuad sont la référence. Ils utilisent des radars pour suivre la balle. Mais pour la majorité des golfeurs, <strong>l'analyse de swing par IA</strong> devient le choix le plus judicieux pour l'entraînement quotidien.</p>
+        
+        <h2 class="reveal">Matériel vs. Logiciel</h2>
+        <p class="reveal">Les radars se concentrent sur le <strong>Résultat</strong> (Vol de balle, spin, vitesse). L'IA comme SmartCaddie se concentre sur la <strong>Cause</strong> (Mouvement du corps, chemin de club, plan). On peut avoir un bon vol de balle avec un swing "compensé" qui mènera inévitablement à des blessures ou de l'irrégularité.</p>
+
+        <div class="comp-box reveal">
+            <h4>Pourquoi l'IA gagne chez les amateurs :</h4>
+            <ul>
+                <li><strong>Accessibilité :</strong> Pas d'investissement à 20 000€. Juste votre smartphone.</li>
+                <li><strong>Retour Visuel :</strong> Voir son chemin de club superposé à la vidéo est plus intuitif que de lire un tableau de chiffres.</li>
+                <li><strong>Portabilité :</strong> Entraînez-vous partout — practice, jardin, ou filet intérieur.</li>
+            </ul>
+        </div>
+
+        <h2 class="reveal">L'approche Hybride</h2>
+        <p class="reveal">Les meilleurs pros utilisent les deux. Le radar pour caler les distances, et l'IA pour surveiller les "Positions" (P1-P10). SmartCaddie offre ce retour biomécanique de niveau pro gratuitement, directement dans votre poche.</p>
+
+        <div class="cta-section reveal" style="margin-top: 5rem;">
+            <h2>Analysez votre Swing</h2>
+            <p>Obtenez un retour professionnel sans le prix qui va avec.</p>
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/fr/app/smartcaddie/id6762388404" class="store-btn">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.golfswingai.app" class="store-btn android">Google Play</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
