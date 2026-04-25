@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How a UV Application Actually Works in 2026 (Sensors, Models, Accuracy) | Sun Day</title>
+    <meta name="description" content="What's really inside a UV application? Satellite data, atmospheric models, ozone, altitude, geolocation — and how Sun Day turns it all into a real-time UV index for your skin.">
+    <meta name="keywords" content="uv application, how uv app works, uv index calculation, uv sensor phone, satellite uv, ozone uv, sun day app">
+    <link rel="canonical" href="https://dih-labs.com/sun-day/en/uv-application-how-it-works.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/sun-day/fr/application-uv-comment-ca-marche.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/sun-day/en/uv-application-how-it-works.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How a UV Application Actually Works in 2026",
+      "description": "A technical look at how UV index applications produce a number from satellites, atmospheric models and your geolocation.",
+      "author": {"@type": "Organization", "name": "DIH LABS"},
+      "datePublished": "2026-04-25",
+      "image": "https://dih-labs.com/sun-day/img/hero.png"
+    }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .article-body { max-width: 820px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.5rem; font-size: 2rem; }
+        .article-body h3 { color: var(--white); margin: 2rem 0 1rem; font-size: 1.4rem; }
+        .article-body p, .article-body li { margin-bottom: 1.2rem; font-size: 1.1rem; }
+        .article-body ul, .article-body ol { padding-left: 1.4rem; margin-bottom: 1.5rem; }
+        .pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .pipe-step { background: var(--bg-card); padding: 1.4rem; border-radius: 12px; border: 1px solid var(--glass-border); }
+        .pipe-step h4 { color: var(--primary-light); margin-bottom: 0.5rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .pipe-step p { font-size: 0.95rem; margin: 0; }
+        .myth-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .myth-table th, .myth-table td { padding: 1.1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .myth-table th { background: rgba(201, 169, 110, 0.1); color: var(--white); }
+        .factor-card { background: var(--bg-card); border-left: 4px solid var(--primary); padding: 1.4rem 1.6rem; margin: 1rem 0; border-radius: 0 12px 12px 0; }
+        .factor-card strong { color: var(--white); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Sun Day Home</a></li>
+                <li><a href="best-free-uv-index-app.html">Best UV Apps</a></li>
+                <li><a href="vitamin-d-sun-guide.html">Vitamin D</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>How a <span>UV application</span> actually works</h1>
+                <p>From satellites to your screen: the real pipeline behind every UV index reading in 2026.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <p>Open any UV application and you get a single number — say <strong>UV 7, very high</strong>. Behind that one digit sits a chain of satellites, atmospheric physics, geolocation and machine-readable forecasts. Understanding what feeds the number tells you how much to trust it, when it can be wrong, and why a phone "UV sensor" alone is not enough. Here is the full pipeline.</p>
+
+            <h2>Step 1 — Why your phone can't measure UV directly</h2>
+            <p>UV-A and UV-B are invisible to your camera and to every standard smartphone sensor. The only commercial phones that ever shipped a UV photodiode (Samsung Galaxy S4 / Note 4 era) abandoned it because the readings drifted with temperature, screen tilt and skin proximity. Today, <strong>every credible UV application uses external data, not on-device sensing</strong>. Anyone claiming a phone-only UV measurement in 2026 is using your geolocation behind the scenes — which is fine, as long as it's transparent.</p>
+
+            <h2>Step 2 — Where the data comes from</h2>
+            <div class="pipeline">
+                <div class="pipe-step"><h4>Satellites</h4><p>NASA OMPS, EUMETSAT GOME-2 and Sentinel-5P measure ozone, aerosols and clouds globally every day.</p></div>
+                <div class="pipe-step"><h4>Ground stations</h4><p>WMO/EPA stations calibrate satellite estimates with direct UV-A/B readings.</p></div>
+                <div class="pipe-step"><h4>Numerical models</h4><p>ECMWF, NOAA GFS and DWD ICON forecast clouds, ozone and surface conditions hour by hour.</p></div>
+                <div class="pipe-step"><h4>Open APIs</h4><p>Open-Meteo, OpenUV and copernicus.eu expose all of this as a free, well-documented JSON.</p></div>
+            </div>
+
+            <h2>Step 3 — How a number becomes "your" UV index</h2>
+            <p>Once raw forecast data is fetched, the app personalizes it through a small chain of corrections:</p>
+
+            <div class="factor-card"><strong>Geolocation:</strong> a UV reading at sea level in Marseille is not the same as one in Chamonix at 2,000 m. The app uses your GPS to query the nearest model grid point.</div>
+            <div class="factor-card"><strong>Altitude:</strong> UV intensity rises about <strong>10 % per 1,000 m</strong>. Mountain hikes need a recalibration good apps do automatically.</div>
+            <div class="factor-card"><strong>Cloud cover:</strong> thick clouds cut UV by 20–60 %, but thin/scattered clouds can <em>amplify</em> it (cloud-edge effect). Apps weight forecasts accordingly.</div>
+            <div class="factor-card"><strong>Surface albedo:</strong> snow reflects up to 80 % of UV, sand around 20 %, water about 10 %. Your environment doubles or halves the effective dose.</div>
+            <div class="factor-card"><strong>Solar elevation:</strong> UV is strongest within ±2 hours of solar noon; the app re-projects the index on a per-hour curve.</div>
+            <div class="factor-card"><strong>Skin type (Fitzpatrick):</strong> the same UV 7 burns a Type I in 10 minutes and a Type V in 60. Personalized apps fold this into the alert thresholds.</div>
+
+            <h2>Step 4 — From UV index to vitamin D and burn time</h2>
+            <p>A modern UV application doesn't stop at the WHO 0–11+ scale. It computes two derived metrics that actually drive behavior:</p>
+            <ol>
+                <li><strong>Erythemal dose (MED).</strong> The minimum UV energy that reddens your skin. The app counts down to MED based on your Fitzpatrick type — that is your real "burn timer".</li>
+                <li><strong>Vitamin D synthesis.</strong> Estimated from skin exposure surface, time, UV intensity, age and clothing. The formula used in Sun Day is approximately <code>21000 × uvFactor × clothingFactor × skinFactor × ageFactor × qualityFactor × adaptationFactor</code> IU/day.</li>
+            </ol>
+
+            <h2>Step 5 — Accuracy: how much should you trust the number?</h2>
+            <table class="myth-table">
+                <thead><tr><th>Source</th><th>Typical accuracy</th><th>Best use</th></tr></thead>
+                <tbody>
+                    <tr><td>Open-Meteo / ECMWF</td><td>±0.5 UV units</td><td>Daily planning, all-purpose</td></tr>
+                    <tr><td>NOAA NWS UV forecast</td><td>±1 UV unit</td><td>North America, free, no API key</td></tr>
+                    <tr><td>OpenUV (paid tier)</td><td>±0.3 UV units</td><td>Research, high-altitude hiking</td></tr>
+                    <tr><td>Generic weather app</td><td>±1 to ±2 UV units</td><td>Rough order of magnitude</td></tr>
+                    <tr><td>"Phone-only UV" claims</td><td>not measurable</td><td>Marketing — ignore</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Common myths the data busts</h2>
+            <h3>"It's cloudy, no UV today."</h3>
+            <p>Up to 80 % of UV passes through high cirrus clouds. You can absolutely burn on an overcast day, especially at altitude or near water.</p>
+            <h3>"Cool weather means safe sun."</h3>
+            <p>UV is independent of temperature. A crisp ski day at -5 °C with snow reflection often exceeds UV 8.</p>
+            <h3>"Glass blocks UV."</h3>
+            <p>Standard window glass blocks UV-B but lets ~60 % of UV-A through. Long drives still age skin.</p>
+            <h3>"UV is the same all day."</h3>
+            <p>It follows a bell curve peaking at solar noon. Outside ±2 hours, UV often drops by 50 % or more.</p>
+
+            <h2>How Sun Day applies all of this</h2>
+            <p>Sun Day fetches Open-Meteo's forecast at your exact GPS coordinates, applies altitude and cloud corrections, then personalizes the result with your Fitzpatrick skin type, age, and clothing pattern. The result: a <strong>real-time UV index</strong>, a <strong>personalized burn timer</strong>, and a <strong>daily vitamin D estimate</strong> — without sending any personal data to a third party. No ads, no tracking, no fake "UV sensor".</p>
+
+            <div class="cta-section">
+                <h2>Get the science on your screen</h2>
+                <p>Download Sun Day for free — UV done right.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/fr/app/sun-day/id6760581712" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Download on the</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.sunday.uvtracker" class="store-btn android">
+                        <div class="btn-text"><span class="btn-text-top">Get it on</span><span class="btn-text-main">Google Play</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Sun Day is not a medical device.</p>
+        </div>
+    </footer>
+</body>
+</html>
