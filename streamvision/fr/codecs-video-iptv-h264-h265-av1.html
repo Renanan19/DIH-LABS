@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codecs vidéo IPTV en 2026 : H.264 vs H.265 vs AV1 | StreamVision</title>
+    <meta name="description" content="Débit, décodage matériel, latence, batterie : comparatif réel des codecs H.264, HEVC et AV1 pour l'IPTV sur iPhone, Android et Google TV — avec recommandations pratiques.">
+    <meta name="keywords" content="codec iptv, h264 vs h265, hevc iptv, av1 iptv, débit iptv, décodage matériel iptv, codec iptv 4k">
+    <link rel="canonical" href="https://dih-labs.com/streamvision/fr/codecs-video-iptv-h264-h265-av1.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/streamvision/en/iptv-video-codecs-h264-h265-av1.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/streamvision/fr/codecs-video-iptv-h264-h265-av1.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Codecs vidéo IPTV en 2026 : H.264 vs H.265 vs AV1","author":{"@type":"Organization","name":"DIH LABS"},"datePublished":"2026-04-26"}</script>
+    <style>
+        .article-content { max-width: 820px; margin: 12rem auto 8rem; padding: 0 2rem; }
+        .article-content h1 { font-size: 3rem; margin-bottom: 2rem; }
+        .article-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: #8b5cf6; }
+        .article-content h3 { font-size: 1.4rem; margin: 2rem 0 1rem; color: #1e293b; }
+        .article-content p, .article-content li { font-size: 1.1rem; color: #64748b; margin-bottom: 1.2rem; line-height: 1.8; }
+        .article-content ul, .article-content ol { padding-left: 1.4rem; margin-bottom: 1.5rem; }
+        .article-content code { background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 5px; color: #4c1d95; font-size: 0.95rem; }
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: #f8fafc; border-radius: 14px; overflow: hidden; }
+        th, td { padding: 1rem 1.2rem; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        th { background: #ede9fe; color: #4c1d95; }
+        td.win { color: #16a34a; font-weight: 700; }
+        td.lose { color: #dc2626; font-weight: 700; }
+        .codec-card { background: white; padding: 1.5rem 1.8rem; margin: 1.2rem 0; border-radius: 14px; border-left: 4px solid #8b5cf6; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+        .codec-card h3 { color: #4c1d95; margin-top: 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Retour à l'App</a></li>
+                <li><a href="resoudre-buffering-iptv.html">Anti-Buffering</a></li>
+                <li><a href="iptv-google-tv-android-tv.html">Google TV</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="article-content">
+        <h1 class="reveal">Codecs vidéo IPTV : <span>H.264, H.265, AV1</span> en 2026</h1>
+        <p class="reveal">Le choix du codec décide si un flux 4K live consomme 8 Mbps ou sature votre connexion 25 Mbps. Il décide aussi si votre téléphone reste frais des heures ou se vide en 90 minutes. Après trois ans de déploiement lent, le décodage matériel d'AV1 est enfin présent là où ça compte — et le paysage des codecs IPTV redevient intéressant. Voici où chaque codec en est, et lequel choisir vraiment.</p>
+
+        <h2 class="reveal">Les trois codecs en un coup d'œil</h2>
+        <table class="reveal">
+            <thead>
+                <tr><th>Critère</th><th>H.264 (AVC)</th><th>H.265 (HEVC)</th><th>AV1</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Sortie</td><td>2003</td><td>2013</td><td>2018</td></tr>
+                <tr><td>Débit pour 1080p60</td><td class="lose">8 Mbps</td><td>4 Mbps</td><td class="win">3 Mbps</td></tr>
+                <tr><td>Débit pour 4K HDR</td><td class="lose">25 Mbps</td><td>12 Mbps</td><td class="win">8 Mbps</td></tr>
+                <tr><td>Décodage matériel iPhone</td><td class="win">tous</td><td class="win">depuis iPhone 6</td><td>depuis iPhone 15 Pro</td></tr>
+                <tr><td>Téléphones Android</td><td class="win">universel</td><td class="win">depuis 2017</td><td>flagships 2023+</td></tr>
+                <tr><td>Google TV / Android TV</td><td class="win">universel</td><td class="win">depuis 2019</td><td>Onn 4K Pro, Shield Pro 2025+</td></tr>
+                <tr><td>Coût royalties (diffuseurs)</td><td>moyen</td><td class="lose">élevé (patent pools)</td><td class="win">gratuit</td></tr>
+                <tr><td>Latence en direct</td><td class="win">~2 s</td><td>~3 s</td><td>~3 s</td></tr>
+            </tbody>
+        </table>
+
+        <h2 class="reveal">H.264 — la valeur sûre universelle</h2>
+        <div class="codec-card reveal">
+            <h3>Quand vous le rencontrez</h3>
+            <p>Tous les flux IPTV anciens, tous les vieux décodeurs, toutes les chaînes « il faut juste que ça marche sur la TV de mamie ». La majorité des fournisseurs gardent leurs bouquets SD en H.264 par défaut.</p>
+            <p><strong>Avantages :</strong> Décodé en hardware par littéralement tous les appareils. Latence la plus basse pour le sport en direct.<br><strong>Inconvénients :</strong> Deux fois le débit du HEVC à qualité égale. Oubliez le 4K — un flux 4K H.264 mange 25 Mbps et est moins beau qu'un 12 Mbps HEVC.</p>
+            <p><strong>Verdict :</strong> OK pour SD/HD, obsolète au-delà de 1080p.</p>
+        </div>
+
+        <h2 class="reveal">H.265 / HEVC — la bête de somme de l'IPTV</h2>
+        <div class="codec-card reveal">
+            <h3>Quand vous le rencontrez</h3>
+            <p>Quasi toutes les chaînes IPTV 4K modernes, toute la VOD catch-up qui respecte votre bande passante, et tous les fournisseurs Xtream qui livrent du HD/UHD. En 2026, HEVC est le standard de fait au-dessus du 1080p.</p>
+            <p><strong>Avantages :</strong> 50 % de débit en moins que H.264 à qualité égale. Décodé matériellement par tous les smartphones depuis 2017 et toutes les Google TV depuis 2019.<br><strong>Inconvénients :</strong> Les licences ont freiné certains diffuseurs occidentaux. CPU légèrement plus chargé sur les appareils en bout de chaîne.</p>
+            <p><strong>Verdict :</strong> Le bon défaut en 2026. Si votre fournisseur propose des variantes HEVC, prenez-les.</p>
+        </div>
+
+        <h2 class="reveal">AV1 — le futur, presque arrivé</h2>
+        <div class="codec-card reveal">
+            <h3>Quand vous le rencontrez</h3>
+            <p>YouTube, Netflix, Twitch et un nombre croissant d'opérateurs IPTV européens poussent maintenant l'AV1 pour le 4K et le 8K. L'IPTV est plus lente parce que les diffuseurs ont besoin d'encodeurs AV1 temps réel à coût acceptable — disponibles seulement depuis 2024.</p>
+            <p><strong>Avantages :</strong> ~30 % de débit en moins que HEVC à qualité égale. Sans royalties, donc adoré des fournisseurs. Excellent à bas débit.<br><strong>Inconvénients :</strong> Le décodage matériel est universel sur les flagships mais aléatoire sur le milieu de gamme et les clés TV. Décoder AV1 4K en software fait fondre un téléphone en minutes.</p>
+            <p><strong>Verdict :</strong> Vaut le coup si votre appareil décode en hardware (vérifiez avant). Sinon restez en HEVC.</p>
+        </div>
+
+        <h2 class="reveal">Bande passante en chiffres réels</h2>
+        <p class="reveal">Pour 1 heure de TV en direct à qualité perçue équivalente, voici ce que mange chaque codec :</p>
+        <table class="reveal">
+            <thead><tr><th>Résolution</th><th>H.264</th><th>HEVC</th><th>AV1</th></tr></thead>
+            <tbody>
+                <tr><td>SD (576p)</td><td>~700 Mo</td><td>~400 Mo</td><td>~280 Mo</td></tr>
+                <tr><td>HD (1080p)</td><td>~3,6 Go</td><td>~1,8 Go</td><td>~1,3 Go</td></tr>
+                <tr><td>4K HDR</td><td>~11 Go</td><td>~5,4 Go</td><td>~3,6 Go</td></tr>
+            </tbody>
+        </table>
+
+        <h2 class="reveal">Batterie et chaleur, la vraie vie</h2>
+        <p class="reveal">La vidéo décodée en hardware est quasi gratuite pour le CPU — la VPU dédiée consomme des milliwatts. <strong>Le décodage software est l'assassin.</strong> Regarder de l'AV1 1080p sur un iPhone 13 (sans AV1 hardware) brûle 3× plus de batterie qu'HEVC et chauffe le boîtier en 20 minutes. StreamVision détecte ce que votre appareil sait décoder en hardware et préfère cette variante quand le fournisseur en propose plusieurs.</p>
+
+        <h2 class="reveal">Latence en direct : HEVC ne gagne pas toujours</h2>
+        <p class="reveal">Les fans de sport en direct se soucient du délai capteur-écran. Les encodeurs H.264 ont 20 ans d'optimisation low-latency et délivrent régulièrement &lt;2 s bout en bout. HEVC tourne autour de 3 s, AV1 plutôt 4 s avec les encodeurs temps réel actuels. Si vous regardez un match pendant que le voisin crie à travers le mur, H.264 SD est parfois le bon choix face à HEVC HD.</p>
+
+        <h2 class="reveal">Conteneur vs codec : ne confondez pas</h2>
+        <p class="reveal">Le conteneur est l'emballage (<code>.ts</code>, <code>.m3u8</code>, <code>.mkv</code>, <code>.mp4</code>). Le codec est ce qu'il y a dedans. L'IPTV utilise presque toujours <strong>MPEG-TS</strong> (transport stream, le standard broadcast) ou <strong>HLS</strong> (le streaming adaptatif d'Apple, manifestes M3U8 pointant vers des chunks TS). Les deux peuvent transporter H.264, HEVC ou AV1 — le codec est indépendant.</p>
+
+        <h2 class="reveal">Recommandations pratiques</h2>
+        <ul class="reveal">
+            <li><strong>iPhone (tous) / Google TV (toutes) :</strong> HEVC par défaut. H.264 uniquement pour le sport en direct si la latence vous gêne.</li>
+            <li><strong>Vieux Android (avant 2017) :</strong> restez en H.264. HEVC vide la batterie.</li>
+            <li><strong>iPhone 15 Pro / Pixel 8 Pro / S24+ / Onn 4K Pro :</strong> testez AV1 si votre fournisseur le propose. 30 % de bande passante en moins, qualité identique.</li>
+            <li><strong>4K HDR sur connexion modeste :</strong> AV1 est le seul codec qui fait passer le 4K HDR sous les 10 Mbps.</li>
+            <li><strong>Compatibilité incertaine :</strong> laissez StreamVision choisir — l'app interroge l'OS sur les capacités hardware au démarrage.</li>
+        </ul>
+
+        <h2 class="reveal">Un mot sur VVC / H.266</h2>
+        <p class="reveal">VVC (le successeur officiel d'HEVC) existe sur le papier mais a un support hardware quasi nul en 2026. Ignorez-le pour l'IPTV sauf si vous testez un codec de recherche. AV1 a gagné la course de la prochaine génération côté streaming.</p>
+
+        <div class="cta-section reveal" style="margin-top: 5rem; background: #8b5cf6; color: white; padding: 4rem; border-radius: 30px; text-align: center;">
+            <h2>Tous les codecs, intelligemment</h2>
+            <p>StreamVision détecte votre appareil et choisit la bonne variante pour vous.</p>
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/app/streamvision-iptv/id6760549542" class="store-btn">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.antoine.streamvisionapp" class="store-btn android">Google Play</a>
+            </div>
+        </div>
+    </main>
+    <footer><div class="container"><p>&copy; 2026 DIH LABS</p></div></footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
