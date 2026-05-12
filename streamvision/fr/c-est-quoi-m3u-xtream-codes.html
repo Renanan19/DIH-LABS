@@ -3,58 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M3U vs Xtream Codes : Quel est le meilleur pour l'IPTV ? | StreamVision</title>
-    <meta name="description" content="Découvrez les différences entre les listes M3U et l'API Xtream Codes. Quel format choisir pour votre lecteur IPTV et comment les configurer dans StreamVision.">
+    <title>M3U vs Xtream Codes : guide simple, format URL et meilleur choix | StreamVision</title>
+    <meta name="description" content="M3U vs Xtream Codes explique simplement : difference, format d'URL, avantages, configuration iPhone/Android et quel format IPTV choisir.">
+    <meta name="keywords" content="m3u vs xtream, xtream vs m3u, m3u vs xtream codes, format url xtream codes m3u, IPTV configuration">
+    <link rel="canonical" href="https://dih-labs.com/streamvision/fr/c-est-quoi-m3u-xtream-codes.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/streamvision/en/what-is-m3u-xtream-codes.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/streamvision/fr/c-est-quoi-m3u-xtream-codes.html">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "M3U vs Xtream Codes : Quel est le meilleur pour l'IPTV ?",
-      "description": "Comprendre les différences techniques entre M3U et Xtream Codes pour le streaming IPTV.",
-      "author": {"@type": "Organization", "name": "DIH LABS"}
+      "headline": "M3U vs Xtream Codes : guide simple, format URL et meilleur choix",
+      "description": "Explication simple des playlists M3U et de l'API Xtream Codes pour les utilisateurs IPTV.",
+      "author": {"@type": "Organization", "name": "DIH LABS"},
+      "datePublished": "2026-04-18",
+      "dateModified": "2026-05-12",
+      "mainEntityOfPage": "https://dih-labs.com/streamvision/fr/c-est-quoi-m3u-xtream-codes.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelle est la difference entre M3U et Xtream Codes ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "M3U est une playlist ou une URL contenant des liens de flux. Xtream Codes est une API de connexion avec URL serveur, identifiant et mot de passe pour charger les chaines, la VOD, les series et l'EPG de maniere structuree."}
+        },
+        {
+          "@type": "Question",
+          "name": "Quel est le plus rapide : M3U ou Xtream Codes ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Xtream Codes est souvent plus rapide pour les gros catalogues, car l'application peut charger les categories et les metadonnees a la demande. M3U reste tres pratique pour les petites listes."}
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on convertir une URL M3U en Xtream Codes ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Souvent oui. Si l'URL M3U contient un serveur, un parametre username et un parametre password, ces valeurs peuvent generalement etre utilisees comme identifiants Xtream Codes dans un lecteur compatible."}
+        }
+      ]
     }
     </script>
     <style>
-        .article-content { max-width: 800px; margin: 12rem auto 8rem; padding: 0 2rem; }
+        .article-content { max-width: 860px; margin: 12rem auto 8rem; padding: 0 2rem; }
         .article-content h1 { font-size: 3rem; margin-bottom: 2rem; }
-        .article-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: #8b5cf6; }
-        .article-content p { font-size: 1.1rem; color: #64748b; margin-bottom: 1.5rem; line-height: 1.8; }
+        .article-content h2 { font-size: 2rem; margin: 3rem 0 1.2rem; color: #8b5cf6; }
+        .article-content h3 { font-size: 1.35rem; margin: 2rem 0 0.8rem; color: #1e293b; }
+        .article-content p, .article-content li { font-size: 1.08rem; color: #64748b; margin-bottom: 1.05rem; line-height: 1.8; }
+        .article-content code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 5px; color: #4c1d95; }
+        .answer-box { background: #f8fafc; border-left: 4px solid #8b5cf6; padding: 1.4rem 1.6rem; border-radius: 0 14px 14px 0; margin: 2rem 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: #f8fafc; border-radius: 14px; overflow: hidden; }
+        .compare-table th, .compare-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        .compare-table th { background: #ede9fe; color: #4c1d95; }
+        .mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 2rem 0; }
+        .mini-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.2rem; }
     </style>
 </head>
 <body>
     <header>
         <div class="container nav">
             <a href="../../" class="logo">DIH <span>LABS</span></a>
-            <ul class="nav-links"><li><a href="index.html">Retour à l'App</a></li></ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Retour a l'app</a></li>
+                <li><a href="configuration.html">Configuration</a></li>
+                <li><a href="m3u-vs-xtream-codes-guide-complet.html">Guide complet</a></li>
+            </ul>
         </div>
     </header>
+
     <main class="article-content">
-        <h1 class="reveal">M3U vs <span>Xtream Codes</span> : Le Guide Complet</h1>
-        <p class="reveal">Lors de la configuration d'un lecteur IPTV comme StreamVision, vous rencontrerez deux formats principaux pour importer votre contenu : les <strong>listes M3U</strong> et l'<strong>API Xtream Codes</strong>. Quelles sont les différences et lequel choisir ?</p>
-        
-        <h2 class="reveal">1. Listes M3U : Le Format Universel</h2>
-        <p class="reveal">Un fichier M3U est essentiellement un fichier texte contenant des liens vers différents flux. C'est le format le plus largement supporté. Vous téléchargez le fichier ou utilisez une URL M3U fournie par votre service.</p>
-        <p class="reveal"><strong>Avantages :</strong> Simple, compatible avec presque tous les lecteurs.<br><strong>Inconvénients :</strong> Chargement lent pour les listes volumineuses (des milliers de chaînes).</p>
+        <h1 class="reveal">M3U vs <span>Xtream Codes</span> : le guide simple</h1>
 
-        <h2 class="reveal">2. API Xtream Codes : Le Standard Moderne</h2>
-        <p class="reveal">Xtream Codes n'est pas un fichier, mais un système de connexion (URL, Nom d'utilisateur, Mot de passe). Au lieu de télécharger une liste massive, le lecteur "discute" avec le serveur pour obtenir uniquement ce dont il a besoin.</p>
-        <p class="reveal"><strong>Avantages :</strong> Chargement rapide, meilleure organisation (VOD, Séries) et mise à jour facile.<br><strong>Inconvénients :</strong> Nécessite trois informations au lieu d'une seule URL.</p>
+        <div class="answer-box reveal">
+            <p><strong>En bref :</strong> M3U est un lien de playlist. Xtream Codes est une methode de connexion. Choisissez M3U pour une liste simple ou personnelle. Choisissez Xtream Codes pour une navigation plus rapide, les categories, la VOD, les series et les metadonnees EPG.</p>
+        </div>
 
-        <h2 class="reveal">Lequel choisir pour StreamVision ?</h2>
-        <p class="reveal">StreamVision supporte parfaitement les deux formats. Cependant, pour une expérience utilisateur optimale (affiches, descriptions) et une navigation fluide, nous recommandons d'utiliser <strong>Xtream Codes</strong> dès que possible.</p>
+        <p class="reveal">Lors de la configuration d'un lecteur IPTV, vous recevez generalement soit une longue <strong>URL M3U</strong>, soit trois champs <strong>Xtream Codes</strong>. Les deux peuvent venir du meme fournisseur, mais ils ne fonctionnent pas de la meme facon dans l'application.</p>
+
+        <h2 class="reveal">Qu'est-ce qu'une playlist M3U ?</h2>
+        <p class="reveal">Une playlist <strong>M3U</strong> ou <strong>M3U8</strong> est une liste de liens media sous forme de texte. Une URL IPTV M3U ressemble souvent a ceci :</p>
+        <p class="reveal"><code>https://example.com/get.php?username=USER&amp;password=PASS&amp;type=m3u_plus&amp;output=m3u8</code></p>
+        <p class="reveal">Le lecteur telecharge la liste, lit chaque entree, puis construit la bibliotheque localement. Le format <code>m3u_plus</code> peut ajouter noms, logos, groupes et identifiants EPG, mais il reste une playlist.</p>
+
+        <h2 class="reveal">Qu'est-ce que Xtream Codes ?</h2>
+        <p class="reveal"><strong>Xtream Codes</strong> n'est pas un fichier. C'est un format de connexion API. Au lieu de coller une seule URL, vous renseignez :</p>
+        <ul class="reveal">
+            <li><strong>URL serveur</strong>, par exemple <code>https://example.com:8080</code></li>
+            <li><strong>Identifiant</strong></li>
+            <li><strong>Mot de passe</strong></li>
+        </ul>
+        <p class="reveal">L'application peut ensuite charger les categories, flux live, VOD, series, affiches et donnees EPG via des endpoints structures.</p>
+
+        <h2 class="reveal">Comparatif M3U vs Xtream Codes</h2>
+        <table class="compare-table reveal">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>M3U</th>
+                    <th>Xtream Codes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Que faut-il coller ?</td>
+                    <td>Une URL ou un fichier playlist</td>
+                    <td>URL serveur, identifiant et mot de passe</td>
+                </tr>
+                <tr>
+                    <td>Meilleur usage</td>
+                    <td>Petites listes, playlists personnelles, compatibilite maximale</td>
+                    <td>Gros catalogues, VOD, series, EPG et categories</td>
+                </tr>
+                <tr>
+                    <td>Vitesse</td>
+                    <td>Peut ralentir sur une liste tres volumineuse</td>
+                    <td>Souvent plus rapide grace au chargement par categorie</td>
+                </tr>
+                <tr>
+                    <td>Modification</td>
+                    <td>Facile a modifier si vous controlez le fichier</td>
+                    <td>Generalement gere par le panneau fournisseur</td>
+                </tr>
+                <tr>
+                    <td>Metadonnees</td>
+                    <td>Basique si la liste est bien construite</td>
+                    <td>Meilleure structure pour affiches, episodes et EPG</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="reveal">Extraire Xtream Codes depuis une URL M3U</h2>
+        <p class="reveal">Beaucoup de liens M3U sont generes par des panneaux compatibles Xtream. Si l'URL contient <code>username=</code> et <code>password=</code>, vous pouvez souvent recuperer les trois informations :</p>
+        <div class="mini-grid reveal">
+            <div class="mini-card">
+                <h3>URL serveur</h3>
+                <p>Tout ce qui se trouve avant <code>/get.php</code>. Exemple : <code>https://example.com:8080</code></p>
+            </div>
+            <div class="mini-card">
+                <h3>Identifiant</h3>
+                <p>La valeur apres <code>username=</code> et avant le prochain <code>&amp;</code>.</p>
+            </div>
+            <div class="mini-card">
+                <h3>Mot de passe</h3>
+                <p>La valeur apres <code>password=</code> et avant le prochain <code>&amp;</code>.</p>
+            </div>
+        </div>
+
+        <h2 class="reveal">Quel format choisir ?</h2>
+        <p class="reveal">Choisissez <strong>M3U</strong> pour une liste courte, personnelle ou a compatibilite maximale. Choisissez <strong>Xtream Codes</strong> pour un grand catalogue, la VOD, les series, l'EPG et une navigation plus fluide.</p>
+        <p class="reveal">Si la vitesse est votre question principale, lisez <a href="xtream-vs-m3u-lequel-est-plus-rapide.html">Xtream vs M3U : lequel est le plus rapide ?</a>. Pour tous les details, consultez le <a href="m3u-vs-xtream-codes-guide-complet.html">guide complet M3U vs Xtream Codes</a>.</p>
+
+        <h2 class="reveal">Note de securite</h2>
+        <p class="reveal">M3U et Xtream Codes sont des formats, pas des garanties de legalite. Importez uniquement des listes et identifiants que vous etes autorise a utiliser. Evitez les listes publiques promettant des chaines payantes gratuites ou les services qui demandent d'installer un profil, de changer les DNS ou de partager des donnees en dehors du lecteur.</p>
 
         <div class="cta-section reveal" style="margin-top: 5rem; background: #8b5cf6; color: white; padding: 4rem; border-radius: 30px; text-align: center;">
-            <h2>Démarrer le Streaming</h2>
-            <p>Téléchargez StreamVision et importez votre contenu en quelques secondes.</p>
+            <h2>Importer M3U ou Xtream Codes dans StreamVision</h2>
+            <p>Lecteur IPTV gratuit pour iPhone et Android. Sans publicite, sans contenu fourni.</p>
             <div class="store-buttons">
                 <a href="https://apps.apple.com/app/streamvision-iptv/id6760549542" class="store-btn">App Store</a>
                 <a href="https://play.google.com/store/apps/details?id=com.antoine.streamvisionapp" class="store-btn android">Google Play</a>
             </div>
         </div>
     </main>
-    <footer><div class="container"><p>&copy; 2026 DIH LABS</p></div></footer>
+
+    <footer><div class="container"><p>&copy; 2026 DIH LABS. StreamVision ne fournit pas de contenus media.</p></div></footer>
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
