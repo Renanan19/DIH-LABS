@@ -149,7 +149,7 @@
     <main class="article-content">
         <h1 class="reveal">How to Sideload Apps on <span>Fire TV Stick</span></h1>
         <p class="reveal">Sideloading means installing an app's APK file from outside the Amazon Appstore. It is officially supported by Amazon through the Developer Options menu, takes about 3 minutes with the free Downloader app, and is legal for any app you have the right to install. This guide covers the full 2026 procedure — including the hidden Developer Options unlock that newer Fire OS versions require — plus the ADB method, troubleshooting, and safety rules.</p>
-        <p class="reveal">As a worked example we'll sideload <a href="download-firetv-apk.html">StreamVision IPTV for Fire TV</a>, a free, ad-free IPTV player by DIH LABS: version 30.0.0, a 7.3 MB APK, for Fire OS 6+ (Fire TV Stick 4K 2018+, Lite, 3rd gen, 4K Max, Cube 2nd gen+). The same steps work for any APK.</p>
+        <p class="reveal">As a worked example we'll sideload <a href="download-firetv-apk.html">StreamVision IPTV for Fire TV</a>, a free, ad-free IPTV player by DIH LABS: version 31.0.0, a 7.4 MB APK, for Fire OS 6+ (Fire TV Stick 4K 2018+, Lite, 3rd gen, 4K Max, Cube 2nd gen+). The same steps work for any APK.</p>
 
         <div class="step-card reveal">
             <h2>1. Unlock the Hidden Developer Options Menu</h2>
@@ -168,7 +168,7 @@
 
         <div class="step-card reveal">
             <h2>4. Enter the APK URL and Install</h2>
-            <p>Open Downloader and type the developer's official URL into the URL field. For StreamVision, enter <code>dih-labs.com/apk</code> — the official DIH LABS download page opens right inside Downloader. Click the big <strong>Download APK</strong> button, wait a few seconds for the 7.3 MB file, then choose <strong>Install</strong> on the system prompt and <strong>Open</strong> when it finishes. Full details, mirrors and the file checksum are on the <a href="download-firetv-apk.html">StreamVision Fire TV APK download page</a>.</p>
+            <p>Open Downloader and type the developer's official URL into the URL field. For StreamVision, enter <code>dih-labs.com/apk</code> — the official DIH LABS download page opens right inside Downloader. Click the big <strong>Download APK</strong> button, wait a few seconds for the 7.4 MB file, then choose <strong>Install</strong> on the system prompt and <strong>Open</strong> when it finishes. Full details, mirrors and the file checksum are on the <a href="download-firetv-apk.html">StreamVision Fire TV APK download page</a>.</p>
         </div>
 
         <div class="step-card reveal">
@@ -180,7 +180,7 @@
         <p class="reveal">If you'd rather push APKs from a computer, ADB (Android Debug Bridge) works over your local network. In <strong>Developer Options</strong>, enable <strong>ADB debugging</strong>, then note your Fire TV's IP address under Settings → My Fire TV → About → Network. From a computer on the same network:</p>
         <pre class="reveal"><code>adb connect FIRETV_IP:5555
 adb install StreamVision-FireTV.apk</code></pre>
-        <p class="reveal">Accept the debugging authorization prompt on the TV the first time you connect. ADB is ideal for installing many apps at once, scripting updates, or when a keyboard beats a remote. You can grab the same signed APK from the <a href="https://github.com/Renanan19/DIH-LABS/releases/download/streamvision-firetv-v30.0.0/StreamVision-FireTV.apk">permanent GitHub release mirror</a>.</p>
+        <p class="reveal">Accept the debugging authorization prompt on the TV the first time you connect. ADB is ideal for installing many apps at once, scripting updates, or when a keyboard beats a remote. You can grab the same signed APK from the <a href="https://github.com/Renanan19/DIH-LABS/releases/download/streamvision-firetv-v31.0.0/StreamVision-FireTV.apk">permanent GitHub release mirror</a>.</p>
 
         <h2 class="reveal">Troubleshooting: App Not Installed, Parse Error, Blocked Downloads</h2>
         <ul class="reveal">
@@ -191,8 +191,8 @@ adb install StreamVision-FireTV.apk</code></pre>
         </ul>
 
         <h2 class="reveal">Sideloading Safety: Only Trust Official Sources</h2>
-        <p class="reveal">The single most important rule: <strong>only download APKs from the developer's own official site or repository</strong>. Random "APK store" sites repackage popular apps with ads or malware, and a TV device is a bad place to find that out. When a developer publishes a SHA-256 checksum, verify it — on a computer, run <code>certutil -hashfile StreamVision-FireTV.apk SHA256</code> (Windows) or <code>shasum -a 256</code> (Mac/Linux) and compare. The official StreamVision v30.0.0 Fire TV build hashes to:</p>
-        <pre class="reveal hash-box"><code>04f08bfce1e5d33d2936ce0eb612dff65c352b4a6764c1d3df98771c8bafe106</code></pre>
+        <p class="reveal">The single most important rule: <strong>only download APKs from the developer's own official site or repository</strong>. Random "APK store" sites repackage popular apps with ads or malware, and a TV device is a bad place to find that out. When a developer publishes a SHA-256 checksum, verify it — on a computer, run <code>certutil -hashfile StreamVision-FireTV.apk SHA256</code> (Windows) or <code>shasum -a 256</code> (Mac/Linux) and compare. The official StreamVision v31.0.0 Fire TV build hashes to:</p>
+        <pre class="reveal hash-box"><code>efc55b070017ce51c4478920d973373b42927bf6cdd87c5da4454eec8d6e26bb</code></pre>
         <p class="reveal">If the hash doesn't match, delete the file and re-download from <a href="download-firetv-apk.html">the official page</a>. Also be wary of apps that demand permissions unrelated to their purpose — a video player has no business reading your contacts.</p>
 
         <h2 class="reveal">Is Sideloading Legal on a Fire TV Stick?</h2>
@@ -224,7 +224,7 @@ adb install StreamVision-FireTV.apk</code></pre>
         </div>
         <div class="faq-item reveal">
             <h3>Is there a size limit for sideloaded apps?</h3>
-            <p>Only your free storage. Most Fire TV Sticks have around 8 GB, so lightweight apps are ideal — StreamVision's entire APK is 7.3 MB. Delete the APK file after installing to keep space free.</p>
+            <p>Only your free storage. Most Fire TV Sticks have around 8 GB, so lightweight apps are ideal — StreamVision's entire APK is 7.4 MB. Delete the APK file after installing to keep space free.</p>
         </div>
 
         <div class="cta-section reveal" style="margin-top: 5rem; background: #8b5cf6; color: white; padding: 4rem; border-radius: 30px; text-align: center;">
