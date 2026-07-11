@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installer un APK sur FireStick en 2026 (Downloader &amp; ADB)</title>
+    <meta name="description" content="Tutoriel complet pour installer un APK sur Fire TV Stick : options développeur cachées, Downloader, méthode ADB, dépannage et vérification SHA-256.">
+    <meta name="keywords" content="installer apk firestick, downloader fire tv stick, sideload fire tv, installer application non officielle fire tv, options développeur fire tv cachées">
+    <link rel="canonical" href="https://dih-labs.com/streamvision/fr/installer-applications-firestick-sideload.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/streamvision/en/how-to-sideload-apps-firestick.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/streamvision/fr/installer-applications-firestick-sideload.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/streamvision/fr/installer-applications-firestick-sideload.html">
+    <meta property="og:title" content="Installer un APK sur FireStick en 2026 (Downloader &amp; ADB)">
+    <meta property="og:description" content="Tutoriel complet pour installer un APK sur Fire TV Stick : options développeur cachées, Downloader, méthode ADB, dépannage et vérification SHA-256.">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Installer des applications sur Fire TV Stick (sideload) : le guide 2026",
+      "description": "Tutoriel pas à pas pour installer un APK sur Fire TV Stick avec Downloader ou ADB : options développeur cachées, dépannage et bonnes pratiques de sécurité.",
+      "inLanguage": "fr",
+      "author": {"@type": "Organization", "name": "DIH LABS"},
+      "publisher": {"@type": "Organization", "name": "DIH LABS"},
+      "datePublished": "2026-07-11",
+      "mainEntityOfPage": "https://dih-labs.com/streamvision/fr/installer-applications-firestick-sideload.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Installer un APK sur Fire TV Stick avec Downloader",
+      "description": "Installer une application hors Amazon Appstore sur Fire TV Stick en 5 étapes, en environ 3 minutes, avec l'application Downloader.",
+      "inLanguage": "fr",
+      "totalTime": "PT3M",
+      "tool": [
+        {"@type": "HowToTool", "name": "Fire TV Stick sous Fire OS 6 ou plus récent"},
+        {"@type": "HowToTool", "name": "Application Downloader (AFTVnews)"}
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Déverrouiller les options développeur",
+          "text": "Allez dans Paramètres → Mon Fire TV → À propos, puis cliquez 7 fois sur le nom de l'appareil pour faire apparaître les options développeur cachées."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Installer Downloader",
+          "text": "Installez l'application Downloader (AFTVnews, icône orange) depuis l'Amazon Appstore, via la recherche ou la commande vocale Alexa."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Autoriser les applications inconnues pour Downloader",
+          "text": "Dans Paramètres → Mon Fire TV → Options développeur → Installer des applications inconnues, activez l'autorisation pour Downloader."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Saisir l'URL et installer l'APK",
+          "text": "Ouvrez Downloader, saisissez dih-labs.com/apk, cliquez sur le bouton Download APK, puis sur Installer quand Fire OS le propose."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Nettoyer après installation",
+          "text": "Acceptez la proposition de Downloader de supprimer le fichier APK une fois l'application installée pour libérer de l'espace de stockage."
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "fr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Le sideloading est-il légal sur Fire TV Stick ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Installer un APK hors Amazon Appstore est une fonction prévue par Fire OS, accessible via les options développeur. Ce qui compte, c'est ce que vous regardez ensuite : utilisez uniquement des contenus et abonnements légaux."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il rooter son Fire TV Stick pour installer un APK ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Aucun root ni jailbreak n'est nécessaire. Il suffit d'activer les options développeur puis d'autoriser Downloader à installer des applications inconnues. La garantie de l'appareil n'est pas affectée."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi je ne trouve pas les options développeur dans les paramètres ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les versions récentes de Fire OS masquent ce menu par défaut. Allez dans Paramètres → Mon Fire TV → À propos, puis cliquez 7 fois de suite sur le nom de l'appareil : le menu Options développeur réapparaît."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les applications installées en sideload se mettent-elles à jour automatiquement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Contrairement à l'Amazon Appstore, un APK installé manuellement ne se met pas à jour tout seul. Il faut retélécharger la nouvelle version depuis le site officiel et l'installer par-dessus l'ancienne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre Downloader et ADB ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Downloader s'utilise directement sur le Fire TV Stick avec la télécommande : c'est la méthode la plus simple. ADB installe l'APK depuis un ordinateur sur le même réseau Wi-Fi ; c'est plus technique mais pratique pour installer plusieurs appareils ou automatiser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "StreamVision fonctionne-t-il sur un Fire TV Stick de 1re ou 2e génération ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. StreamVision requiert Fire OS 6 ou plus récent (Android 7.0+). Les Fire TV Stick de 1re et 2e génération tournent sous Fire OS 5 et affichent une erreur d'analyse à l'installation. Tous les modèles depuis le Fire TV Stick 4K de 2018 sont compatibles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Amazon peut-il supprimer une application installée en sideload ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une application installée manuellement reste sur l'appareil tant que vous ne la désinstallez pas. Elle n'apparaît pas toujours en première ligne du launcher : cherchez-la dans Paramètres → Applications ou via le bouton « Toutes les applications »."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        .article-content { max-width: 800px; margin: 12rem auto 8rem; padding: 0 2rem; }
+        .article-content h1 { font-size: 3rem; margin-bottom: 2rem; }
+        .article-content h2 { font-size: 2rem; margin: 3rem 0 1.5rem; color: #8b5cf6; }
+        .article-content h3 { font-size: 1.3rem; margin: 2rem 0 1rem; color: #e2e8f0; }
+        .article-content p { font-size: 1.1rem; color: #64748b; margin-bottom: 1.5rem; line-height: 1.8; }
+        .article-content ul, .article-content ol { color: #64748b; font-size: 1.1rem; line-height: 1.8; margin: 0 0 1.5rem 1.5rem; }
+        .article-content li { margin-bottom: 0.6rem; }
+        .article-content a { color: #00d4ff; }
+        .article-content code { background: rgba(139, 92, 246, 0.12); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 6px; padding: 0.15rem 0.5rem; font-size: 0.95rem; color: #00d4ff; word-break: break-all; }
+        .step-card { border-left: 4px solid #8b5cf6; padding-left: 1.5rem; margin-bottom: 2rem; }
+        .url-box { background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.35); border-radius: 14px; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center; color: #00d4ff; letter-spacing: 0.03em; }
+        .faq-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: 16px; padding: 1.5rem 1.8rem; margin-bottom: 1.2rem; }
+        .faq-item h3 { margin: 0 0 0.8rem; font-size: 1.15rem; color: #e2e8f0; }
+        .faq-item p { margin-bottom: 0; font-size: 1.05rem; }
+        .table-wrap { overflow-x: auto; margin-bottom: 1.5rem; }
+        .table-wrap table { width: 100%; border-collapse: collapse; font-size: 1rem; color: #64748b; }
+        .table-wrap th { color: #8b5cf6; text-align: left; padding: 0.8rem 1rem; border-bottom: 2px solid rgba(139, 92, 246, 0.4); white-space: nowrap; }
+        .table-wrap td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(139, 92, 246, 0.15); line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links"><li><a href="index.html">Retour à l'app</a></li></ul>
+        </div>
+    </header>
+    <main class="article-content">
+        <h1 class="reveal">Installer des applications sur <span>Fire TV Stick</span> (sideload)</h1>
+
+        <p class="reveal">Le sideloading consiste à installer une application au format APK sans passer par l'Amazon Appstore. C'est une fonction officielle de Fire OS, parfaitement légale, et avec l'application gratuite Downloader l'opération prend environ 3 minutes. Ce guide détaille les 5 étapes exactes valables sur les Fire TV Stick récents (Fire OS 2025/2026), la méthode ADB pour les utilisateurs avancés, et le dépannage des erreurs les plus courantes.</p>
+
+        <p class="reveal">Pourquoi installer un APK manuellement ? Parce que certaines applications parfaitement légitimes ne sont pas distribuées sur l'Appstore d'Amazon. C'est le cas de <a href="telecharger-apk-firetv.html">StreamVision</a>, un lecteur IPTV gratuit et sans publicité développé par DIH LABS : la version Fire TV v30.0.0 (7,3 Mo) se télécharge directement depuis le site officiel. Nous l'utiliserons comme exemple concret tout au long du tutoriel — la procédure est identique pour n'importe quel APK.</p>
+
+        <div class="step-card reveal">
+            <h2>Étape 1 : déverrouiller les options développeur cachées</h2>
+            <p>Sur les Fire OS récents, Amazon masque le menu développeur par défaut. Pour le faire apparaître : <strong>Paramètres → Mon Fire TV → À propos</strong>, puis cliquez <strong>7 fois de suite</strong> sur le nom de l'appareil (la première ligne du menu). Un message confirme que vous êtes désormais développeur. Retournez dans <strong>Paramètres → Mon Fire TV</strong> : la ligne <strong>Options développeur</strong> est maintenant visible. Sur les Sticks plus anciens, ce menu est déjà affiché — passez directement à l'étape suivante.</p>
+        </div>
+
+        <div class="step-card reveal">
+            <h2>Étape 2 : installer Downloader depuis l'Amazon Appstore</h2>
+            <p>Downloader (éditeur AFTVnews, icône orange) est l'outil standard pour récupérer un APK directement sur le Stick, sans ordinateur. Il est distribué gratuitement sur l'Amazon Appstore : cherchez « Downloader » avec la loupe du launcher ou demandez-le à Alexa via le bouton vocal de la télécommande, puis installez-le comme n'importe quelle application.</p>
+        </div>
+
+        <div class="step-card reveal">
+            <h2>Étape 3 : autoriser les applications inconnues pour Downloader</h2>
+            <p>Fire OS bloque par défaut l'installation d'APK par les applications tierces. Allez dans <strong>Options développeur → Installer des applications inconnues</strong> et activez l'interrupteur en face de <strong>Downloader</strong>. Sur les versions plus anciennes de Fire OS, l'option s'appelle simplement « Applications de sources inconnues » : passez-la sur ON. Sans cette autorisation, le téléchargement aboutira mais l'installation sera refusée.</p>
+        </div>
+
+        <div class="step-card reveal">
+            <h2>Étape 4 : saisir l'URL et installer l'APK</h2>
+            <p>Ouvrez Downloader et tapez l'adresse courte dans le champ URL :</p>
+            <div class="url-box">dih-labs.com/apk</div>
+            <p>La page de téléchargement officielle s'ouvre dans Downloader. Cliquez sur le gros bouton <strong>« Download APK »</strong> : le fichier de 7,3 Mo se télécharge en quelques secondes, puis Fire OS affiche l'écran d'installation. Choisissez <strong>Installer</strong>, patientez, puis <strong>Ouvrir</strong>. Tous les détails de cette version (nouveautés v30.0.0, empreinte SHA-256, miroir GitHub) sont sur la page <a href="telecharger-apk-firetv.html">télécharger l'APK StreamVision pour Fire TV</a>.</p>
+        </div>
+
+        <div class="step-card reveal">
+            <h2>Étape 5 : nettoyer après l'installation</h2>
+            <p>Une fois l'application installée, Downloader propose de <strong>supprimer le fichier APK</strong> devenu inutile : acceptez. Le stockage d'un Fire TV Stick est limité (8 à 16 Go selon les modèles) et chaque fichier résiduel compte. L'application installée, elle, reste évidemment en place. Vous pouvez ensuite suivre le <a href="configuration.html">guide de configuration de StreamVision</a> pour ajouter votre propre playlist M3U ou vos identifiants Xtream Codes.</p>
+        </div>
+
+        <h2 class="reveal">Méthode ADB : pour les utilisateurs avancés</h2>
+        <p class="reveal">Si vous préférez installer depuis un ordinateur — pratique pour équiper plusieurs appareils ou scripter l'opération — utilisez ADB (Android Debug Bridge). Activez d'abord <strong>Débogage ADB</strong> dans les options développeur du Stick, notez son adresse IP (Paramètres → Mon Fire TV → À propos → Réseau), puis depuis un ordinateur connecté au même réseau :</p>
+        <p class="reveal"><code>adb connect FIRETV_IP:5555</code><br><code>adb install StreamVision-FireTV.apk</code></p>
+        <p class="reveal">Le fichier APK se télécharge depuis <a href="https://dih-labs.com/apk/streamvision.apk">https://dih-labs.com/apk/streamvision.apk</a> ou depuis le miroir GitHub permanent lié à la version taguée. À la première connexion, le Stick affiche une demande d'autorisation ADB : validez-la avec la télécommande, sinon la commande reste bloquée.</p>
+
+        <h2 class="reveal">Dépannage : les 3 erreurs classiques</h2>
+        <div class="table-wrap reveal">
+            <table>
+                <thead>
+                    <tr><th>Message</th><th>Cause probable</th><th>Solution</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>« Application non installée »</td>
+                        <td>Stockage plein, ou une ancienne version incompatible est déjà présente</td>
+                        <td>Libérez de l'espace, désinstallez l'ancienne version, puis relancez l'installation</td>
+                    </tr>
+                    <tr>
+                        <td>« Erreur d'analyse » (parse error)</td>
+                        <td>Appareil sous Fire OS 5 (Stick 1re/2e gén., non supporté) ou téléchargement corrompu</td>
+                        <td>Vérifiez le modèle ; sinon retéléchargez et contrôlez le SHA-256</td>
+                    </tr>
+                    <tr>
+                        <td>Téléchargement bloqué dans Downloader</td>
+                        <td>L'autorisation « Installer des applications inconnues » n'est pas active</td>
+                        <td>Retournez à l'étape 3 et activez l'interrupteur pour Downloader</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="reveal">Rappel de compatibilité : StreamVision requiert <strong>Fire OS 6 ou plus récent</strong> (équivalent Android 7.0+). Sont compatibles le Fire TV Stick 4K (2018 et après), le Stick Lite, le Stick 3e génération, le 4K Max et les Fire TV Cube à partir de la 2e génération — ainsi que tout appareil Android TV / Google TV sous Android 7+.</p>
+
+        <h2 class="reveal">Sécurité : les bonnes pratiques du sideloading</h2>
+        <p class="reveal">Le sideloading est sûr à une condition : savoir d'où vient le fichier. Trois règles simples suffisent.</p>
+        <ul class="reveal">
+            <li><strong>Téléchargez uniquement depuis le site officiel du développeur.</strong> Pour StreamVision, c'est dih-labs.com (ou le miroir GitHub officiel du même éditeur). Un APK repackagé sur un site tiers peut contenir n'importe quoi.</li>
+            <li><strong>Vérifiez l'empreinte SHA-256 publiée.</strong> Celle de la v30.0.0 est <code>04f08bfce1e5d33d2936ce0eb612dff65c352b4a6764c1d3df98771c8bafe106</code>. Si le hachage du fichier téléchargé diffère, supprimez-le et recommencez.</li>
+            <li><strong>Évitez les « stores d'APK » douteux</strong> et les agrégateurs qui hébergent des milliers d'applications sans lien avec leurs éditeurs : c'est le principal vecteur d'APK modifiés et de publiciels sur Fire TV.</li>
+        </ul>
+
+        <h2 class="reveal">Le sideloading est-il légal ?</h2>
+        <p class="reveal">Oui, sans ambiguïté : installer un APK hors Appstore est une capacité prévue par Fire OS et par Android en général. Ce qui peut poser problème, ce n'est jamais la méthode d'installation, mais le contenu consommé ensuite. StreamVision est un lecteur neutre : il ne fournit aucune chaîne, aucune playlist, aucun abonnement — vous y connectez exclusivement vos propres sources légales. Pour comprendre où passe la ligne entre IPTV légale et illégale, lisez notre analyse <a href="iptv-est-elle-legale-2026.html">l'IPTV est-elle légale en 2026 ?</a></p>
+
+        <h2 class="reveal">Questions fréquentes</h2>
+        <div class="faq-item reveal">
+            <h3>Le sideloading est-il légal sur Fire TV Stick ?</h3>
+            <p>Oui. C'est une fonction prévue par Fire OS, accessible via les options développeur. Ce qui compte, c'est ce que vous regardez ensuite : utilisez uniquement des contenus et abonnements légaux.</p>
+        </div>
+        <div class="faq-item reveal">
+            <h3>Faut-il rooter son Fire TV Stick pour installer un APK ?</h3>
+            <p>Non. Aucun root ni jailbreak n'est nécessaire : il suffit d'activer les options développeur puis d'autoriser Downloader à installer des applications inconnues. La garantie de l'appareil n'est pas affectée.</p>
+        </div>
+        <div class="faq-item reveal">
+            <h3>Pourquoi je ne trouve pas les options développeur dans les paramètres ?</h3>
+            <p>Les Fire OS récents masquent ce menu par défaut. Allez dans Paramètres → Mon Fire TV → À propos, puis cliquez 7 fois de suite sur le nom de l'appareil : le menu Options développeur réapparaît.</p>
+        </div>
+        <div class="faq-item reveal">
+            <h3>Les applications installées en sideload se mettent-elles à jour automatiquement ?</h3>
+            <p>Non. Un APK installé manuellement ne se met pas à jour tout seul : il faut retélécharger la nouvelle version depuis le site officiel et l'installer par-dessus l'ancienne, qui conserve vos réglages.</p>
+        </div>
+        <div class="faq-item reveal">
+            <h3>Quelle est la différence entre Downloader et ADB ?</h3>
+            <p>Downloader s'utilise directement sur le Stick avec la télécommande : c'est la voie simple. ADB installe l'APK depuis un ordinateur sur le même réseau — plus technique, mais idéal pour équiper plusieurs appareils.</p>
+        </div>
+        <div class="faq-item reveal">
+            <h3>StreamVision fonctionne-t-il sur un Fire TV Stick de 1re ou 2e génération ?</h3>
+            <p>Non. StreamVision exige Fire OS 6+ (Android 7.0+). Les Sticks de 1re et 2e génération, sous Fire OS 5, affichent une erreur d'analyse. Tous les modèles depuis le Fire TV Stick 4K de 2018 sont compatibles.</p>
+        </div>
+        <div class="faq-item reveal">
+            <h3>Amazon peut-il supprimer une application installée en sideload ?</h3>
+            <p>Une application installée manuellement reste en place tant que vous ne la désinstallez pas. Si vous ne la voyez pas sur l'écran d'accueil, cherchez-la dans Paramètres → Applications ou via « Toutes les applications ».</p>
+        </div>
+
+        <p class="reveal">Pour aller plus loin : notre <a href="iptv-sur-firestick.html">guide IPTV complet sur Fire TV Stick</a> couvre le choix du modèle et l'optimisation des performances, et notre <a href="meilleure-application-iptv-fire-tv-stick.html">comparatif des meilleures applications IPTV pour Fire TV Stick</a> vous aide à choisir votre lecteur.</p>
+
+        <div class="cta-section reveal" style="margin-top: 5rem; background: #8b5cf6; color: white; padding: 4rem; border-radius: 30px; text-align: center;">
+            <h2>Prêt en 3 minutes sur votre Fire TV</h2>
+            <p>StreamVision : lecteur IPTV 100 % gratuit et sans publicité. Tapez dih-labs.com/apk dans Downloader, ou téléchargez-le sur mobile.</p>
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/app/streamvision-iptv/id6760549542" class="store-btn">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.antoine.streamvisionapp" class="store-btn android">Google Play</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
