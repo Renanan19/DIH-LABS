@@ -526,8 +526,14 @@ h2 span {
     letter-spacing: -0.035em;
 }
 
-.cta-section p {
-    color: rgba(250, 248, 243, 0.65);
+/* !important: win over each blog page's inline .article-content h2/p colors */
+.cta-section p,
+main .cta-section p {
+    color: rgba(250, 248, 243, 0.75) !important;
+}
+
+main .cta-section h2 {
+    color: #FAF8F3 !important;
 }
 
 .cta-section .store-btn {
@@ -603,6 +609,83 @@ footer {
     max-width: 100%;
     height: auto;
     border-radius: 16px;
+}
+
+/* Blog breadcrumb + meta line (selectors carry extra specificity so they
+   win over each page's inline .article-content h2/h3/p rules) */
+main .breadcrumb {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.6rem;
+}
+
+main .breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s var(--ease);
+}
+
+main .breadcrumb a:hover { color: var(--text-main); }
+
+main .article-meta {
+    font-size: 0.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    color: var(--text-muted) !important;
+    margin: -0.6rem 0 2.4rem !important;
+}
+
+/* Related articles */
+main .related-articles {
+    margin-top: 4.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+main .related-articles h2 {
+    color: var(--text-main) !important;
+    font-size: 1.5rem !important;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.4rem !important;
+    padding: 0 !important;
+}
+
+main .related-articles h2::before { display: none; }
+
+main .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+main a.related-card {
+    display: block;
+    border: 1px solid var(--glass-border);
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.3rem 1.4rem;
+    text-decoration: none;
+    transition:
+        transform 0.4s var(--ease),
+        border-color 0.4s var(--ease),
+        box-shadow 0.4s var(--ease);
+}
+
+main a.related-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow);
+}
+
+main .related-card h3 {
+    font-size: 1.02rem !important;
+    color: var(--text-main) !important;
+    margin: 0 !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
 }
 
 table {
