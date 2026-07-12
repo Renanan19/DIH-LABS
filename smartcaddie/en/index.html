@@ -79,7 +79,7 @@
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -120,6 +120,12 @@
                             <span class="btn-text-main">Google Play</span>
                         </div>
                     </a>
+                </div>
+
+                <div class="hero-mockup reveal" style="max-width: 400px;">
+                    <div class="mockup-container">
+                        <img src="../img/hero.webp" alt="SmartCaddie — AI golf swing analysis with score and biomechanical skeleton overlay" class="mockup-screen" width="800" height="1737">
+                    </div>
                 </div>
             </div>
         </section>
@@ -213,6 +219,11 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="content-visual reveal">
+                        <div class="mockup-container" style="max-width: 380px; margin: 0 auto;">
+                            <img src="../img/mechanics.webp" alt="Clear swing mechanics visualization in SmartCaddie" class="mockup-screen" width="800" height="1737" loading="lazy">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -286,6 +297,7 @@
     </footer>
 
     <script>
+        document.documentElement.classList.add('js');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');

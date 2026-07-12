@@ -1,71 +1,10 @@
+/* SmartCaddie — golf green accent override on the shared Venice master */
 @import url('../streamvision/style.css');
 
 :root {
-    --primary: #22c55e; /* Emerald Golf */
-    --primary-light: #4ade80;
-    --primary-dark: #166534;
-    --accent: #2dd4bf;
-    --bg-dark: #050a06; /* Deep Forest Black */
-    --bg-card: rgba(20, 30, 20, 0.6);
-    --text-main: #f0fdf4;
-    --text-muted: #94a3b8;
-    --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(34, 197, 94, 0.2);
-}
-
-body {
-    background: radial-gradient(ellipse at top, #0d2818 0%, #050a06 70%) fixed;
-}
-
-/* Header Ultra-Pro */
-header {
-    background: rgba(5, 10, 6, 0.8);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.logo span {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.badge {
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    color: var(--primary-light);
-}
-
-.feature-icon {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    border: none;
-    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
-}
-
-.cta-section {
-    background: linear-gradient(145deg, rgba(34, 197, 94, 0.1), rgba(45, 212, 191, 0.05));
-    border: 1px solid var(--glass-border);
-}
-
-h1 span {
-    background: linear-gradient(135deg, #fff 0%, var(--primary-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.check-icon {
-    background: var(--primary);
-    color: white;
-}
-
-@media (max-width: 768px) {
-    h1 { font-size: 3rem; }
-    .cta-section h2 { font-size: 2.2rem; }
+    --primary: #1F7A4D;
+    --primary-light: #23885A;
+    --primary-dark: #14573A;
+    --accent: #1F7A4D;
+    --primary-tint: rgba(31, 122, 77, 0.10);
 }
