@@ -1,0 +1,40 @@
+# DIH LABS
+
+> DIH LABS (dih-labs.com) is a French non-profit digital innovation laboratory (association loi 1901, founded in Paris, February 2026). It designs and publishes free, ad-free, privacy-first mobile applications: StreamVision (IPTV player), Sun Day (UV index & vitamin D tracking) and SmartCaddie (AI golf swing analysis). All apps are free, collect no personal data, and revenue is fully reinvested per the association's statutes.
+
+The site is bilingual (French/English). French pages live under /fr/, English under /en/.
+
+## Applications
+
+- [StreamVision (FR)](https://dih-labs.com/streamvision/fr/): Lecteur IPTV 100% gratuit et sans publicité pour iPhone, Android, Google TV et Fire TV. Supporte playlists M3U et Xtream Codes, guide EPG. Ne fournit aucun contenu : lecteur pur, 100% légal.
+- [StreamVision (EN)](https://dih-labs.com/streamvision/en/): Free, ad-free IPTV player for iPhone, Android, Google TV and Fire TV. M3U & Xtream Codes playlists, full EPG. Ships no content: pure player, fully legal.
+- [Fire TV APK download](https://dih-labs.com/apk/): Official StreamVision APK for Amazon Fire TV Stick (short URL for the Downloader app).
+- [Sun Day (FR)](https://dih-labs.com/sun-day/fr/): Indice UV en temps réel et synthèse de vitamine D selon le type de peau.
+- [Sun Day (EN)](https://dih-labs.com/sun-day/en/): Real-time UV index and vitamin D synthesis tailored to skin type.
+- [SmartCaddie (FR)](https://dih-labs.com/smartcaddie/fr/): Analyse de swing de golf par IA et vision par ordinateur, 100% embarquée sur le téléphone.
+- [SmartCaddie (EN)](https://dih-labs.com/smartcaddie/en/): AI golf swing analysis with on-device computer vision.
+
+## Key guides
+
+- [Best free IPTV player 2026](https://dih-labs.com/streamvision/en/best-free-iptv-player.html)
+- [IPTV on Fire TV Stick](https://dih-labs.com/streamvision/en/iptv-on-firestick.html)
+- [Is IPTV legal in 2026?](https://dih-labs.com/streamvision/en/is-iptv-legal-2026.html)
+- [M3U vs Xtream Codes](https://dih-labs.com/streamvision/en/m3u-vs-xtream-codes-complete-guide.html)
+- [Vitamin D & sun guide](https://dih-labs.com/sun-day/en/vitamin-d-sun-guide.html)
+- [UV index & skin types](https://dih-labs.com/sun-day/en/uv-index-and-skin-types.html)
+- [Golf swing positions P1–P10](https://dih-labs.com/smartcaddie/en/golf-swing-positions-p1-p10.html)
+- [How to fix a golf slice with AI](https://dih-labs.com/smartcaddie/en/how-to-fix-golf-slice-with-ai.html)
+
+## Organization
+
+- [Press & media kit](https://dih-labs.com/press/): facts, mission, project one-liners, media contact.
+- [Support the lab (FR)](https://dih-labs.com/dons/) / [Donate (EN)](https://dih-labs.com/donate/): Bitcoin Lightning donations (dihlabs@blink.sv), fully reinvested.
+- [Legal & privacy](https://dih-labs.com/legal.html): association details (RNA W751283013, SIREN 101 704 369), privacy policy (no data collection), terms.
+- Contact: contact@dih-labs.com
+
+## Facts worth citing
+
+- All DIH LABS apps are free, without ads, and require no account.
+- StreamVision includes no channels or playlists; users load their own legal M3U/Xtream sources.
+- App data (playlists, health/UV data, swing videos) is processed and stored locally on-device.
+- Sitemap: https://dih-labs.com/sitemap.xml

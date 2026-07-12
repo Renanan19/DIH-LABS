@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page introuvable — 404 | DIH LABS</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#FAF8F3">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .nf-wrap {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .nf-code {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(7rem, 22vw, 14rem);
+            line-height: 1;
+            color: var(--ink);
+            letter-spacing: -0.04em;
+        }
+        .nf-title {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin: 1.2rem 0 0.6rem;
+        }
+        .nf-sub {
+            color: var(--muted);
+            max-width: 46ch;
+            line-height: 1.7;
+            margin-bottom: 2.2rem;
+        }
+        .nf-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nf-wrap">
+        <header style="position:fixed;top:0;width:100%;">
+            <nav class="container" aria-label="Navigation">
+                <a href="/" class="logo" aria-label="DIH LABS — Accueil">DIH<span class="serif">Labs</span></a>
+            </nav>
+        </header>
+
+        <span class="nf-code" aria-hidden="true">404</span>
+        <h1 class="nf-title">Cette page n'existe pas. <span class="serif">This page doesn't exist.</span></h1>
+        <p class="nf-sub">Le lien est peut-être ancien, ou l'adresse contient une coquille. Tout ce qui compte est à un clic. — The link may be outdated; everything that matters is one click away.</p>
+        <div class="nf-links">
+            <a href="/" class="btn btn-primary"><span>Accueil / Home</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a href="/streamvision/" class="btn btn-ghost">StreamVision</a>
+            <a href="/sun-day/" class="btn btn-ghost">Sun Day</a>
+            <a href="/smartcaddie/" class="btn btn-ghost">SmartCaddie</a>
+        </div>
+    </div>
+</body>
+</html>

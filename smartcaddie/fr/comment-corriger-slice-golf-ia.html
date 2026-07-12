@@ -16,11 +16,12 @@
     <meta property="og:site_name" content="DIH LABS">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <style>
         .article-content { max-width: 800px; margin: 12rem auto 8rem; padding: 0 2rem; }
         .article-content h1 { font-size: 3rem; margin-bottom: 2rem; text-align: left; }
@@ -34,6 +35,9 @@
     </script>
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "SmartCaddie", "item": "https://dih-labs.com/smartcaddie/fr/"}, {"@type": "ListItem", "position": 3, "name": "Comment corriger un slice au golf avec l'IA", "item": "https://dih-labs.com/smartcaddie/fr/comment-corriger-slice-golf-ia.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quelle est la cause d'un slice au golf ?", "acceptedAnswer": {"@type": "Answer", "text": "Deux facteurs combinés : un chemin de club « extérieur-intérieur » et une face de club ouverte par rapport à ce chemin. La combinaison crée un effet latéral qui fait courber la balle à droite (pour un droitier)."}}, {"@type": "Question", "name": "Comment l'IA détecte-t-elle la cause d'un slice ?", "acceptedAnswer": {"@type": "Answer", "text": "La vision par ordinateur suit la tête de club et les positions du corps image par image : plan de swing, trajet des mains au début du downswing, position du poignet avant. À 160 km/h, ces détails sont invisibles à l'œil nu — l'IA les voit à chaque swing."}}, {"@type": "Question", "name": "Quels exercices corrigent un slice ?", "acceptedAnswer": {"@type": "Answer", "text": "Des classiques comme le « Headcover Drill » et le « Split-Hands Drill » enseignent le bon chemin intérieur-extérieur. SmartCaddie propose automatiquement le bon exercice après avoir détecté un mouvement extérieur-intérieur dans votre vidéo."}}, {"@type": "Question", "name": "Faut-il des capteurs ou un radar de practice ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. SmartCaddie fonctionne uniquement avec la caméra de votre téléphone, tout le traitement IA est embarqué. L'app est gratuite, sans abonnement ni matériel externe."}}]}
     </script>
 </head>
 <body>
@@ -88,6 +92,19 @@
                 </a>
             </div>
         </div>
+
+        
+        <section class="faq-block">
+            <h2>Questions fréquentes</h2>
+            <h3>Quelle est la cause d&#x27;un slice au golf ?</h3>
+            <p>Deux facteurs combinés : un chemin de club « extérieur-intérieur » et une face de club ouverte par rapport à ce chemin. La combinaison crée un effet latéral qui fait courber la balle à droite (pour un droitier).</p>
+            <h3>Comment l&#x27;IA détecte-t-elle la cause d&#x27;un slice ?</h3>
+            <p>La vision par ordinateur suit la tête de club et les positions du corps image par image : plan de swing, trajet des mains au début du downswing, position du poignet avant. À 160 km/h, ces détails sont invisibles à l&#x27;œil nu — l&#x27;IA les voit à chaque swing.</p>
+            <h3>Quels exercices corrigent un slice ?</h3>
+            <p>Des classiques comme le « Headcover Drill » et le « Split-Hands Drill » enseignent le bon chemin intérieur-extérieur. SmartCaddie propose automatiquement le bon exercice après avoir détecté un mouvement extérieur-intérieur dans votre vidéo.</p>
+            <h3>Faut-il des capteurs ou un radar de practice ?</h3>
+            <p>Non. SmartCaddie fonctionne uniquement avec la caméra de votre téléphone, tout le traitement IA est embarqué. L&#x27;app est gratuite, sans abonnement ni matériel externe.</p>
+        </section>
 
         <section class="related-articles">
             <h2>À lire aussi</h2>

@@ -16,11 +16,12 @@
     <meta property="og:site_name" content="DIH LABS">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <style>
         .article-content { max-width: 800px; margin: 12rem auto 8rem; padding: 0 2rem; }
         .article-content h1 { font-size: 3rem; margin-bottom: 2rem; text-align: left; }
@@ -34,6 +35,9 @@
     </script>
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "SmartCaddie", "item": "https://dih-labs.com/smartcaddie/en/"}, {"@type": "ListItem", "position": 3, "name": "How to Fix a Golf Slice with AI", "item": "https://dih-labs.com/smartcaddie/en/how-to-fix-golf-slice-with-ai.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What causes a golf slice?", "acceptedAnswer": {"@type": "Answer", "text": "Two combined factors: an outside-in swing path and a clubface open relative to that path. The combination creates sidespin that curves the ball right (for right-handed players)."}}, {"@type": "Question", "name": "How does AI detect the cause of a slice?", "acceptedAnswer": {"@type": "Answer", "text": "Computer vision tracks your clubhead and body positions frame by frame: swing plane, hand path at the start of the downswing, and lead wrist position. At 100 mph these details are invisible to the naked eye — the AI sees them on every swing."}}, {"@type": "Question", "name": "Which drills fix a slice?", "acceptedAnswer": {"@type": "Answer", "text": "Classics like the Headcover Drill and the Split-Hands Drill teach the correct inside-out path. SmartCaddie suggests the right drill automatically after detecting an outside-in move in your swing video."}}, {"@type": "Question", "name": "Do I need sensors or a launch monitor?", "acceptedAnswer": {"@type": "Answer", "text": "No. SmartCaddie works from your phone camera only, with all AI processing on-device. It is free and requires no subscription or external hardware."}}]}
     </script>
 </head>
 <body>
@@ -88,6 +92,19 @@
                 </a>
             </div>
         </div>
+
+        
+        <section class="faq-block">
+            <h2>Frequently asked questions</h2>
+            <h3>What causes a golf slice?</h3>
+            <p>Two combined factors: an outside-in swing path and a clubface open relative to that path. The combination creates sidespin that curves the ball right (for right-handed players).</p>
+            <h3>How does AI detect the cause of a slice?</h3>
+            <p>Computer vision tracks your clubhead and body positions frame by frame: swing plane, hand path at the start of the downswing, and lead wrist position. At 100 mph these details are invisible to the naked eye — the AI sees them on every swing.</p>
+            <h3>Which drills fix a slice?</h3>
+            <p>Classics like the Headcover Drill and the Split-Hands Drill teach the correct inside-out path. SmartCaddie suggests the right drill automatically after detecting an outside-in move in your swing video.</p>
+            <h3>Do I need sensors or a launch monitor?</h3>
+            <p>No. SmartCaddie works from your phone camera only, with all AI processing on-device. It is free and requires no subscription or external hardware.</p>
+        </section>
 
         <section class="related-articles">
             <h2>Related guides</h2>
