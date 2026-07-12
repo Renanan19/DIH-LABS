@@ -8,88 +8,93 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-dark: #0f172a;
-            --accent: #8b5cf6;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
         .legal-container {
-            max-width: 900px;
-            margin: 100px auto;
-            padding: 40px 20px;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: calc(var(--nav-h) + 3rem) clamp(1.25rem, 4vw, 3rem) 5rem;
         }
-        .lang-toggle {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 40px;
-            justify-content: center;
+        .legal-container h1 {
+            max-width: none;
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            margin-bottom: 2.5rem;
         }
-        .lang-btn {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
+        .legal-container h2 {
+            font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin: 3rem 0 1.2rem;
+            padding-top: 2.2rem;
+            border-top: 1px solid var(--line);
         }
-        .lang-btn.active {
-            background: var(--accent);
-            border-color: var(--accent);
+        .legal-container h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin: 1.8rem 0 0.6rem;
+            color: var(--ink);
         }
-        section {
-            margin-bottom: 60px;
+        .legal-container p, .legal-container li {
+            color: var(--ink-soft);
+            margin-bottom: 0.9rem;
+            line-height: 1.75;
+        }
+        .legal-container ul {
+            margin: 0 0 1rem 1.3rem;
+        }
+        .legal-container section {
             display: none;
         }
-        section.active {
+        .legal-container section.active {
             display: block;
         }
-        h1 { font-size: 2.5rem; margin-bottom: 1.5rem; background: linear-gradient(to right, #fff, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); border-bottom: 1px solid rgba(139, 92, 246, 0.2); padding-bottom: 0.5rem; }
-        h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.8rem; color: #fff; }
-        p, li { color: var(--text-muted); margin-bottom: 1rem; }
-        ul { margin-left: 20px; margin-bottom: 1rem; }
         .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 2.5rem;
+            color: var(--muted);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s var(--ease);
         }
-        .back-link:hover { text-decoration: underline; }
-        .legal-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
+        .back-link:hover { color: var(--ink); }
+        .legal-lang-toggle {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 2.5rem;
         }
-        @media (max-width: 768px) {
-            .legal-grid { grid-template-columns: 1fr; }
+        .legal-lang-toggle .lang-btn {
+            border: 1px solid var(--line-strong);
+            padding: 0.45rem 1.1rem;
+            font-size: 0.85rem;
+        }
+        .legal-lang-toggle .lang-btn.active {
+            border-color: var(--ink);
         }
     </style>
 </head>
 <body>
+    <header class="scrolled">
+        <nav class="container" aria-label="Navigation principale">
+            <a href="/" class="logo" aria-label="DIH LABS — Accueil">DIH<span class="serif">Labs</span></a>
+        </nav>
+    </header>
+
     <div class="legal-container">
-        <a href="index.html" class="back-link">← Retour / Back</a>
-        
-        <div class="lang-toggle">
+        <a href="index.html" class="back-link">&larr; Retour / Back</a>
+
+        <div class="legal-lang-toggle">
             <button class="lang-btn active" onclick="showLang('fr')">Français</button>
             <button class="lang-btn" onclick="showLang('en')">English</button>
         </div>
 
         <!-- VERSION FRANCAISE -->
         <section id="fr-content" class="active">
-            <h1>Informations Légales</h1>
-            
+            <h1>Informations <em class="serif">légales.</em></h1>
+
             <div id="mentions-legales">
                 <h2>1. Mentions Légales</h2>
                 <p><strong>Éditeur :</strong> Association DIH (sigle DIH LABS)</p>
@@ -104,7 +109,7 @@
             <div id="privacy-policy">
                 <h2>2. Politique de Confidentialité</h2>
                 <p>Dernière mise à jour : 28 mars 2026</p>
-                
+
                 <h3>Collecte des données</h3>
                 <p>Nos applications (<strong>StreamVision</strong>, <strong>Sun Day</strong>, <strong>SmartCaddie</strong>) et le site <strong>dih-labs.com</strong> sont conçus pour respecter votre vie privée :</p>
                 <ul>
@@ -117,6 +122,9 @@
                 <h3>Services tiers</h3>
                 <p>Nous n'utilisons aucun service de publicité ou d'analyse tiers collectant des données identifiables au sein de nos applications.</p>
 
+                <h3>Dons en Bitcoin (Lightning Network)</h3>
+                <p>Les dons adressés à notre adresse Lightning (dihlabs@blink.sv) ne nous transmettent aucune donnée personnelle. Nous ne pouvons pas identifier les donateurs.</p>
+
                 <h3>Vos droits (RGPD)</h3>
                 <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données. Puisque nous ne collectons aucune donnée, ces droits s'exercent par la simple suppression de l'application de votre appareil.</p>
             </div>
@@ -125,10 +133,10 @@
                 <h2>3. Conditions Générales d'Utilisation</h2>
                 <h3>Objet</h3>
                 <p>Les présentes CGU ont pour objet de définir les modalités de mise à disposition des services de DIH LABS.</p>
-                
+
                 <h3>Responsabilité</h3>
                 <p>StreamVision est un <strong>lecteur multimédia pur</strong>. DIH LABS ne fournit, n'héberge, ni ne diffuse aucun contenu audiovisuel. L'utilisateur est seul responsable du contenu qu'il charge dans l'application via des listes M3U ou codes Xtream. L'utilisateur s'engage à respecter les droits de propriété intellectuelle et les législations en vigueur dans son pays.</p>
-                
+
                 <h3>Propriété Intellectuelle</h3>
                 <p>Le logiciel, les logos et les éléments graphiques sont la propriété exclusive de DIH LABS.</p>
             </div>
@@ -136,8 +144,8 @@
 
         <!-- ENGLISH VERSION -->
         <section id="en-content">
-            <h1>Legal Information</h1>
-            
+            <h1>Legal <em class="serif">information.</em></h1>
+
             <div id="legal-notice">
                 <h2>1. Legal Notice</h2>
                 <p><strong>Publisher:</strong> DIH Association (aka DIH LABS)</p>
@@ -152,7 +160,7 @@
             <div id="privacy-policy-en">
                 <h2>2. Privacy Policy</h2>
                 <p>Last updated: March 28, 2026</p>
-                
+
                 <h3>Data Collection</h3>
                 <p>Our applications (<strong>StreamVision</strong>, <strong>Sun Day</strong>, <strong>SmartCaddie</strong>) and the <strong>dih-labs.com</strong> website are designed to respect your privacy:</p>
                 <ul>
@@ -165,6 +173,9 @@
                 <h3>Third-party Services</h3>
                 <p>We do not use any third-party advertising or analytics services that collect identifiable data within our applications.</p>
 
+                <h3>Bitcoin Donations (Lightning Network)</h3>
+                <p>Donations sent to our Lightning address (dihlabs@blink.sv) do not transmit any personal data to us. We cannot identify donors.</p>
+
                 <h3>Your Rights (GDPR)</h3>
                 <p>In accordance with the GDPR, you have the right to access, rectify, and delete your data. Since we do not collect any data, these rights are exercised by simply deleting the application from your device.</p>
             </div>
@@ -173,21 +184,27 @@
                 <h2>3. Terms of Service</h2>
                 <h3>Purpose</h3>
                 <p>These TOS define the terms and conditions for using DIH LABS services.</p>
-                
+
                 <h3>Liability</h3>
                 <p>StreamVision is a <strong>pure media player</strong>. DIH LABS does not provide, host, or broadcast any audiovisual content. The user is solely responsible for the content they load into the application via M3U lists or Xtream codes. The user agrees to respect intellectual property rights and the laws in force in their country.</p>
-                
+
                 <h3>Intellectual Property</h3>
                 <p>The software, logos, and graphic elements are the exclusive property of DIH LABS.</p>
             </div>
         </section>
     </div>
 
+    <footer class="press-footer">
+        <div class="container">
+            <p>&copy; 2026 DIH LABS — Laboratoire d'Innovation Digitale</p>
+        </div>
+    </footer>
+
     <script>
         function showLang(lang) {
-            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            
+            document.querySelectorAll('.legal-container section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.legal-lang-toggle .lang-btn').forEach(b => b.classList.remove('active'));
+
             if (lang === 'fr') {
                 document.getElementById('fr-content').classList.add('active');
                 document.querySelector('button[onclick="showLang(\'fr\')"]').classList.add('active');
@@ -195,6 +212,7 @@
                 document.getElementById('en-content').classList.add('active');
                 document.querySelector('button[onclick="showLang(\'en\')"]').classList.add('active');
             }
+            document.documentElement.lang = lang;
         }
     </script>
 </body>

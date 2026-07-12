@@ -6,7 +6,7 @@
     <title data-i18n="head_title">DIH LABS | StreamVision : Le Meilleur Lecteur IPTV Gratuit Sans Pub</title>
     <meta name="description" content="Découvrez StreamVision, le meilleur lecteur IPTV gratuit et sans publicité de 2026. Une solution 100% légale et performante pour iPhone et Android. Rejoignez le Lab." data-i18n-meta="description">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#8b5cf6">
+    <meta name="theme-color" content="#FAF8F3">
     <link rel="canonical" href="https://dih-labs.com/">
 
     <!-- Open Graph -->
@@ -40,7 +40,12 @@
         "addressCountry": "FR"
       },
       "foundingDate": "2026-02-18",
-      "description": "Association loi 1901 dédiée à la conception, au développement et à l'édition d'applications mobiles et web."
+      "description": "Association loi 1901 dédiée à la conception, au développement et à l'édition d'applications mobiles et web.",
+      "potentialAction": {
+        "@type": "DonateAction",
+        "name": "Soutenir DIH LABS via Bitcoin Lightning",
+        "target": "https://dih-labs.com/dons/"
+      }
     }
     </script>
 
@@ -105,225 +110,392 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="#main" class="skip-link" data-i18n="skip_link">Passer au contenu principal</a>
-    <header>
-        <nav class="container">
-            <a href="#accueil" class="logo">DIH <span>LABS</span></a>
-            
-            <div class="lang-switch">
-                <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en français">FR</button>
-                <span aria-hidden="true">/</span>
-                <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
-            </div>
 
-            <button type="button" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul id="main-nav">
-                <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
-                <li><a href="#objet" data-i18n="nav_purpose">Notre Objet</a></li>
-                <li><a href="/streamvision/" data-i18n="nav_streamvision">StreamVision</a></li>
-                <li><a href="/sun-day/" data-i18n="nav_sunday">Sun Day</a></li>
-                <li><a href="/smartcaddie/" data-i18n="nav_golfswinganalyzer">SmartCaddie</a></li>
-                <li><a href="#activites" data-i18n="nav_activities">Activités</a></li>
+    <header>
+        <nav class="container" aria-label="Navigation principale">
+            <a href="/" class="logo" aria-label="DIH LABS — Accueil">DIH<span class="serif">Labs</span></a>
+
+            <ul id="main-nav" class="nav-center">
+                <li><a href="#apps" data-i18n="nav_apps">Applications</a></li>
+                <li><a href="#objet" data-i18n="nav_purpose">Le Lab</a></li>
+                <li><a href="#activites" data-i18n="nav_method">Méthode</a></li>
                 <li><a href="#adhesion" data-i18n="nav_membership">Adhésion</a></li>
+                <li><a href="#soutenir" data-i18n="nav_support">Soutenir</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
+
+            <div class="nav-right">
+                <div class="lang-switch">
+                    <button type="button" class="lang-btn active" data-lang="fr" aria-label="Passer en français">FR</button>
+                    <button type="button" class="lang-btn" data-lang="en" aria-label="Switch to English">EN</button>
+                </div>
+                <button type="button" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main id="main">
+        <!-- ============ HERO ============ -->
         <section id="accueil" class="hero">
-            <div class="container reveal">
-                <h1 data-i18n="hero_title">L'innovation digitale,<br>façonnée par le collectif.</h1>
-                <p data-i18n="hero_desc">Association à but non lucratif dédiée à la conception d'applications mobiles et web de nouvelle génération. Nous développons, nous apprenons, nous diffusons.</p>
-                <div class="cta-group">
-                    <a href="/streamvision/" class="btn btn-primary" data-i18n="hero_btn_1">Découvrir StreamVision</a>
-                    <a href="/sun-day/" class="btn btn-primary" data-i18n="hero_btn_3">Découvrir Sun Day</a>
-                    <a href="/smartcaddie/" class="btn btn-primary" data-i18n="hero_btn_4">Découvrir SmartCaddie</a>
-                    <a href="#adhesion" class="btn btn-secondary" data-i18n="hero_btn_2">Nous rejoindre</a>
-                </div>
-                <div class="store-buttons">
-                    <a href="https://apps.apple.com/app/streamvision-iptv/id6760549542" class="store-btn" aria-label="Télécharger StreamVision dans l'App Store">
-                        <div class="btn-text">
-                            <span class="btn-text-top">Télécharger dans l'</span>
-                            <span class="btn-text-main">App Store</span>
-                        </div>
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.antoine.streamvisionapp" class="store-btn android" aria-label="Télécharger StreamVision sur Google Play">
-                        <div class="btn-text">
-                            <span class="btn-text-top">Disponible sur</span>
-                            <span class="btn-text-main">Google Play</span>
-                        </div>
-                    </a>
+            <div class="container">
+                <p class="hero-eyebrow reveal" data-i18n="hero_eyebrow">Laboratoire d'innovation digitale — Paris</p>
+                <h1 class="reveal d1" data-i18n="hero_title">L'innovation digitale, <em class="serif">façonnée</em> par le collectif.</h1>
+                <p class="hero-desc reveal d2" data-i18n="hero_desc">Association à but non lucratif dédiée à la conception d'applications mobiles et web de nouvelle génération. Nous développons, nous apprenons, nous diffusons.</p>
+                <div class="cta-group reveal d3">
+                    <a href="#apps" class="btn btn-primary"><span data-i18n="hero_cta_apps">Découvrir les applications</span> <span class="arrow" aria-hidden="true">&darr;</span></a>
+                    <a href="#adhesion" class="btn btn-ghost" data-i18n="hero_cta_join">Rejoindre le Lab</a>
                 </div>
             </div>
         </section>
 
+        <!-- ============ MARQUEE ============ -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span data-i18n="marquee_items">StreamVision <i>&#10022;</i> Sun Day <i>&#10022;</i> SmartCaddie <i>&#10022;</i> iOS <i>&#10022;</i> Android <i>&#10022;</i> Google TV <i>&#10022;</i> Fire TV <i>&#10022;</i> 100% gratuit <i>&#10022;</i> Sans publicité <i>&#10022;</i></span><span data-i18n="marquee_items">StreamVision <i>&#10022;</i> Sun Day <i>&#10022;</i> SmartCaddie <i>&#10022;</i> iOS <i>&#10022;</i> Android <i>&#10022;</i> Google TV <i>&#10022;</i> Fire TV <i>&#10022;</i> 100% gratuit <i>&#10022;</i> Sans publicité <i>&#10022;</i></span>
+            </div>
+        </div>
+
+        <!-- ============ APPS ============ -->
+        <section id="apps" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-label" data-i18n="apps_label">01 — Applications</span>
+                    <h2 class="section-title" data-i18n="apps_title">Trois applications, <span class="serif">une exigence.</span></h2>
+                </div>
+
+                <div class="apps-grid">
+                    <!-- StreamVision -->
+                    <article class="app-card app-card-feature app-sv reveal">
+                        <div class="app-card-text">
+                            <div class="app-tags">
+                                <span>IPTV</span>
+                                <span>iOS</span>
+                                <span>Android</span>
+                                <span>Google TV</span>
+                                <span>Fire TV</span>
+                            </div>
+                            <h3>StreamVision</h3>
+                            <p data-i18n="sv_desc">Le lecteur IPTV 100% gratuit et sans publicité. Playlists M3U &amp; Xtream Codes, guide EPG complet — sur iPhone, Android, Google TV et Fire TV.</p>
+                            <a href="/streamvision/" class="app-link"><span data-i18n="sv_link">Découvrir StreamVision</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                            <div class="store-row">
+                                <a class="store-chip" href="https://apps.apple.com/app/streamvision-iptv/id6760549542" aria-label="StreamVision sur l'App Store">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.88 0 2.25-1.01 3.92-1.01.63 0 2.88.06 4.37 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.94 4.45z"/></svg>
+                                    App Store
+                                </a>
+                                <a class="store-chip" href="https://play.google.com/store/apps/details?id=com.antoine.streamvisionapp" aria-label="StreamVision sur Google Play">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5V3.5c0-.6.34-1.11.84-1.35l9.63 9.35-9.63 9.35c-.5-.24-.84-.75-.84-1.35zm13.81-6.6l-10.7 6.2 8.47-8.42 2.23 2.22zm3.35-3.5c.41.32.71.82.71 1.6 0 .77-.29 1.27-.71 1.58l-2.27 1.32-2.46-2.45 2.46-2.45 2.27 1.4zM6.11 3.9l10.7 6.21-2.23 2.21L6.11 3.9z"/></svg>
+                                    Google Play
+                                </a>
+                                <a class="store-chip" href="/apk/" aria-label="Télécharger l'APK Fire TV">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v10"/><path d="m8 9 4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                                    APK Fire TV
+                                </a>
+                            </div>
+                        </div>
+                        <div class="app-card-visual" aria-hidden="true">
+                            <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="34" width="260" height="152" rx="14" stroke="#17140F" stroke-width="2"/>
+                                <circle cx="160" cy="102" r="30" stroke="#6C4CF1" stroke-width="2"/>
+                                <path d="M152 88l24 14-24 14V88z" fill="#6C4CF1"/>
+                                <line x1="48" y1="152" x2="120" y2="152" stroke="#17140F" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="48" y1="164" x2="96" y2="164" stroke="#17140F" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="200" y1="152" x2="272" y2="152" stroke="#17140F" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="224" y1="164" x2="272" y2="164" stroke="#17140F" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="128" y1="206" x2="192" y2="206" stroke="#17140F" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="160" y1="186" x2="160" y2="206" stroke="#17140F" stroke-width="2"/>
+                                <path d="M244 20c6 4 10 10 11 18" stroke="#6C4CF1" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M252 10c9 6 15 15 16 26" stroke="#6C4CF1" stroke-width="2" stroke-linecap="round" stroke-opacity="0.5"/>
+                            </svg>
+                        </div>
+                    </article>
+
+                    <!-- Sun Day -->
+                    <article class="app-card app-card-half app-sd reveal d1">
+                        <div class="app-card-visual" aria-hidden="true">
+                            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="160" cy="128" r="44" stroke="#D97E06" stroke-width="2"/>
+                                <line x1="160" y1="46" x2="160" y2="62" stroke="#D97E06" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="103" y1="70" x2="114" y2="81" stroke="#D97E06" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="217" y1="70" x2="206" y2="81" stroke="#D97E06" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="86" y1="128" x2="102" y2="128" stroke="#D97E06" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="218" y1="128" x2="234" y2="128" stroke="#D97E06" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="30" y1="172" x2="290" y2="172" stroke="#17140F" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M112 20a56 56 0 0 1 96 0" stroke="#17140F" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 9"/>
+                                <circle cx="160" cy="128" r="14" fill="#D97E06" fill-opacity="0.25"/>
+                            </svg>
+                        </div>
+                        <div class="app-card-text">
+                            <div class="app-tags">
+                                <span data-i18n="tag_health">Santé</span>
+                                <span>UV</span>
+                                <span>iOS</span>
+                                <span>Android</span>
+                            </div>
+                            <h3>Sun Day</h3>
+                            <p data-i18n="sd_desc">L'indice UV en temps réel et votre synthèse de vitamine D, calculés selon votre type de peau. Le soleil, en toute connaissance.</p>
+                            <a href="/sun-day/" class="app-link"><span data-i18n="sd_link">Découvrir Sun Day</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                            <div class="store-row">
+                                <a class="store-chip" href="https://apps.apple.com/fr/app/sun-day/id6760581712" aria-label="Sun Day sur l'App Store">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.88 0 2.25-1.01 3.92-1.01.63 0 2.88.06 4.37 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.94 4.45z"/></svg>
+                                    App Store
+                                </a>
+                                <a class="store-chip" href="https://play.google.com/store/apps/details?id=com.sunday.uvtracker" aria-label="Sun Day sur Google Play">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5V3.5c0-.6.34-1.11.84-1.35l9.63 9.35-9.63 9.35c-.5-.24-.84-.75-.84-1.35zm13.81-6.6l-10.7 6.2 8.47-8.42 2.23 2.22zm3.35-3.5c.41.32.71.82.71 1.6 0 .77-.29 1.27-.71 1.58l-2.27 1.32-2.46-2.45 2.46-2.45 2.27 1.4zM6.11 3.9l10.7 6.21-2.23 2.21L6.11 3.9z"/></svg>
+                                    Google Play
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SmartCaddie -->
+                    <article class="app-card app-card-half app-sc reveal d2">
+                        <div class="app-card-visual" aria-hidden="true">
+                            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M96 160a80 80 0 1 1 128 0" stroke="#1F7A4D" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 10"/>
+                                <line x1="160" y1="152" x2="208" y2="60" stroke="#17140F" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="212" cy="52" r="7" stroke="#1F7A4D" stroke-width="2"/>
+                                <circle cx="140" cy="164" r="5" fill="#17140F"/>
+                                <line x1="112" y1="164" x2="126" y2="164" stroke="#17140F" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="98" y1="156" x2="112" y2="156" stroke="#17140F" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="30" y1="176" x2="290" y2="176" stroke="#17140F" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="252" y1="176" x2="252" y2="120" stroke="#1F7A4D" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M252 120l20 7-20 7v-14z" fill="#1F7A4D"/>
+                            </svg>
+                        </div>
+                        <div class="app-card-text">
+                            <div class="app-tags">
+                                <span>Golf</span>
+                                <span data-i18n="tag_ai">IA embarquée</span>
+                                <span>iOS</span>
+                                <span>Android</span>
+                            </div>
+                            <h3>SmartCaddie</h3>
+                            <p data-i18n="sc_desc">L'analyse de swing de golf par intelligence artificielle, directement sur votre téléphone. Vision par ordinateur 100% embarquée.</p>
+                            <a href="/smartcaddie/" class="app-link"><span data-i18n="sc_link">Découvrir SmartCaddie</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                            <div class="store-row">
+                                <a class="store-chip" href="https://apps.apple.com/fr/app/smartcaddie/id6762388404" aria-label="SmartCaddie sur l'App Store">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.88 0 2.25-1.01 3.92-1.01.63 0 2.88.06 4.37 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.94 4.45z"/></svg>
+                                    App Store
+                                </a>
+                                <a class="store-chip" href="https://play.google.com/store/apps/details?id=com.golfswingai.app" aria-label="SmartCaddie sur Google Play">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5V3.5c0-.6.34-1.11.84-1.35l9.63 9.35-9.63 9.35c-.5-.24-.84-.75-.84-1.35zm13.81-6.6l-10.7 6.2 8.47-8.42 2.23 2.22zm3.35-3.5c.41.32.71.82.71 1.6 0 .77-.29 1.27-.71 1.58l-2.27 1.32-2.46-2.45 2.46-2.45 2.27 1.4zM6.11 3.9l10.7 6.21-2.23 2.21L6.11 3.9z"/></svg>
+                                    Google Play
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ LE LAB (objet) ============ -->
         <section id="objet" class="section">
             <div class="container">
-                <h2 class="section-title reveal" data-i18n="purpose_title">Un ADN d'Expérimentation</h2>
-                <div class="grid">
-                    <div class="card reveal delay-1">
-                        <div class="icon-placeholder" role="img" aria-label="Application mobile">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                        </div>
+                <div class="section-head reveal">
+                    <span class="section-label" data-i18n="lab_label">02 — Le Lab</span>
+                    <h2 class="section-title" data-i18n="lab_title">Un ADN <span class="serif">d'expérimentation.</span></h2>
+                </div>
+
+                <p class="lab-lead reveal" data-i18n="lab_lead">DIH LABS est une association à but non lucratif : chaque application est conçue comme un objet <span class="serif">soigné</span> — gratuit, respectueux de la vie privée, pensé pour durer.</p>
+
+                <div class="pillars reveal">
+                    <div class="pillar">
+                        <span class="pillar-num">(01)</span>
                         <h3 data-i18n="purpose_card_1_title">Ingénierie Mobile</h3>
                         <p data-i18n="purpose_card_1_desc">Nous concevons des applications robustes pour iOS et Android, de la première ligne de code à la mise en ligne sur les stores (App Store &amp; Google Play).</p>
                     </div>
-                    <div class="card reveal delay-2">
-                        <div class="icon-placeholder" role="img" aria-label="Innovation">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                        </div>
+                    <div class="pillar">
+                        <span class="pillar-num">(02)</span>
                         <h3 data-i18n="purpose_card_2_title">Contenus Innovants</h3>
                         <p data-i18n="purpose_card_2_desc">Plus que des outils, nous créons des expériences numériques riches, axées sur l'ergonomie et la valeur ajoutée pour l'utilisateur final.</p>
                     </div>
-                    <div class="card reveal delay-3">
-                        <div class="icon-placeholder" role="img" aria-label="Diffusion et partage">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                        </div>
+                    <div class="pillar">
+                        <span class="pillar-num">(03)</span>
                         <h3 data-i18n="purpose_card_3_title">Diffusion &amp; Partage</h3>
                         <p data-i18n="purpose_card_3_desc">Nous organisons des événements, des sessions de formation et des actions de communication pour faire vivre nos projets.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="activites" class="section">
-            <div class="container">
-                <h2 class="section-title reveal" data-i18n="activities_title">Expertise &amp; Moyens</h2>
-                <div class="feature-list reveal">
-                    <div class="feature-item">
-                        <span class="feature-number">01</span>
-                        <div>
-                            <h4 data-i18n="activities_item_1_title">Cycle de Vie Logiciel</h4>
-                            <p data-i18n="activities_item_1_desc">Nous couvrons l'intégralité du cycle de vie des produits : conception UI/UX, développement full-stack, exploitation et maintenance évolutive.</p>
-                        </div>
+                <div class="stats-row reveal">
+                    <div class="stat">
+                        <span class="stat-n">3</span>
+                        <span class="stat-l" data-i18n="stat_1l">Applications publiées</span>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-number">02</span>
-                        <div>
-                            <h4 data-i18n="activities_item_2_title">Économie Circulaire Numérique</h4>
-                            <p data-i18n="activities_item_2_desc">Nos revenus (publicité, in-app, abonnements) sont réinvestis pour financer nos futurs projets et soutenir l'objet social de l'association.</p>
-                        </div>
+                    <div class="stat">
+                        <span class="stat-n">4</span>
+                        <span class="stat-l" data-i18n="stat_2l">Plateformes couvertes</span>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-number">03</span>
-                        <div>
-                            <h4 data-i18n="activities_item_3_title">Collaboration Ouverte</h4>
-                            <p data-i18n="activities_item_3_desc">Nous accueillons membres actifs et bienfaiteurs pour enrichir our laboratoire de nouvelles compétences et perspectives.</p>
-                        </div>
+                    <div class="stat">
+                        <span class="stat-n">0</span>
+                        <span class="stat-l" data-i18n="stat_3l">Publicité intrusive</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-n">100%</span>
+                        <span class="stat-l" data-i18n="stat_4l">Des revenus réinvestis</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ============ MÉTHODE (activites) ============ -->
+        <section id="activites" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-label" data-i18n="method_label">03 — La méthode</span>
+                    <h2 class="section-title" data-i18n="method_title">Du premier commit <span class="serif">au store.</span></h2>
+                </div>
+
+                <ul class="method-rows">
+                    <li class="method-row reveal">
+                        <span class="method-num">(01)</span>
+                        <h4 data-i18n="activities_item_1_title">Cycle de Vie Logiciel</h4>
+                        <p data-i18n="activities_item_1_desc">Nous couvrons l'intégralité du cycle de vie des produits : conception UI/UX, développement full-stack, exploitation et maintenance évolutive.</p>
+                    </li>
+                    <li class="method-row reveal d1">
+                        <span class="method-num">(02)</span>
+                        <h4 data-i18n="activities_item_2_title">Économie Circulaire Numérique</h4>
+                        <p data-i18n="activities_item_2_desc">Nos revenus (publicité, in-app, abonnements) sont réinvestis pour financer nos futurs projets et soutenir l'objet social de l'association.</p>
+                    </li>
+                    <li class="method-row reveal d2">
+                        <span class="method-num">(03)</span>
+                        <h4 data-i18n="activities_item_3_title">Collaboration Ouverte</h4>
+                        <p data-i18n="activities_item_3_desc">Nous accueillons membres actifs et bienfaiteurs pour enrichir notre laboratoire de nouvelles compétences et perspectives.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ============ ADHÉSION ============ -->
         <section id="adhesion" class="section">
             <div class="container">
-                <div class="membership-info reveal">
-                    <!-- Colonne Gauche : Appel à l'action -->
-                    <div class="membership-text">
-                        <h2 data-i18n="membership_title">Rejoindre le Lab</h2>
+                <div class="section-head reveal">
+                    <span class="section-label" data-i18n="join_label">04 — Adhésion</span>
+                </div>
+                <div class="membership-info">
+                    <div class="membership-text reveal">
+                        <h2 data-i18n="membership_title">Rejoindre <span class="serif">le Lab.</span></h2>
                         <p data-i18n="membership_desc">DIH LABS est avant tout un collectif. Que vous soyez développeur, designer ou stratège, venez transformer vos idées en applications concrètes.</p>
-                        <a href="mailto:contact@dih-labs.com" class="btn btn-primary" data-i18n="membership_btn">Envoyer une candidature</a>
+                        <a href="mailto:contact@dih-labs.com" class="btn btn-primary"><span data-i18n="membership_btn">Envoyer une candidature</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
                         <p class="address-note" data-i18n="membership_address">Siège social : 31 Rue Linné, 75005 Paris</p>
                     </div>
 
-                    <!-- Colonne Droite : FAQ Intégrée -->
-                    <div class="faq-integrated">
+                    <div class="faq-integrated reveal d1">
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-btn-1">
                                 <span data-i18n="faq_q1">Comment fonctionne l'admission ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-1" aria-labelledby="faq-btn-1" data-i18n="faq_a1">L'admission est soumise à l'agrément du bureau (Art. 6). Envoyez-nous un court mail avec vos motivations.</section>
+                            <div class="faq-answer-wrap">
+                                <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1" data-i18n="faq_a1">L'admission est soumise à l'agrément du bureau (Art. 6). Envoyez-nous un court mail avec vos motivations.</div>
+                            </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-btn-2">
                                 <span data-i18n="faq_q2">Quelles sont les ressources ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-2" aria-labelledby="faq-btn-2" data-i18n="faq_a2">Cotisations, dons et revenus des applications (pub/achats in-app) sont réinvestis dans nos projets (Art. 8).</section>
+                            <div class="faq-answer-wrap">
+                                <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2" data-i18n="faq_a2">Cotisations, dons et revenus des applications (pub/achats in-app) sont réinvestis dans nos projets (Art. 8).</div>
+                            </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-btn-3">
                                 <span data-i18n="faq_q3">Rémunération des membres ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-3" aria-labelledby="faq-btn-3" data-i18n="faq_a3">Les fonctions sont bénévoles par défaut. Des rémunérations spécifiques peuvent être votées par l'AG (Art. 13).</section>
+                            <div class="faq-answer-wrap">
+                                <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3" data-i18n="faq_a3">Les fonctions sont bénévoles par défaut. Des rémunérations spécifiques peuvent être votées par l'AG (Art. 13).</div>
+                            </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-btn-4">
                                 <span data-i18n="faq_q4">Sur quels stores publiez-vous ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-4" aria-labelledby="faq-btn-4" data-i18n="faq_a4">Prioritairement App Store et Google Play, conformément à notre objet social de diffusion globale (Art. 2).</section>
+                            <div class="faq-answer-wrap">
+                                <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4" data-i18n="faq_a4">Prioritairement App Store et Google Play, conformément à notre objet social de diffusion globale (Art. 2).</div>
+                            </div>
                         </div>
                         <div class="faq-item">
                             <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-btn-5">
                                 <span data-i18n="faq_q5">Puis-je devenir bienfaiteur ?</span> <span class="faq-icon" aria-hidden="true"></span>
                             </button>
-                            <section class="faq-answer" id="faq-answer-5" aria-labelledby="faq-btn-5" data-i18n="faq_a5">Oui, toute personne peut soutenir l'association par un don ou un apport exceptionnel (Art. 5).</section>
+                            <div class="faq-answer-wrap">
+                                <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5" data-i18n="faq_a5">Oui, toute personne peut soutenir l'association par un don ou un apport exceptionnel (Art. 5).</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section bg-dark">
+        <!-- ============ SOUTENIR (Bitcoin Lightning) ============ -->
+        <section id="soutenir" class="section">
             <div class="container">
-                <div class="grid contact-grid reveal">
+                <div class="section-head reveal">
+                    <span class="section-label" data-i18n="sup_label">05 — Soutenir</span>
+                    <h2 class="section-title" data-i18n="sup_title">Un don, <span class="serif">en un éclair.</span></h2>
+                </div>
+
+                <div class="donate-card reveal">
                     <div>
-                        <h3 class="text-white">DIH LABS</h3>
-                        <p class="contact-muted" data-i18n="contact_desc">Association (Loi 1901) fondée à Paris le 18/02/2026.</p>
-                        <p class="contact-muted" data-i18n="contact_address"><strong>Siège social :</strong><br>31 Rue Linné, 75005 Paris</p>
+                        <p data-i18n="sup_desc">Nos applications sont gratuites et sans publicité. Si elles vous sont utiles, vous pouvez soutenir le Lab d'un don en Bitcoin via le réseau Lightning : instantané, sans intermédiaire, dès quelques satoshis.</p>
+                        <div class="ln-address-row">
+                            <span class="ln-address">
+                                <svg class="ln-bolt" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"/></svg>
+                                dihlabs@blink.sv
+                            </span>
+                            <button type="button" class="copy-btn" data-copy="dihlabs@blink.sv">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                <span data-i18n="sup_copy">Copier l'adresse</span>
+                            </button>
+                        </div>
+                        <p class="donate-note" data-i18n="sup_note">Conformément à nos statuts (Art. 8), chaque don est intégralement réinvesti dans le développement des applications.</p>
+                        <div class="donate-links">
+                            <a href="/dons/" class="app-link" data-i18n-href="donate_url" style="position:relative;"><span data-i18n="sup_how">Comment faire un don Lightning</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                        </div>
                     </div>
-                    <div class="contact-right">
-                        <h3 class="text-white" data-i18n="contact_title_right">Connexion</h3>
-                        <p class="contact-muted" data-i18n="contact_desc_right">Des questions sur nos statuts ou nos projets ?</p>
-                        <p class="contact-link-wrap"><a href="mailto:contact@dih-labs.com" class="contact-email">contact@dih-labs.com</a></p>
+                    <div class="qr-box">
+                        <img src="/img/qr-lightning.svg" width="200" height="200" alt="QR code Bitcoin Lightning : dihlabs@blink.sv" loading="lazy">
+                        <span class="qr-hint" data-i18n="sup_qr_hint">Scannez avec un portefeuille Lightning</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT / FOOTER ============ -->
+        <section id="contact" class="contact-block">
+            <div class="contact-inner">
+                <span class="contact-label" data-i18n="contact_label">Contact</span>
+                <h2 class="contact-title reveal" data-i18n="contact_title">Une idée, une question&nbsp;? <span class="serif">Travaillons ensemble.</span></h2>
+                <a class="contact-email" href="mailto:contact@dih-labs.com">contact@dih-labs.com</a>
+
+                <div class="contact-meta">
+                    <div>
+                        <strong data-i18n="meta_org">Association</strong>
+                        <span data-i18n="meta_org_val">Loi 1901 — fondée à Paris le 18/02/2026</span>
+                    </div>
+                    <div>
+                        <strong data-i18n="meta_hq">Siège social</strong>
+                        <span>31 Rue Linné, 75005 Paris</span>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <span data-i18n="footer_copy">&copy; 2026 DIH LABS — Laboratoire d'Innovation Digitale</span>
+                    <div class="footer-links">
+                        <a href="/dons/" data-i18n-href="donate_url"><span data-i18n="footer_donate">Faire un don</span></a>
+                        <a href="/press/" data-i18n="footer_press">Presse &amp; Media Kit</a>
+                        <a href="legal.html" data-i18n="footer_legal">Légal &amp; Confidentialité</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="container">
-            <p data-i18n="footer_copy">&copy; 2026 DIH LABS | Laboratoire d'Innovation Digitale. Développé avec passion.</p>
-            <p class="footer-links">
-                <a href="/press/" data-i18n="footer_press">Espace Presse & Media Kit</a> | 
-                <a href="legal.html" data-i18n="footer_legal">Informations Légales & Confidentialité</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Modal Mentions Légales -->
-    <div id="mentions-modal" class="modal" aria-hidden="true">
-        <div class="modal-content">
-            <button type="button" class="modal-close" aria-label="Fermer">&times;</button>
-            <h2 data-i18n="modal_title">Mentions Légales</h2>
-            <div class="modal-body">
-                <h3 data-i18n="modal_h1">Éditeur du site</h3>
-                <p data-i18n="modal_p1">Le site dih-labs.com est édité par l'association <strong>DIH</strong> (sigle DIH LABS), association déclarée régie par la loi du 1er juillet 1901.</p>
-                <p><strong>N° RNA :</strong> W751283013<br>
-                <strong>SIREN :</strong> 101 704 369<br>
-                <strong>SIRET :</strong> 101 704 369 00012<br>
-                <strong>Code APE :</strong> 58.29C (Édition de logiciels applicatifs)</p>
-                <p data-i18n="modal_address"><strong>Siège social :</strong> 31 Rue Linné, 75005 Paris.</p>
-                <p><strong>Email :</strong> contact@dih-labs.com</p>
-
-                <h3 data-i18n="modal_h2">Hébergement</h3>
-                <p data-i18n="modal_p2">Le site est hébergé par <strong>GitHub Inc.</strong><br>
-                88 Colin P. Kelly Jr. Street<br>
-                San Francisco, CA 94107, USA</p>
-
-                <h3 data-i18n="modal_h3">Propriété intellectuelle</h3>
-                <p data-i18n="modal_p3">Tous les contenus présents sur le site (logos, textes, graphiques) sont la propriété exclusive de l'association DIH LABS, sauf mention contraire.</p>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>

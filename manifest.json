@@ -4,8 +4,8 @@
   "description": "Le meilleur lecteur IPTV 100% gratuit et sans publicité.",
   "start_url": "/streamvision/",
   "display": "standalone",
-  "background_color": "#020617",
-  "theme_color": "#8b5cf6",
+  "background_color": "#FAF8F3",
+  "theme_color": "#17140F",
   "icons": [
     {
       "src": "/favicon.svg",

@@ -11,3 +11,4 @@ dist/
 # Workspace
 .vscode/
 .idea/
+.gstack/
