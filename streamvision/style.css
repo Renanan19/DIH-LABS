@@ -454,6 +454,13 @@ h2 span {
     align-items: center;
 }
 
+/* Text-only showcase (no visual column): center a single readable column */
+.content-showcase:not(:has(.content-visual)) {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
 .content-text h2 {
     margin-bottom: 2.2rem;
     text-align: left;
