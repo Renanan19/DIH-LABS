@@ -1,0 +1,10 @@
+/* Sauna Cycle — glacial blue accent override on the shared Venice master */
+@import url('../streamvision/style.css');
+
+:root {
+    --primary: #17618C;
+    --primary-light: #145578;
+    --primary-dark: #104663;
+    --accent: #17618C;
+    --primary-tint: rgba(23, 97, 140, 0.10);
+}
