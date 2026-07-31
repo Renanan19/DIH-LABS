@@ -49,7 +49,8 @@
         "https://play.google.com/store/apps/details?id=com.sunday.uvtracker",
         "https://apps.apple.com/fr/app/smartcaddie/id6762388404",
         "https://play.google.com/store/apps/details?id=com.golfswingai.app",
-        "https://apps.apple.com/us/app/sauna-cycle-heat-cold-rest/id6788517158"
+        "https://apps.apple.com/us/app/sauna-cycle-heat-cold-rest/id6788517158",
+        "https://apps.apple.com/us/app/pulse-burnout/id6774562157"
       ],
       "potentialAction": {
         "@type": "DonateAction",
@@ -92,6 +93,13 @@
           "name": "Sauna Cycle",
           "url": "https://dih-labs.com/sauna-cycle/fr/",
           "description": "Compagnon de séances sauna et bain froid : cycles guidés chaud-froid-repos et Score d'Adaptation Thermique."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Pulse",
+          "url": "https://dih-labs.com/pulse/fr/",
+          "description": "Score de risque de burn-out et prévision à 7 jours, calculés sur l'iPhone à partir du sommeil, de la VFC et d'un point quotidien."
         }
       ]
     }
@@ -108,7 +116,7 @@
           "name": "Quels sont les projets de DIH LABS ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "DIH LABS édite plusieurs applications gratuites : StreamVision (IPTV), Sun Day (Index UV), SmartCaddie (Analyseur de Swing de Golf IA) et Sauna Cycle (compagnon sauna & bain froid)."
+            "text": "DIH LABS édite plusieurs applications gratuites : StreamVision (IPTV), Sun Day (Index UV), SmartCaddie (Analyseur de Swing de Golf IA), Sauna Cycle (compagnon sauna & bain froid) et Pulse (score de risque de burn-out et prévision à 7 jours)."
           }
         },
         {
@@ -177,7 +185,7 @@
         <!-- ============ MARQUEE ============ -->
         <div class="marquee" aria-hidden="true">
             <div class="marquee-track">
-                <span data-i18n="marquee_items">StreamVision <i>&#10022;</i> Sun Day <i>&#10022;</i> SmartCaddie <i>&#10022;</i> Sauna Cycle <i>&#10022;</i> iOS <i>&#10022;</i> Android <i>&#10022;</i> Google TV <i>&#10022;</i> Fire TV <i>&#10022;</i> 100% gratuit <i>&#10022;</i> Sans publicité <i>&#10022;</i></span><span data-i18n="marquee_items">StreamVision <i>&#10022;</i> Sun Day <i>&#10022;</i> SmartCaddie <i>&#10022;</i> Sauna Cycle <i>&#10022;</i> iOS <i>&#10022;</i> Android <i>&#10022;</i> Google TV <i>&#10022;</i> Fire TV <i>&#10022;</i> 100% gratuit <i>&#10022;</i> Sans publicité <i>&#10022;</i></span>
+                <span data-i18n="marquee_items">StreamVision <i>&#10022;</i> Sun Day <i>&#10022;</i> SmartCaddie <i>&#10022;</i> Sauna Cycle <i>&#10022;</i> Pulse <i>&#10022;</i> iOS <i>&#10022;</i> Android <i>&#10022;</i> Google TV <i>&#10022;</i> Fire TV <i>&#10022;</i> 100% gratuit <i>&#10022;</i> Sans publicité <i>&#10022;</i></span><span data-i18n="marquee_items">StreamVision <i>&#10022;</i> Sun Day <i>&#10022;</i> SmartCaddie <i>&#10022;</i> Sauna Cycle <i>&#10022;</i> Pulse <i>&#10022;</i> iOS <i>&#10022;</i> Android <i>&#10022;</i> Google TV <i>&#10022;</i> Fire TV <i>&#10022;</i> 100% gratuit <i>&#10022;</i> Sans publicité <i>&#10022;</i></span>
             </div>
         </div>
 
@@ -186,7 +194,7 @@
             <div class="container">
                 <div class="section-head reveal">
                     <span class="section-label" data-i18n="apps_label">01 — Applications</span>
-                    <h2 class="section-title" data-i18n="apps_title">Quatre applications, <span class="serif">une exigence.</span></h2>
+                    <h2 class="section-title" data-i18n="apps_title">Cinq applications, <span class="serif">une exigence.</span></h2>
                 </div>
 
                 <div class="apps-grid">
@@ -349,6 +357,42 @@
                             </svg>
                         </div>
                     </article>
+
+                    <!-- Pulse -->
+                    <article class="app-card app-card-feature app-pl reveal">
+                        <div class="app-card-visual" aria-hidden="true">
+                            <svg viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="40" y="36" width="240" height="132" rx="14" stroke="#17140F" stroke-width="2"/>
+                                <path d="M58 118h20l8-20 10 42 12-56 10 34h16" stroke="#17140F" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M58 140c30 0 62-8 96-32" stroke="#D24B2E" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M154 108l84-38" stroke="#D24B2E" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 7"/>
+                                <path d="M154 108l84-58" stroke="#D24B2E" stroke-width="2" stroke-linecap="round" stroke-opacity="0.35" stroke-dasharray="2 9"/>
+                                <path d="M154 108l84-18" stroke="#D24B2E" stroke-width="2" stroke-linecap="round" stroke-opacity="0.35" stroke-dasharray="2 9"/>
+                                <circle cx="154" cy="108" r="5" fill="#D24B2E"/>
+                                <line x1="30" y1="206" x2="290" y2="206" stroke="#17140F" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="128" y1="188" x2="128" y2="206" stroke="#17140F" stroke-opacity="0.2" stroke-width="2"/>
+                                <line x1="160" y1="168" x2="160" y2="206" stroke="#17140F" stroke-width="2"/>
+                                <line x1="192" y1="188" x2="192" y2="206" stroke="#17140F" stroke-opacity="0.2" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="app-card-text">
+                            <div class="app-tags">
+                                <span>Burn-out</span>
+                                <span data-i18n="tag_health">Santé</span>
+                                <span>iOS</span>
+                                <span>HealthKit</span>
+                            </div>
+                            <h3>Pulse</h3>
+                            <p data-i18n="pl_desc">Votre risque de burn-out en un score, avec une prévision à 7 jours. Sommeil, VFC, fréquence cardiaque et un point quotidien de 30 secondes — tout est calculé sur l'iPhone, rien n'en sort.</p>
+                            <a href="/pulse/" class="app-link"><span data-i18n="pl_link">Découvrir Pulse</span> <span class="arrow" aria-hidden="true">&rarr;</span></a>
+                            <div class="store-row">
+                                <a class="store-chip" href="https://apps.apple.com/fr/app/pulse-burnout/id6774562157" aria-label="Pulse sur l'App Store">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.88 0 2.25-1.01 3.92-1.01.63 0 2.88.06 4.37 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.94 4.45z"/></svg>
+                                    App Store
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -383,7 +427,7 @@
 
                 <div class="stats-row reveal">
                     <div class="stat">
-                        <span class="stat-n">4</span>
+                        <span class="stat-n">5</span>
                         <span class="stat-l" data-i18n="stat_1l">Applications publiées</span>
                     </div>
                     <div class="stat">

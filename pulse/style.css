@@ -1,0 +1,36 @@
+/* Pulse — signal coral accent override on the shared Venice master.
+   Derived from the app's own Primary (#E55C3D), deepened for legibility
+   on the warm paper canvas. */
+@import url('../streamvision/style.css');
+
+:root {
+    --primary: #D24B2E;
+    --primary-light: #B93F25;
+    --primary-dark: #9C351E;
+    --accent: #D24B2E;
+    --primary-tint: rgba(210, 75, 46, 0.10);
+}
+
+/* Inline links inside guide bodies. The master stylesheet leaves prose links
+   at the browser default (blue, thick underline), which reads as a foreign
+   object on the paper canvas. Scoped to this section so the ~100 pages of the
+   older sections keep their current appearance. */
+.article-body p a,
+.article-body li a,
+.article-body td a {
+    color: var(--primary-light);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(185, 63, 37, 0.4);
+    transition:
+        color 0.3s var(--ease),
+        text-decoration-color 0.3s var(--ease);
+}
+
+.article-body p a:hover,
+.article-body li a:hover,
+.article-body td a:hover {
+    color: var(--primary-dark);
+    text-decoration-color: currentColor;
+}

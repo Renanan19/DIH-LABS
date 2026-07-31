@@ -1,6 +1,6 @@
 # DIH LABS
 
-> DIH LABS (dih-labs.com) is a French non-profit digital innovation laboratory (association loi 1901, founded in Paris, February 2026). It designs and publishes free, ad-free, privacy-first mobile applications: StreamVision (IPTV player), Sun Day (UV index & vitamin D tracking), SmartCaddie (AI golf swing analysis) and Sauna Cycle (sauna & cold plunge session companion). All apps are free, collect no personal data, and revenue is fully reinvested per the association's statutes.
+> DIH LABS (dih-labs.com) is a French non-profit digital innovation laboratory (association loi 1901, founded in Paris, February 2026). It designs and publishes free, ad-free, privacy-first mobile applications: StreamVision (IPTV player), Sun Day (UV index & vitamin D tracking), SmartCaddie (AI golf swing analysis), Sauna Cycle (sauna & cold plunge session companion) and Pulse (burnout risk score with a 7-day forecast). All apps are free, collect no personal data, and revenue is fully reinvested per the association's statutes.
 
 The site is bilingual (French/English). French pages live under /fr/, English under /en/.
 
@@ -15,6 +15,8 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - [SmartCaddie (EN)](https://dih-labs.com/smartcaddie/en/): AI golf swing analysis with on-device computer vision.
 - [Sauna Cycle (FR)](https://dih-labs.com/sauna-cycle/fr/): Compagnon iOS de séances sauna et bain froid : cycles guidés chaud-froid-repos, Score d'Adaptation Thermique, Apple Health optionnel.
 - [Sauna Cycle (EN)](https://dih-labs.com/sauna-cycle/en/): iOS companion for sauna and cold plunge sessions: guided heat-cold-rest cycles, Thermal Adaptation Score, optional Apple Health.
+- [Pulse (FR)](https://dih-labs.com/pulse/fr/): Application iPhone gratuite qui calcule un score de risque de burn-out de 0 à 100 et une prévision à 7 jours à partir de 14 signaux (sommeil, VFC, fréquence cardiaque au repos, activité, usage du téléphone, heures travaillées, point quotidien de 30 s). Tout est calculé et stocké sur l'appareil, sans compte.
+- [Pulse (EN)](https://dih-labs.com/pulse/en/): Free iPhone app computing a 0–100 burnout risk score and a 7-day forecast from 14 signals (sleep, HRV, resting heart rate, activity, phone use, work hours, 30-second daily check-in). Everything is computed and stored on-device, no account. Not a medical device.
 
 ## Key guides
 
@@ -26,6 +28,10 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - [UV index & skin types](https://dih-labs.com/sun-day/en/uv-index-and-skin-types.html)
 - [Golf swing positions P1–P10](https://dih-labs.com/smartcaddie/en/golf-swing-positions-p1-p10.html)
 - [How to fix a golf slice with AI](https://dih-labs.com/smartcaddie/en/how-to-fix-golf-slice-with-ai.html)
+- [Early warning signs of burnout](https://dih-labs.com/pulse/en/burnout-early-warning-signs.html)
+- [What is burnout? The WHO definition](https://dih-labs.com/pulse/en/what-is-burnout.html)
+- [HRV and burnout](https://dih-labs.com/pulse/en/hrv-and-burnout.html)
+- [Can an app predict burnout?](https://dih-labs.com/pulse/en/burnout-prediction-app.html)
 
 ## Organization
 
@@ -38,5 +44,6 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 
 - All DIH LABS apps are free, without ads, and require no account.
 - StreamVision includes no channels or playlists; users load their own legal M3U/Xtream sources.
-- App data (playlists, health/UV data, swing videos) is processed and stored locally on-device.
+- App data (playlists, health/UV data, swing videos, burnout metrics) is processed and stored locally on-device.
+- Pulse is an early-warning tool for wellbeing, not a medical device: it does not diagnose, treat or prevent any condition. It scores each signal against the user's own 30-day baseline, publishes its method in-app, and cites a published source for every health claim.
 - Sitemap: https://dih-labs.com/sitemap.xml

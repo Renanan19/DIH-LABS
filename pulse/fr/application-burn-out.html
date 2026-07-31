@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Une application peut-elle prédire le burn-out ? Ce qu'un téléphone mesure vraiment | Pulse</title>
+    <meta name="description" content="Ce qu'une application de prévention du burn-out peut honnêtement mesurer, pourquoi la référence personnelle bat la moyenne de population, à quoi ressemble une prévision honnête, et sept questions à poser avant de faire confiance à un score.">
+    <meta name="keywords" content="application burn-out, app prévention burn-out, score de stress application, fiabilité score bien-être, application santé mentale travail, VFC application">
+    <link rel="canonical" href="https://dih-labs.com/pulse/fr/application-burn-out.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/pulse/fr/application-burn-out.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/pulse/en/burnout-prediction-app.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Une application peut-elle prédire le burn-out ?",
+      "description": "Les limites honnêtes de la prédiction du burn-out sur un téléphone, l'importance de la référence personnelle, et les questions à poser avant de croire un score de bien-être.",
+      "author": {"@type": "Organization", "name": "DIH LABS"},
+      "publisher": {"@type": "Organization", "name": "DIH LABS", "logo": {"@type": "ImageObject", "url": "https://dih-labs.com/favicon.svg"}},
+      "datePublished": "2026-07-31",
+      "dateModified": "2026-07-31",
+      "image": "https://dih-labs.com/pulse/img/og-card.png",
+      "inLanguage": "fr-FR",
+      "mainEntityOfPage": "https://dih-labs.com/pulse/fr/application-burn-out.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Une application peut-elle vraiment prédire le burn-out ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Pas au sens d'un diagnostic. Le burn-out n'a pas de critères diagnostiques cliniques dans la CIM-11 et aucun instrument grand public validé n'existe. Ce qu'une application peut honnêtement faire, c'est suivre des signaux associés au stress chronique - sommeil, VFC, fréquence au repos, activité, horaires, ressenti déclaré - et montrer s'ils dérivent dans la mauvaise direction par rapport à votre propre historique."}
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi une référence personnelle est-elle indispensable ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Parce que la variation entre individus écrase l'effet mesuré. La VFC peut varier d'un facteur trois entre deux adultes en bonne santé, et le besoin de sommeil varie aussi. Comparé à une moyenne de population, la plupart des gens paraissent soit alarmants soit parfaits pour des raisons sans rapport avec le stress. Comparé à sa propre médiane sur 30 jours, c'est le changement qui devient le signal."}
+        },
+        {
+          "@type": "Question",
+          "name": "À quoi doit ressembler une prévision à 7 jours honnête ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "À une projection avec un intervalle d'incertitude explicite qui s'élargit avec l'horizon, pas à une ligne unique et confiante. Une prévision tirée de deux semaines de données bruitées comporte une réelle incertitude, et une application qui la masque fait un choix de conception contre l'utilisateur."}
+        },
+        {
+          "@type": "Question",
+          "name": "Mes données de santé sont-elles en sécurité dans ce type d'application ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Cela dépend entièrement de l'application. L'architecture sûre est locale : calcul et stockage sur le téléphone, sans compte, sans synchronisation cloud, sans statistiques d'usage. Si une application exige un compte, supposez que les données quittent l'appareil et lisez la politique de confidentialité avant de connecter Apple Santé."}
+        }
+      ]
+    }
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/pulse/fr/application-burn-out.html">
+    <meta property="og:title" content="Une application peut-elle prédire le burn-out ?">
+    <meta property="og:description" content="Les limites honnêtes d'un score de bien-être, et sept questions à poser avant d'y croire.">
+    <meta property="og:image" content="https://dih-labs.com/pulse/img/og-card.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(210, 75, 46, 0.08); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .source-box a { color: var(--primary-light); }
+    </style>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Pulse", "item": "https://dih-labs.com/pulse/fr/"}, {"@type": "ListItem", "position": 3, "name": "Une application peut-elle prédire le burn-out ?", "item": "https://dih-labs.com/pulse/fr/application-burn-out.html"}]}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil Pulse</a></li>
+                <li><a href="vfc-et-burn-out.html">VFC</a></li>
+                <li><a href="qu-est-ce-que-le-burn-out.html">Définition</a></li>
+                <li><a href="https://apps.apple.com/fr/app/pulse-burnout/id6774562157">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/">Accueil</a> &rarr; <a href="index.html">Pulse</a> &middot; <a href="https://dih-labs.com/pulse/en/burnout-prediction-app.html" hreflang="en">English version</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>Une application peut-elle <span>prédire le burn-out ?</span></h1>
+                <p class="article-meta">DIH LABS &middot; Mis à jour le 31 juillet 2026</p>
+                <p>Un compte rendu honnête de ce qu'un téléphone mesure, de ce qu'il ne mesure pas, et de la façon de juger un score.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>Réponse rapide :</strong> aucune application ne diagnostique un burn-out — <span class="highlight">le burn-out n'a pas de critères diagnostiques cliniques dans la CIM-11</span> et il n'existe pas d'instrument grand public validé. Ce qu'un téléphone peut faire honnêtement, c'est suivre des signaux associés au stress chronique par rapport à <span class="highlight">votre propre référence</span> et montrer s'ils dérivent. C'est réellement utile pour repérer une dérive tôt. Ce n'est pas un diagnostic, et toute app qui prétend le contraire survend.</p>
+            </div>
+
+            <p>Nous éditons une de ces applications : traitez donc cette page avec la méfiance qui s'impose. C'est précisément pour ça qu'il vaut la peine d'écrire les limites noir sur blanc — une catégorie remplie de scores de bien-être très confiants et sans méthode publiée mérite une page qui dise où est le plafond.</p>
+
+            <h2>Ce qu'un téléphone mesure réellement</h2>
+            <p>Les téléphones et montres actuels, via Apple Santé, donnent un accès raisonnable à quelques éléments que la recherche relie au stress chronique :</p>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Signal</th>
+                        <th>Qualité sur téléphone/montre</th>
+                        <th>Ce que soutient la littérature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="highlight">Durée et horaires de sommeil</td><td>Bonne, et en progrès</td><td>7 h ou plus par nuit, de façon régulière (consensus AASM / SRS).</td></tr>
+                    <tr><td class="highlight">VFC</td><td>Bruitée, exploitable en tendance</td><td>Stress professionnel et burn-out associés à une VFC réduite, en particulier une moindre activité parasympathique (PLOS ONE).</td></tr>
+                    <tr><td class="highlight">Fréquence cardiaque au repos</td><td>Bonne, peu bruitée</td><td>Bouge pour les mêmes raisons autonomes, plus lentement et plus stablement.</td></tr>
+                    <tr><td>Activité</td><td>Bonne</td><td>OMS : 150 à 300 min d'activité modérée par semaine ; l'activité réduit les symptômes anxieux et dépressifs.</td></tr>
+                    <tr><td>Usage du téléphone, écrans tardifs</td><td>Approximative</td><td>Les écrans lumineux du soir suppriment la mélatonine et retardent l'horloge circadienne (PNAS).</td></tr>
+                    <tr><td>Heures travaillées</td><td>Déclaratif</td><td>55 h et plus : +35 % de risque d'AVC estimé, +17 % de décès par cardiopathie ischémique (OMS/OIT).</td></tr>
+                    <tr><td class="highlight">Humeur, stress, énergie</td><td>Déclaratif — et c'est très bien</td><td>Deux des trois dimensions du burn-out selon l'OMS sont subjectives. Demander est la bonne méthode.</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Ce qu'un téléphone ne mesure pas du tout</h2>
+            <ul>
+                <li><strong>Le cortisol, l'inflammation, ou tout ce qui demande une prise de sang.</strong> Aucun capteur au poignet ne les lit.</li>
+                <li><strong>Votre travail.</strong> Autonomie, soutien et sécurité psychologique comptent parmi les meilleurs prédicteurs des symptômes de burn-out, et un téléphone n'en sait rien tant que vous ne les saisissez pas.</li>
+                <li><strong>La dépression.</strong> C'est une évaluation clinique. Voir <a href="burn-out-ou-depression.html">burn-out ou dépression</a>.</li>
+                <li><strong>Le burn-out lui-même.</strong> Faute d'étalon de référence, aucune application grand public n'a été validée contre un diagnostic. Aucune.</li>
+            </ul>
+
+            <h2>Le problème de la référence — ce que la plupart des apps ratent</h2>
+            <p>La variation entre individus est énorme comparée à l'effet qu'on cherche à détecter. La VFC peut varier d'un facteur trois entre deux adultes en aussi bonne santé ; le besoin de sommeil varie ; la fréquence au repos couvre une large plage. Notez quelqu'un contre une moyenne de population et vous direz à la moitié de vos utilisateurs qu'ils sont en crise et à l'autre moitié que tout va bien, pour des raisons sans rapport avec le stress.</p>
+            <p>La seule approche défendable est <strong>intra-individuelle</strong> : construire pour chaque utilisateur sa propre référence glissante et mesurer l'écart. Statistiquement, cela plaide pour des estimateurs robustes — une médiane et un écart absolu médian plutôt qu'une moyenne et un écart-type — afin qu'une nuit aberrante après un vol ne déplace pas la référence pendant quinze jours. Et l'influence de chaque signal doit être plafonnée, pour qu'aucune mesure isolée ne fasse basculer le score.</p>
+
+            <h2>À quoi ressemble une prévision honnête</h2>
+            <p>Une projection à 7 jours issue de deux semaines de données quotidiennes bruitées comporte une incertitude réelle. La présenter comme une ligne confiante est un choix de conception fait contre l'utilisateur. Une prévision honnête :</p>
+            <ul>
+                <li>Affiche un <strong>intervalle d'incertitude qui s'élargit</strong> avec l'horizon.</li>
+                <li>Dit <strong>à quel point elle est confiante</strong>, et le dit fort quand la réponse est « pas beaucoup ».</li>
+                <li>Refuse de faire semblant la première semaine, quand il n'existe encore aucune référence.</li>
+                <li>Se présente comme <strong>la prolongation d'une tendance</strong>, pas comme un destin. C'est une droite passant par vos derniers jours, et tout changement que vous faites l'invalide — c'est précisément l'objectif.</li>
+            </ul>
+
+            <h2>Sept questions avant de croire un score de bien-être</h2>
+            <ol>
+                <li><strong>La méthode est-elle publiée ?</strong> Si vous ne pouvez pas savoir comment le chiffre est calculé, c'est un baromètre d'humeur.</li>
+                <li><strong>Me compare-t-elle à moi-même ?</strong> Les percentiles de population n'ont quasiment aucun sens pour la VFC.</li>
+                <li><strong>Montre-t-elle ce qui pousse le score ?</strong> Un chiffre sans attribution n'est pas actionnable.</li>
+                <li><strong>Annonce-t-elle son incertitude ?</strong> La confiance sans calibration est un signal d'alarme.</li>
+                <li><strong>Cite-t-elle ses sources ?</strong> Ou affirme-t-elle qu'un chiffre signifie quelque chose sans rien derrière ?</li>
+                <li><strong>Où vivent mes données ?</strong> Sur l'appareil et sans compte est une bonne réponse. Un compte obligatoire signifie que les données sortent.</li>
+                <li><strong>Prétend-elle diagnostiquer ?</strong> Si oui, c'est faux — et tout le reste devient suspect.</li>
+            </ol>
+
+            <h2>Comment Pulse répond à ces sept questions</h2>
+            <p>Par souci d'être jugé sur notre propre grille :</p>
+            <ul>
+                <li><strong>Méthode :</strong> publiée dans l'app, sous Réglages → Méthode et sources. Scores z robustes contre votre médiane sur 30 jours, normalisés en direction, plafonnés à ±3, pondérés, ramenés sur 0–100, lissés sur plusieurs jours.</li>
+                <li><strong>Référence :</strong> la vôtre. La première semaine de calibration est signalée comme peu fiable plutôt que devinée.</li>
+                <li><strong>Attribution :</strong> les principaux facteurs sont listés et classés chaque jour.</li>
+                <li><strong>Incertitude :</strong> la prévision à 7 jours est une régression sur vos 14 derniers jours, tracée avec un intervalle à 95 % qui s'élargit avec l'horizon.</li>
+                <li><strong>Sources :</strong> chaque affirmation de santé renvoie à sa source publiée. Les pondérations, elles, relèvent de notre jugement éditorial informé par cette littérature — ce n'est pas un instrument clinique validé, et l'application le dit.</li>
+                <li><strong>Données :</strong> base SQLite locale. Pas de compte, pas de synchronisation, pas de statistiques d'usage.</li>
+                <li><strong>Revendications :</strong> Pulse est un outil d'alerte précoce sur le bien-être, pas un dispositif médical. Il ne diagnostique, ne traite et ne prévient rien.</li>
+            </ul>
+
+            <h2>Quand fermer l'application</h2>
+            <p>Le suivi sert à repérer une dérive. Si un score vous angoisse, si vous le consultez plusieurs fois par jour, ou si un mauvais chiffre gâche une journée qui allait bien, l'outil est devenu le problème : arrêtez. Et si vos symptômes sont marqués, persistants, ou débordent le cadre du travail, la conversation à avoir est avec un médecin, pas avec un graphique.</p>
+
+            <div class="source-box">
+                <h2>Sources</h2>
+                <ul>
+                    <li><a href="https://icd.who.int/browse11/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f129180281">Organisation mondiale de la santé, CIM-11, QD85 Burn-out (2019)</a></li>
+                    <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205741">« Associations of sympathetic and parasympathetic activity in job stress and burnout: A systematic review », PLOS ONE (2018)</a></li>
+                    <li><a href="https://jcsm.aasm.org/doi/10.5664/jcsm.4758">Watson et al., « Recommended Amount of Sleep for a Healthy Adult », AASM &amp; Sleep Research Society (2015)</a></li>
+                    <li><a href="https://www.pnas.org/doi/10.1073/pnas.1418490112">Chang et al., « Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness », PNAS (2015)</a></li>
+                    <li><a href="https://www.who.int/news/item/17-05-2021-long-working-hours-increasing-deaths-from-heart-disease-and-stroke-who-ilo">OMS &amp; OIT, « Long working hours increasing deaths from heart disease and stroke » (2021)</a></li>
+                    <li><a href="https://www.who.int/publications/i/item/9789240015128">Lignes directrices de l'OMS sur l'activité physique et la sédentarité (2020)</a></li>
+                    <li><a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4153-7">« A systematic review including meta-analysis of work environment and burnout symptoms », BMC Public Health 17:264 (2017)</a></li>
+                </ul>
+            </div>
+
+            <div class="cta-section">
+                <h2>Jugée sur sa propre grille</h2>
+                <p>Méthode publiée, référence personnelle, facteurs classés, intervalle de confiance honnête, sources citées, rien ne quitte l'appareil. Gratuit sur l'App Store.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/fr/app/pulse-burnout/id6774562157" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Télécharger dans</span><span class="btn-text-main">l'App Store</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>À lire aussi</h2>
+            <div class="related-grid">
+                <a class="related-card" href="vfc-et-burn-out.html"><h3>VFC et burn-out : ce que le cœur sait avant vous</h3></a>
+                <a class="related-card" href="qu-est-ce-que-le-burn-out.html"><h3>Qu'est-ce que le burn-out ? La définition de l'OMS</h3></a>
+                <a class="related-card" href="signes-precoces-burn-out.html"><h3>Les signes précoces du burn-out</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Pulse est un outil d'alerte précoce sur le bien-être, pas un dispositif médical. Il ne diagnostique, ne traite et ne prévient aucune pathologie.</p>
+        </div>
+    </footer>
+</body>
+</html>

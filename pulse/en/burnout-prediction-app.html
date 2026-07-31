@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can an App Predict Burnout? What a Phone Can and Cannot Measure | Pulse</title>
+    <meta name="description" content="What a burnout prediction app can honestly measure, why personal baselines beat population averages, how a 7-day forecast should be presented, and seven questions to ask before trusting any wellbeing score.">
+    <meta name="keywords" content="burnout prediction app, burnout app, can an app predict burnout, stress score app, wellbeing score accuracy, burnout risk score, HealthKit burnout app">
+    <link rel="canonical" href="https://dih-labs.com/pulse/en/burnout-prediction-app.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/pulse/fr/application-burn-out.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/pulse/en/burnout-prediction-app.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Can an App Predict Burnout? What a Phone Can and Cannot Measure",
+      "description": "The honest limits of burnout prediction on a phone, why a personal baseline beats a population average, and the questions to ask before trusting any wellbeing score.",
+      "author": {"@type": "Organization", "name": "DIH LABS"},
+      "publisher": {"@type": "Organization", "name": "DIH LABS", "logo": {"@type": "ImageObject", "url": "https://dih-labs.com/favicon.svg"}},
+      "datePublished": "2026-07-31",
+      "dateModified": "2026-07-31",
+      "image": "https://dih-labs.com/pulse/img/og-card.png",
+      "mainEntityOfPage": "https://dih-labs.com/pulse/en/burnout-prediction-app.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can an app really predict burnout?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Not in the sense of diagnosing it. Burn-out has no clinical diagnostic criteria in ICD-11 and no validated consumer instrument. What an app can honestly do is track signals associated with chronic stress - sleep, HRV, resting heart rate, activity, hours, self-reported mood - and show whether they are drifting in a bad direction against your own history."}
+        },
+        {
+          "@type": "Question",
+          "name": "Why does a personal baseline matter?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Because between-person variation dwarfs the effect being measured. HRV can differ threefold between two healthy adults, and habitual sleep need varies too. Compared with a population average, most people look either alarming or perfect for reasons that have nothing to do with stress. Compared with their own 30-day median, the change is the signal."}
+        },
+        {
+          "@type": "Question",
+          "name": "What should a 7-day forecast look like?",
+          "acceptedAnswer": {"@type": "Answer", "text": "It should be a projection with an explicit uncertainty band that widens as the horizon extends, not a single confident line. A forecast drawn from two weeks of noisy data has real uncertainty, and an app that hides it is making a design choice against the user."}
+        },
+        {
+          "@type": "Question",
+          "name": "Is my health data safe in a burnout app?",
+          "acceptedAnswer": {"@type": "Answer", "text": "It depends entirely on the app. The safe architecture is on-device: computation and storage on the phone, no account, no cloud sync, no analytics. If an app requires an account, assume the data leaves the device and read the privacy policy before connecting Apple Health."}
+        }
+      ]
+    }
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/pulse/en/burnout-prediction-app.html">
+    <meta property="og:title" content="Can an App Predict Burnout? What a Phone Can and Cannot Measure">
+    <meta property="og:description" content="The honest limits of a wellbeing score, and seven questions to ask before trusting one.">
+    <meta property="og:image" content="https://dih-labs.com/pulse/img/og-card.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(210, 75, 46, 0.08); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .source-box a { color: var(--primary-light); }
+    </style>
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Pulse", "item": "https://dih-labs.com/pulse/en/"}, {"@type": "ListItem", "position": 3, "name": "Can an App Predict Burnout?", "item": "https://dih-labs.com/pulse/en/burnout-prediction-app.html"}]}
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Pulse Home</a></li>
+                <li><a href="hrv-and-burnout.html">HRV</a></li>
+                <li><a href="what-is-burnout.html">What Is Burnout</a></li>
+                <li><a href="https://apps.apple.com/us/app/pulse-burnout/id6774562157">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rarr; <a href="index.html">Pulse</a> &middot; <a href="https://dih-labs.com/pulse/fr/application-burn-out.html" hreflang="fr">Version française</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>Can an app <span>predict burnout?</span></h1>
+                <p class="article-meta">DIH LABS &middot; Updated July 31, 2026</p>
+                <p>An honest account of what a phone can measure, what it cannot, and how to judge any app that hands you a score.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>Quick answer:</strong> no app can diagnose burnout — <span class="highlight">burn-out has no clinical diagnostic criteria in ICD-11</span> and no validated consumer instrument exists. What a phone can do honestly is track signals associated with chronic stress against <span class="highlight">your own baseline</span> and show whether they are drifting the wrong way. That is genuinely useful for catching drift early. It is not a diagnosis, and any app claiming otherwise is overselling.</p>
+            </div>
+
+            <p>We build one of these apps, so treat this page with the appropriate suspicion. That is exactly why it is worth writing down the limits explicitly — a category full of confident wellbeing scores with no stated method deserves a page that says what the ceiling is.</p>
+
+            <h2>What a phone can actually measure</h2>
+            <p>Modern phones and watches, via Apple Health, give reasonable access to a handful of things that research links to chronic stress:</p>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Signal</th>
+                        <th>Quality on a phone/watch</th>
+                        <th>What the literature supports</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="highlight">Sleep duration &amp; timing</td><td>Good, and improving</td><td>Adults should sleep 7+ hours per night on a regular basis (AASM/SRS consensus).</td></tr>
+                    <tr><td class="highlight">HRV</td><td>Noisy, but usable as a trend</td><td>Job stress and burnout associated with reduced HRV, specifically lower parasympathetic activity (PLOS ONE).</td></tr>
+                    <tr><td class="highlight">Resting heart rate</td><td>Good, low noise</td><td>Moves with the same autonomic load, more slowly and more stably.</td></tr>
+                    <tr><td>Activity</td><td>Good</td><td>WHO: 150–300 min moderate activity per week; activity reduces anxiety and depressive symptoms.</td></tr>
+                    <tr><td>Phone use, late-night screens</td><td>Approximate</td><td>Evening light-emitting screens suppress melatonin and delay the circadian clock (PNAS).</td></tr>
+                    <tr><td>Work hours</td><td>Self-reported</td><td>55+ hours/week: est. 35% higher stroke risk, 17% higher risk of dying from ischaemic heart disease (WHO/ILO).</td></tr>
+                    <tr><td class="highlight">Mood, stress, energy</td><td>Self-reported, and that is fine</td><td>Two of burnout's three WHO dimensions are subjective. Asking is the correct method.</td></tr>
+                </tbody>
+            </table>
+
+            <h2>What a phone cannot measure — at all</h2>
+            <ul>
+                <li><strong>Cortisol, inflammation, or anything requiring a blood sample.</strong> No wrist sensor reads these.</li>
+                <li><strong>Your job.</strong> Autonomy, support and psychological safety are among the strongest predictors of burnout symptoms, and a phone knows nothing about them unless you type them in.</li>
+                <li><strong>Depression.</strong> That is a clinical assessment. See <a href="burnout-vs-depression.html">burnout vs depression</a>.</li>
+                <li><strong>Burnout itself.</strong> Because there is no criterion standard to measure against, no consumer app has been validated against a diagnosis. Nobody's has.</li>
+            </ul>
+
+            <h2>The baseline problem — the thing most apps get wrong</h2>
+            <p>Between-person variation is enormous compared with the effect being detected. HRV can differ threefold between two equally healthy adults; habitual sleep need varies; resting heart rate spans a wide range. Score someone against a population average and you will tell half your users they are in crisis and the other half that they are fine, for reasons that have nothing to do with stress.</p>
+            <p>The only defensible approach is <strong>within-person</strong>: build each user's own rolling baseline and measure the deviation from it. Statistically this argues for robust estimators — a median and a median absolute deviation rather than a mean and a standard deviation — so that one wild night after a flight does not shift the reference for a fortnight. And each signal's influence should be capped, so no single bad reading can swing the whole score.</p>
+
+            <h2>What an honest forecast looks like</h2>
+            <p>A 7-day projection from two weeks of noisy daily data carries real uncertainty. Presenting it as a confident line is a design decision made against the user. An honest forecast:</p>
+            <ul>
+                <li>Shows an <strong>uncertainty band that widens</strong> as the horizon extends.</li>
+                <li>Says <strong>how confident it is</strong>, and says so loudly when the answer is "not very".</li>
+                <li>Refuses to pretend during the first week, when there is no baseline yet.</li>
+                <li>Is framed as <strong>a trend continuing</strong>, not destiny. It is a straight line through your recent days, and any change you make invalidates it — which is the point.</li>
+            </ul>
+
+            <h2>Seven questions to ask before trusting any wellbeing score</h2>
+            <ol>
+                <li><strong>Is the method published?</strong> If you cannot find out how the number is computed, it is a mood ring.</li>
+                <li><strong>Does it compare me to myself?</strong> Population percentiles are close to meaningless for HRV.</li>
+                <li><strong>Does it show what is driving the score?</strong> A number with no attribution cannot be acted on.</li>
+                <li><strong>Does it state its uncertainty?</strong> Confidence without calibration is a red flag.</li>
+                <li><strong>Does it cite sources for health claims?</strong> Or does it assert that a number means something with nothing behind it?</li>
+                <li><strong>Where does my data live?</strong> On-device with no account is a strong answer. An account requirement means the data leaves.</li>
+                <li><strong>Does it claim to diagnose?</strong> If it does, it is wrong, and everything else it says is suspect too.</li>
+            </ol>
+
+            <h2>How Pulse answers those seven</h2>
+            <p>In the interest of being judged by our own checklist:</p>
+            <ul>
+                <li><strong>Method:</strong> published in the app, under Settings → Method &amp; sources. Robust z-scores against your 30-day median, direction-normalised, capped at ±3, weighted, mapped to 0–100, smoothed across days.</li>
+                <li><strong>Baseline:</strong> yours. A first calibration week is marked as low confidence rather than guessed at.</li>
+                <li><strong>Attribution:</strong> the top contributors are listed and ranked every day.</li>
+                <li><strong>Uncertainty:</strong> the 7-day forecast is a regression over your last 14 days, drawn with a 95% band that widens with the horizon.</li>
+                <li><strong>Sources:</strong> every health claim in the app links to its published source. The weights themselves are our editorial judgement informed by that literature — not a validated clinical instrument, and the app says so.</li>
+                <li><strong>Data:</strong> on-device SQLite. No account, no cloud sync, no analytics.</li>
+                <li><strong>Claims:</strong> Pulse is an early-warning tool for wellbeing, not a medical device. It does not diagnose, treat or prevent anything.</li>
+            </ul>
+
+            <h2>When to close the app</h2>
+            <p>Tracking is for drift. If a score is making you anxious, if you are checking it several times a day, or if a bad number ruins a day that was otherwise fine, the tool has become the problem — stop using it. And if your symptoms are severe, persistent, or extend beyond work, that is a conversation with a doctor, not with a chart.</p>
+
+            <div class="source-box">
+                <h2>Sources</h2>
+                <ul>
+                    <li><a href="https://icd.who.int/browse11/l-m/en#/http%3a%2f%2fid.who.int%2ficd%2fentity%2f129180281">World Health Organization, ICD-11, QD85 Burn-out (2019)</a></li>
+                    <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205741">"Associations of sympathetic and parasympathetic activity in job stress and burnout: A systematic review", PLOS ONE (2018)</a></li>
+                    <li><a href="https://jcsm.aasm.org/doi/10.5664/jcsm.4758">Watson et al., "Recommended Amount of Sleep for a Healthy Adult", AASM &amp; Sleep Research Society (2015)</a></li>
+                    <li><a href="https://www.pnas.org/doi/10.1073/pnas.1418490112">Chang et al., "Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness", PNAS (2015)</a></li>
+                    <li><a href="https://www.who.int/news/item/17-05-2021-long-working-hours-increasing-deaths-from-heart-disease-and-stroke-who-ilo">WHO &amp; ILO, "Long working hours increasing deaths from heart disease and stroke" (2021)</a></li>
+                    <li><a href="https://www.who.int/publications/i/item/9789240015128">WHO guidelines on physical activity and sedentary behaviour (2020)</a></li>
+                    <li><a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4153-7">"A systematic review including meta-analysis of work environment and burnout symptoms", BMC Public Health 17:264 (2017)</a></li>
+                </ul>
+            </div>
+
+            <div class="cta-section">
+                <h2>Judged by its own checklist</h2>
+                <p>Published method, personal baseline, ranked drivers, honest confidence band, cited sources, nothing leaves the device. Free on the App Store.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/us/app/pulse-burnout/id6774562157" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Download on the</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>Related guides</h2>
+            <div class="related-grid">
+                <a class="related-card" href="hrv-and-burnout.html"><h3>HRV and Burnout: What Your Heart Knows First</h3></a>
+                <a class="related-card" href="what-is-burnout.html"><h3>What Is Burnout? The WHO Definition</h3></a>
+                <a class="related-card" href="burnout-early-warning-signs.html"><h3>Early Warning Signs of Burnout: What Actually Moves First</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Pulse is an early-warning tool for wellbeing, not a medical device. It does not diagnose, treat or prevent any condition.</p>
+        </div>
+    </footer>
+</body>
+</html>
