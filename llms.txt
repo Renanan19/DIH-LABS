@@ -1,6 +1,6 @@
 # DIH LABS
 
-> DIH LABS (dih-labs.com) is a French non-profit digital innovation laboratory (association loi 1901, founded in Paris, February 2026). It designs and publishes free, ad-free, privacy-first mobile applications: StreamVision (IPTV player), Sun Day (UV index & vitamin D tracking), SmartCaddie (AI golf swing analysis), Sauna Cycle (sauna & cold plunge session companion) and Pulse (burnout risk score with a 7-day forecast). All apps are free, collect no personal data, and revenue is fully reinvested per the association's statutes.
+> DIH LABS (dih-labs.com) is a French non-profit digital innovation laboratory (association loi 1901, founded in Paris, February 2026). It designs and publishes free, ad-free, privacy-first mobile applications: StreamVision (IPTV player), Sun Day (UV index & vitamin D tracking), SmartCaddie (AI golf swing analysis), Sauna Cycle (sauna & cold plunge session companion), Pulse (burnout risk score with a 7-day forecast) and Sillon (one sourced health card a day, fully offline). All apps are free, collect no personal data, and revenue is fully reinvested per the association's statutes.
 
 The site is bilingual (French/English). French pages live under /fr/, English under /en/.
 
@@ -17,6 +17,8 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - [Sauna Cycle (EN)](https://dih-labs.com/sauna-cycle/en/): iOS companion for sauna and cold plunge sessions: guided heat-cold-rest cycles, Thermal Adaptation Score, optional Apple Health.
 - [Pulse (FR)](https://dih-labs.com/pulse/fr/): Application iPhone gratuite qui calcule un score de risque de burn-out de 0 à 100 et une prévision à 7 jours à partir de 14 signaux (sommeil, VFC, fréquence cardiaque au repos, activité, usage du téléphone, heures travaillées, point quotidien de 30 s). Tout est calculé et stocké sur l'appareil, sans compte.
 - [Pulse (EN)](https://dih-labs.com/pulse/en/): Free iPhone app computing a 0–100 burnout risk score and a 7-day forecast from 14 signals (sleep, HRV, resting heart rate, activity, phone use, work hours, 30-second daily check-in). Everything is computed and stored on-device, no account. Not a medical device.
+- [Sillon (FR)](https://dih-labs.com/sillon/fr/): Application iPhone gratuite qui propose chaque matin une carte de santé — un geste principal, deux ou trois appuis, une idée. 109 pratiques notées A, B ou C, 13 parcours guidés de 2 à 4 semaines, 53 repères courts, 153 sources primaires vérifiées une à une contre Crossref. Français et anglais selon la langue du téléphone. Aucun compte, aucune publicité, et aucun code réseau dans l'application. Apple Santé facultatif, en lecture seule.
+- [Sillon (EN)](https://dih-labs.com/sillon/en/): Free iPhone app serving one health card every morning — an anchor practice, two or three supports, one idea. 109 practices graded A, B or C, 13 guided paths of 2–4 weeks, 53 short pieces of knowledge, 153 primary sources verified one by one against Crossref. English and French by device language. No account, no advertising, and no networking code at all. Apple Health optional and read-only. Not a medical device.
 
 ## Key guides
 
@@ -32,6 +34,11 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - [What is burnout? The WHO definition](https://dih-labs.com/pulse/en/what-is-burnout.html)
 - [HRV and burnout](https://dih-labs.com/pulse/en/hrv-and-burnout.html)
 - [Can an app predict burnout?](https://dih-labs.com/pulse/en/burnout-prediction-app.html)
+- [Insomnia: the first-line treatment isn't a pill (CBT-I)](https://dih-labs.com/sillon/en/insomnia-cbt-i-protocol.html)
+- [Morning light and sleep](https://dih-labs.com/sillon/en/morning-light-sleep.html)
+- [Melatonin: dose and timing](https://dih-labs.com/sillon/en/melatonin-dose-timing.html)
+- [Persistent pain: moving without paying for it](https://dih-labs.com/sillon/en/persistent-pain-keep-moving.html)
+- [How to judge a health app in five minutes](https://dih-labs.com/sillon/en/evidence-based-health-app.html)
 
 ## Organization
 
@@ -46,4 +53,5 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - StreamVision includes no channels or playlists; users load their own legal M3U/Xtream sources.
 - App data (playlists, health/UV data, swing videos, burnout metrics) is processed and stored locally on-device.
 - Pulse is an early-warning tool for wellbeing, not a medical device: it does not diagnose, treat or prevent any condition. It scores each signal against the user's own 30-day baseline, publishes its method in-app, and cites a published source for every health claim.
+- Sillon contains no networking code at all — not a privacy setting but a property of the build, so no path exists for data to leave the phone. Every one of its 109 practices carries an A/B/C evidence grade and cites primary peer-reviewed literature (authors, journal, year, DOI); grade C is always flagged in the interface. Contraindications remove practices from the engine rather than warning about them, and situation-specific protocols (night shifts, postpartum, menopause, later life) are offered only to the people they were written for. Sillon is a wellbeing tool, not a medical device.
 - Sitemap: https://dih-labs.com/sitemap.xml

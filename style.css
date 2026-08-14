@@ -57,6 +57,8 @@
     --sy-tint: #E2EEF6;
     --pl: #D24B2E;
     --pl-tint: #FBE7E1;
+    --si: #5C6E4C;
+    --si-tint: #E9EDE3;
 
     --radius: 24px;
     --radius-sm: 14px;
@@ -663,6 +665,10 @@ h1 .serif {
 .app-pl .app-card-visual { background: radial-gradient(120% 120% at 20% 20%, var(--pl-tint) 0%, var(--paper) 75%); }
 .app-pl:hover { border-color: rgba(210, 75, 46, 0.45); }
 .app-pl .app-link { color: var(--pl); }
+
+.app-si .app-card-visual { background: radial-gradient(120% 120% at 80% 20%, var(--si-tint) 0%, var(--paper) 75%); }
+.app-si:hover { border-color: rgba(92, 110, 76, 0.45); }
+.app-si .app-link { color: var(--si); }
 
 /* ============================================================
    Lab (objet) — pillars + stats

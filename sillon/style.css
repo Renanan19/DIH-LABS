@@ -1,0 +1,56 @@
+/* Sillon — sage accent override on the shared Venice master.
+   Taken from the app's own Palette.sage (#6F8163) and deepened so it clears
+   4.5:1 against the warm paper canvas. Deliberately duller and more olive
+   than SmartCaddie's emerald so the two green sections stay distinguishable. */
+@import url('../streamvision/style.css');
+
+:root {
+    --primary: #5C6E4C;
+    --primary-light: #4C5D3E;
+    --primary-dark: #3B4A30;
+    --accent: #5C6E4C;
+    --primary-tint: rgba(92, 110, 76, 0.10);
+}
+
+/* Inline links inside guide bodies — same treatment as the Pulse section:
+   the master leaves prose links at the browser default, which reads as a
+   foreign object on paper. Scoped here so older sections are untouched. */
+.article-body p a,
+.article-body li a,
+.article-body td a {
+    color: var(--primary-light);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(76, 93, 62, 0.4);
+    transition:
+        color 0.3s var(--ease),
+        text-decoration-color 0.3s var(--ease);
+}
+
+.article-body p a:hover,
+.article-body li a:hover,
+.article-body td a:hover {
+    color: var(--primary-dark);
+    text-decoration-color: currentColor;
+}
+
+/* Evidence grade chips. Sillon grades every practice A/B/C and the guides
+   carry that vocabulary over, so the site needs a token for it. Colours come
+   from the app's own EvidenceGrade palette (strong / moderate / emerging). */
+.grade {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.grade-a { color: #4F6B57; }
+.grade-b { color: #7A7364; }
+.grade-c { color: #8A6222; }
