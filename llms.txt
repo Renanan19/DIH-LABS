@@ -1,6 +1,6 @@
 # DIH LABS
 
-> DIH LABS (dih-labs.com) is a French non-profit digital innovation laboratory (association loi 1901, founded in Paris, February 2026). It designs and publishes free, ad-free, privacy-first mobile applications: StreamVision (IPTV player), Sun Day (UV index & vitamin D tracking), SmartCaddie (AI golf swing analysis), Sauna Cycle (sauna & cold plunge session companion), Pulse (burnout risk score with a 7-day forecast) and Sillon (one sourced health card a day, fully offline). All apps are free, collect no personal data, and revenue is fully reinvested per the association's statutes.
+> DIH LABS (dih-labs.com) is a French non-profit digital innovation laboratory (association loi 1901, founded in Paris, February 2026). It designs and publishes free, ad-free, privacy-first mobile applications: StreamVision (IPTV player), Sun Day (UV index & vitamin D tracking), SmartCaddie (AI golf swing analysis), Sauna Cycle (sauna & cold plunge session companion), Pulse (burnout risk score with a 7-day forecast) Sillon (one sourced health card a day, fully offline) and Halation (shared photo albums with no account and no server, sealable until a date, plus 24 cinema film looks). All apps are free, collect no personal data, and revenue is fully reinvested per the association's statutes.
 
 The site is bilingual (French/English). French pages live under /fr/, English under /en/.
 
@@ -19,6 +19,8 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - [Pulse (EN)](https://dih-labs.com/pulse/en/): Free iPhone app computing a 0–100 burnout risk score and a 7-day forecast from 14 signals (sleep, HRV, resting heart rate, activity, phone use, work hours, 30-second daily check-in). Everything is computed and stored on-device, no account. Not a medical device.
 - [Sillon (FR)](https://dih-labs.com/sillon/fr/): Application iPhone gratuite qui propose chaque matin une carte de santé — un geste principal, deux ou trois appuis, une idée. 109 pratiques notées A, B ou C, 13 parcours guidés de 2 à 4 semaines, 53 repères courts, 153 sources primaires vérifiées une à une contre Crossref. Français et anglais selon la langue du téléphone. Aucun compte, aucune publicité, et aucun code réseau dans l'application. Apple Santé facultatif, en lecture seule.
 - [Sillon (EN)](https://dih-labs.com/sillon/en/): Free iPhone app serving one health card every morning — an anchor practice, two or three supports, one idea. 109 practices graded A, B or C, 13 guided paths of 2–4 weeks, 53 short pieces of knowledge, 153 primary sources verified one by one against Crossref. English and French by device language. No account, no advertising, and no networking code at all. Apple Health optional and read-only. Not a medical device.
+- [Halation (FR)](https://dih-labs.com/halation/fr/): Application gratuite iPhone et Android d'albums photo partagés : un lien, aucun compte, aucun serveur qui détienne photos, vidéos ou Live Photos (de téléphone à téléphone, chiffré), verrou temporel facultatif jusqu'à une date via la balise drand, et 24 looks de cinéma pour photos et vidéos.
+- [Halation (EN)](https://dih-labs.com/halation/en/): Free iPhone and Android shared photo album app: one link, no account, no server holding photos, videos or Live Photos (phone to phone, encrypted), optional time lock until a date via the drand beacon, and 24 cinema film looks for photos and video.
 
 ## Key guides
 
@@ -42,6 +44,11 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - [Melatonin: dose and timing](https://dih-labs.com/sillon/en/melatonin-dose-timing.html)
 - [Persistent pain: moving without paying for it](https://dih-labs.com/sillon/en/persistent-pain-keep-moving.html)
 - [How to judge a health app in five minutes](https://dih-labs.com/sillon/en/evidence-based-health-app.html)
+- [Shared wedding photo album with no sign-up](https://dih-labs.com/halation/en/shared-wedding-photo-album.html)
+- [Photo time capsule: an album that opens on a date](https://dih-labs.com/halation/en/photo-time-capsule-album.html)
+- [How time-lock encryption works](https://dih-labs.com/halation/en/how-time-lock-encryption-works.html)
+- [Peer-to-peer photo sharing, with no server](https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html)
+- [Film looks: what a 3D LUT is](https://dih-labs.com/halation/en/film-look-lut-explained.html)
 
 ## Organization
 
@@ -57,4 +64,5 @@ The site is bilingual (French/English). French pages live under /fr/, English un
 - App data (playlists, health/UV data, swing videos, burnout metrics) is processed and stored locally on-device.
 - Pulse is an early-warning tool for wellbeing, not a medical device: it does not diagnose, treat or prevent any condition. It scores each signal against the user's own 30-day baseline, publishes its method in-app, and cites a published source for every health claim.
 - Sillon contains no networking code at all — not a privacy setting but a property of the build, so no path exists for data to leave the phone. Every one of its 109 practices carries an A/B/C evidence grade and cites primary peer-reviewed literature (authors, journal, year, DOI); grade C is always flagged in the interface. Contraindications remove practices from the engine rather than warning about them, and situation-specific protocols (night shifts, postpartum, menopause, later life) are offered only to the people they were written for. Sillon is a wellbeing tool, not a medical device.
+- Halation is not "nothing leaves the phone": photos move directly between the phones in an album, encrypted, with no server of ours storing them; a public relay can forward encrypted traffic when two phones cannot connect directly. Sealed albums use time-lock encryption on the drand randomness beacon, so the key does not exist until the chosen date. Anyone holding an album link can join it. Editing works offline. The App Store lists Halation as Data Not Collected.
 - Sitemap: https://dih-labs.com/sitemap.xml

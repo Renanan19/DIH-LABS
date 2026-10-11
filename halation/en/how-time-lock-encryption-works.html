@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How time-lock encryption works: locking data until a future moment | Halation</title>
+    <meta name="description" content="Time-lock encryption explained without the maths: how a public randomness beacon (drand) lets you encrypt to a future round, why nobody can open it early, and what the real assumptions are.">
+    <meta name="keywords" content="time lock encryption, tlock explained, drand timelock, encrypt until a date, randomness beacon, League of Entropy, timelock encryption photos">
+    <link rel="canonical" href="https://dih-labs.com/halation/en/how-time-lock-encryption-works.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/halation/en/how-time-lock-encryption-works.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/halation/fr/chiffrement-temporel-drand-explique.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How time-lock encryption works: locking data until a future moment",
+  "description": "Time-lock encryption explained without the maths: how a public randomness beacon (drand) lets you encrypt to a future round, why nobody can open it early, and what the real assumptions are.",
+  "author": {
+    "@type": "Organization",
+    "name": "DIH LABS"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DIH LABS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dih-labs.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "image": "https://dih-labs.com/halation/img/og-card-en.png",
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": "https://dih-labs.com/halation/en/how-time-lock-encryption-works.html"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is time-lock encryption the same as a timer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A timer is a rule that software enforces and a person can change. Time-lock encryption makes the key not exist until a public value is published, so there is nothing to override."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is drand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "drand is a distributed randomness beacon run by a group of independent organisations. It publishes a signed random value on a fixed schedule that anyone can verify."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the operators open it early?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not alone. Producing a future value takes a threshold of the group signing together, so security rests on enough independent operators not colluding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Halation rely on this for every album?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only for albums you seal. An open album works without any time lock."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Halation", "item": "https://dih-labs.com/halation/en/"}, {"@type": "ListItem", "position": 3, "name": "Time-lock encryption", "item": "https://dih-labs.com/halation/en/how-time-lock-encryption-works.html"}]}
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/halation/en/how-time-lock-encryption-works.html">
+    <meta property="og:title" content="How time-lock encryption works: locking data until a future moment">
+    <meta property="og:description" content="How an album can be locked until a date by mathematics instead of a server rule, and what you still have to trust.">
+    <meta property="og:image" content="https://dih-labs.com/halation/img/og-card-en.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(138, 100, 32, 0.10); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box, .warn-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .warn-box { border-left: 3px solid var(--primary); }
+        .source-box a { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Halation home</a></li>
+                <li><a href="shared-wedding-photo-album.html">Wedding album</a></li>
+                <li><a href="photo-time-capsule-album.html">Time capsule</a></li>
+                <li><a href="film-look-lut-explained.html">Film looks</a></li>
+                <li><a href="https://apps.apple.com/us/app/halation-shared-photo-albums/id6809901589">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rarr; <a href="index.html">Halation</a> &middot; <a href="https://dih-labs.com/halation/fr/chiffrement-temporel-drand-explique.html" hreflang="fr">Version française</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>Locked by the clock,<span> not by a rule.</span></h1>
+                <p class="article-meta">DIH LABS &middot; Updated 11 October 2026</p>
+                <p>"Nobody can look early" is a strong sentence. This page explains the mechanism behind it, and where it stops.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>Short answer:</strong> a public beacon called <span class="highlight">drand</span> publishes a signed random value on a fixed schedule. Time-lock encryption lets you encrypt to a <span class="highlight">future</span> value, which cannot be computed until it is published. So the key to open the data <span class="highlight">does not exist</span> until the chosen moment.</p>
+            </div>
+
+<h2>The problem with "open on a date"</h2>
+<p>If you want a secret to open on a date, the obvious design is a server that holds it and releases it on time. That works exactly as long as you trust the server, its operator, its staff, its backups and every court that could order it to speak. Time-lock encryption removes the server from the story: there is nothing holding the key early, because the key cannot yet be made.</p>
+
+<h2>The beacon</h2>
+<p><a href="https://drand.love">drand</a> is a distributed randomness beacon operated by a group of independent organisations. At fixed intervals it publishes a new random value, signed jointly by the group. Two properties matter here:</p>
+<ul>
+  <li><strong>It is public.</strong> Everyone sees the same value at the same time.</li>
+  <li><strong>It is unpredictable until published.</strong> A value for a future round does not exist, and no single operator can produce it alone — a threshold of the group has to sign it.</li>
+</ul>
+<p>The network Halation uses is called <em>quicknet</em>: it publishes a new value every <span class="highlight">3 seconds</span>, on a schedule known years in advance, using BLS signatures over the BLS12-381 curve. The chain it trusts is pinned by hash in the app's source.</p>
+
+<h2>Encrypting to a round</h2>
+<p>The scheme is called <em>tlock</em>. In outline: the signature the beacon will publish for a future round acts as a decryption key for anything encrypted to that round. Encryption is done with public information only, today. Decryption becomes possible the instant the beacon publishes that round's signature — to everyone, simultaneously.</p>
+<table class="comp-table">
+  <thead><tr><th>Who</th><th>Before the round</th><th>After the round</th></tr></thead>
+  <tbody>
+    <tr><td class="highlight">Album members</td><td>Can add photos, cannot open them.</td><td>Open everything.</td></tr>
+    <tr><td class="highlight">The person who made it</td><td>No special key.</td><td>Same as everyone.</td></tr>
+    <tr><td class="highlight">The app's makers</td><td>No key to give out.</td><td>Same as everyone.</td></tr>
+  </tbody>
+</table>
+
+<h2>What you still have to trust</h2>
+<p>Honest claims name their assumptions.</p>
+<ul>
+  <li><strong>The beacon's threshold.</strong> Security rests on enough independent drand operators not colluding to sign a future round early. That is a much weaker thing to trust than one company's server, but it is not nothing.</li>
+  <li><strong>The cryptography.</strong> The scheme is published and peer-reviewed; the implementation is one shared code path used by both the iPhone and Android apps, so there are not two versions of the lock to disagree.</li>
+  <li><strong>The link.</strong> Time-lock protects the photographs before the date. It does not stop a person who holds the link from joining the album.</li>
+</ul>
+
+<div class="source-box">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://github.com/drand/tlock">drand/tlock — timelock encryption library and tle tool</a></li>
+    <li><a href="https://eprint.iacr.org/2023/189">Gailly N., Melissaris K., Romailler Y., "tlock: Practical Timelock Encryption from Threshold BLS" (IACR ePrint 2023/189)</a></li>
+    <li><a href="https://drand.love">drand — distributed randomness beacon</a></li>
+  </ul>
+</div>
+
+            <div class="cta-section">
+                <h2>A lock you do not have to take on trust</h2>
+                <p>Free, no account, no ads. iPhone and Android.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/us/app/halation-shared-photo-albums/id6809901589" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Download on the</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.dihlabs.halation" class="store-btn android">
+                        <div class="btn-text"><span class="btn-text-top">Get it on</span><span class="btn-text-main">Google Play</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>Related guides</h2>
+            <div class="related-grid">
+                <a class="related-card" href="photo-time-capsule-album.html"><h3>A photo time capsule: an album that opens on a date nobody can bring forward</h3></a>
+                <a class="related-card" href="peer-to-peer-photo-sharing.html"><h3>Peer-to-peer photo sharing: how photos move between phones with no server</h3></a>
+                <a class="related-card" href="private-photo-sharing-without-cloud.html"><h3>How to judge a private photo-sharing app in five minutes</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Halation is a creative and sharing tool. This article is information, not legal or security advice.</p>
+        </div>
+    </footer>
+</body>
+</html>

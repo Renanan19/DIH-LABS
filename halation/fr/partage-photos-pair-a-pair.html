@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage de photos en pair-à-pair : comment les photos passent d&#x27;un téléphone à l&#x27;autre sans serveur | Halation</title>
+    <meta name="description" content="Comment un album photo peut se synchroniser directement entre téléphones sans serveur qui détienne les photos : découverte en Wi-Fi et sur Internet, transfert chiffré, relais de secours, et le compromis de deux téléphones jamais en ligne ensemble.">
+    <meta name="keywords" content="partage photos pair à pair, partager des photos sans cloud, album photo sans serveur, application p2p iroh, synchronisation photos entre téléphones, mDNS partage local, relais NAT expliqué">
+    <link rel="canonical" href="https://dih-labs.com/halation/fr/partage-photos-pair-a-pair.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/halation/fr/partage-photos-pair-a-pair.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Partage de photos en pair-à-pair : comment les photos passent d'un téléphone à l'autre sans serveur",
+  "description": "Comment un album photo peut se synchroniser directement entre téléphones sans serveur qui détienne les photos : découverte en Wi-Fi et sur Internet, transfert chiffré, relais de secours, et le compromis de deux téléphones jamais en ligne ensemble.",
+  "author": {
+    "@type": "Organization",
+    "name": "DIH LABS"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DIH LABS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dih-labs.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "image": "https://dih-labs.com/halation/img/og-card.png",
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": "https://dih-labs.com/halation/fr/partage-photos-pair-a-pair.html"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Un serveur stocke-t-il mes photos ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Les photos vivent sur les téléphones de l'album et circulent directement entre eux, chiffrées."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que le relais ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une machine publique qui transmet du trafic chiffré quand deux téléphones ne peuvent pas se connecter directement, ce qui arrive dans environ 10 à 30 % des cas. Elle ne peut pas lire les photographies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi une photo n'est-elle pas arrivée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une photo ne circule que si le téléphone qui la détient et un autre sont en ligne à peu près en même temps. Ouvrir l'application en Wi-Fi une ou deux fois suffit généralement à compléter la synchronisation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cela marche-t-il sans Internet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les téléphones d'un même réseau Wi-Fi peuvent se trouver localement. Les albums demandent une connexion entre téléphones, alors que retoucher des photos n'en demande aucune."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Halation", "item": "https://dih-labs.com/halation/fr/"}, {"@type": "ListItem", "position": 3, "name": "Pair-à-pair", "item": "https://dih-labs.com/halation/fr/partage-photos-pair-a-pair.html"}]}
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/halation/fr/partage-photos-pair-a-pair.html">
+    <meta property="og:title" content="Partage de photos en pair-à-pair : comment les photos passent d&#x27;un téléphone à l&#x27;autre sans serveur">
+    <meta property="og:description" content="La synchronisation directe entre téléphones : comment elle marche, ce qu&#x27;est le relais, et le seul compromis à connaître.">
+    <meta property="og:image" content="https://dih-labs.com/halation/img/og-card.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(138, 100, 32, 0.10); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box, .warn-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .warn-box { border-left: 3px solid var(--primary); }
+        .source-box a { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil Halation</a></li>
+                <li><a href="album-photo-partage-mariage.html">Album mariage</a></li>
+                <li><a href="album-photo-capsule-temporelle.html">Capsule temporelle</a></li>
+                <li><a href="look-argentique-lut-explique.html">Looks argentiques</a></li>
+                <li><a href="https://apps.apple.com/fr/app/halation-shared-photo-albums/id6809901589">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Accueil</a> &rarr; <a href="index.html">Halation</a> &middot; <a href="https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html" hreflang="en">English version</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>Les téléphones parlent<span> aux téléphones.</span></h1>
+                <p class="article-meta">DIH LABS &middot; Mis à jour le 11 octobre 2026</p>
+                <p>Les applications de partage de photos fonctionnent en général en envoyant vers la machine de quelqu'un et en téléchargeant depuis elle. Un album pair-à-pair supprime l'intermédiaire.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>En bref :</strong> chaque téléphone de l'album est un nœud. Les téléphones <span class="highlight">se trouvent</span> sur le réseau local ou sur Internet, puis s'envoient les photos <span class="highlight">directement</span>, chiffrées. Un relais public n'est utilisé que si deux téléphones ne peuvent pas se joindre. Le compromis : <span class="highlight">deux téléphones doivent être en ligne à peu près en même temps</span> pour qu'une photo passe.</p>
+            </div>
+
+<h2>Avec ou sans serveur</h2>
+<p>Un album cloud a le serveur d'une entreprise au milieu. Les photos montent, les photos descendent, et l'entreprise les stocke, paie le stockage et décide combien de temps elle les garde. Un album pair-à-pair n'a pas de milieu : chaque téléphone conserve des copies et les transmet aux autres.</p>
+<p>Les bénéfices découlent de l'architecture. Il n'y a pas de stock de photos à pirater, pas de facture d'hébergement qui grimpe avec la popularité — l'application peut donc être gratuite sans contrepartie cachée — et pas d'entreprise à qui l'on pourrait demander de remettre un album, puisqu'elle n'en détient aucun.</p>
+
+<h2>Comment les téléphones se trouvent</h2>
+<p>Deux téléphones ne peuvent échanger des photos qu'en sachant où se trouve l'autre. Halation emploie deux moyens de trouver un pair, dont aucun n'est un serveur exploité par les concepteurs de l'application :</p>
+<ul>
+  <li><strong>Sur le même Wi-Fi :</strong> la découverte locale (mDNS). Des téléphones dans la même pièce se trouvent sans connexion Internet.</li>
+  <li><strong>Sur Internet :</strong> la DHT Mainline de BitTorrent, un vaste annuaire distribué qui existe déjà, utilisé pour savoir où un pair est joignable.</li>
+</ul>
+<p>La couche pair-à-pair repose sur <a href="https://iroh.computer">iroh</a>, qui établit des connexions chiffrées directes entre appareils et adresse les données par leur empreinte.</p>
+
+<h2>Le relais, en toute franchise</h2>
+<p>Les box domestiques et les réseaux mobiles bloquent souvent les connexions entrantes : deux téléphones ne peuvent pas toujours se connecter directement. Dans ce cas, la connexion bascule sur un <strong>relais public</strong> — une machine exploitée par quelqu'un d'autre, qui transmet des paquets chiffrés. Pour environ 10 à 30 % des connexions, c'est la seule voie.</p>
+<table class="comp-table">
+  <thead><tr><th>Ce que le relais peut faire</th><th>Ce qu'il ne peut pas faire</th></tr></thead>
+  <tbody>
+    <tr><td>Transmettre du trafic chiffré entre deux téléphones.</td><td>Lire les photographies, chiffrées avant de quitter le téléphone.</td></tr>
+    <tr><td>Voir que deux appareils communiquent.</td><td>Stocker l'album.</td></tr>
+  </tbody>
+</table>
+<p>C'est la seule machine tierce du tableau, et la raison pour laquelle Halation n'affirme pas que « rien ne quitte jamais le téléphone ». Les photos quittent bien le téléphone — vers ceux des autres membres, chiffrées.</p>
+
+<h2>Le compromis : être en ligne ensemble</h2>
+<p>Sans serveur où attendre, une photo ne peut circuler que si le téléphone qui la détient et un téléphone qui la veut sont joignables en même temps. Pour un groupe qui ouvre régulièrement l'application, c'est constant. Pour deux personnes qui l'ouvrent cinq minutes par jour au hasard, le recoupement est faible. En pratique : après un événement, ouvrez l'application une ou deux fois en Wi-Fi ; plus il y a de téléphones qui détiennent une photo, plus il est probable que tout le monde la reçoive.</p>
+
+<h2>Est-ce chiffré ?</h2>
+<p>Oui. Chaque photographie est scellée avant d'être partagée, et les connexions entre appareils sont chiffrées. Les photographies sont chiffrées avec une clé dérivée du contenu lui-même : des octets identiques se scellent à l'identique, et chaque clé n'est utilisée qu'une fois.</p>
+
+<div class="source-box">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://docs.iroh.computer/">Documentation d'iroh</a></li>
+    <li><a href="https://www.bittorrent.org/beps/bep_0005.html">BEP 5, « DHT Protocol » (BitTorrent Enhancement Proposals)</a></li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc6762">RFC 6762, « Multicast DNS »</a></li>
+  </ul>
+</div>
+
+            <div class="cta-section">
+                <h2>Un album qui ne vit sur aucun serveur</h2>
+                <p>Gratuit, sans compte, sans publicité. iPhone et Android.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/fr/app/halation-shared-photo-albums/id6809901589" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Télécharger sur l'</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.dihlabs.halation" class="store-btn android">
+                        <div class="btn-text"><span class="btn-text-top">Disponible sur</span><span class="btn-text-main">Google Play</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>Guides liés</h2>
+            <div class="related-grid">
+                <a class="related-card" href="partage-photos-prive-sans-cloud.html"><h3>Comment juger une application de partage de photos privée en cinq minutes</h3></a>
+                <a class="related-card" href="partager-photos-iphone-android.html"><h3>Partager des photos entre iPhone et Android : un album que les deux peuvent rejoindre</h3></a>
+                <a class="related-card" href="chiffrement-temporel-drand-explique.html"><h3>Comment fonctionne le chiffrement temporel : verrouiller des données jusqu&#x27;à un moment futur</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Halation est un outil de création et de partage. Cet article est informatif, il ne constitue pas un conseil juridique ou de sécurité.</p>
+        </div>
+    </footer>
+</body>
+</html>

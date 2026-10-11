@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ce qu&#x27;est vraiment un look argentique : les LUT 3D, et pourquoi un filtre n&#x27;est pas la même chose | Halation</title>
+    <meta name="description" content="Comment une table de correspondance 3D (LUT) donne à une photo un étalonnage cinéma, en quoi elle diffère d&#x27;un filtre posé par-dessus, et comment les 24 looks d&#x27;Halation sont calculés une fois pour qu&#x27;un iPhone et un Pixel s&#x27;accordent.">
+    <meta name="keywords" content="LUT 3D expliquée, application look argentique photo, étalonnage cinéma photos, LUT ou filtre, émulation argentique iPhone, étalonnage photo téléphone, looks Halation">
+    <link rel="canonical" href="https://dih-labs.com/halation/fr/look-argentique-lut-explique.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/halation/fr/look-argentique-lut-explique.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/halation/en/film-look-lut-explained.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ce qu'est vraiment un look argentique : les LUT 3D, et pourquoi un filtre n'est pas la même chose",
+  "description": "Comment une table de correspondance 3D (LUT) donne à une photo un étalonnage cinéma, en quoi elle diffère d'un filtre posé par-dessus, et comment les 24 looks d'Halation sont calculés une fois pour qu'un iPhone et un Pixel s'accordent.",
+  "author": {
+    "@type": "Organization",
+    "name": "DIH LABS"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DIH LABS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dih-labs.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "image": "https://dih-labs.com/halation/img/og-card.png",
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": "https://dih-labs.com/halation/fr/look-argentique-lut-explique.html"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'une LUT 3D ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un cube de couleurs stockées : pour chaque valeur d'entrée rouge, verte et bleue, il stocke la couleur de sortie. Étalonner une photo revient à chercher chaque pixel dans le cube et à interpoler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Une LUT est-elle la même chose qu'un filtre de type Instagram ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas forcément. Un filtre applique souvent une seule teinte ou courbe sur l'image ; une LUT peut modifier séparément ombres, tons moyens et hautes lumières."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de looks propose Halation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "24, chacun cuit dans sa propre LUT 3D, avec un curseur d'intensité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les looks fonctionnent-ils sur les vidéos ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Les mêmes 24 looks et couches de texture s'appliquent aux clips, ré-encodés avec l'étalonnage intégré."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Halation", "item": "https://dih-labs.com/halation/fr/"}, {"@type": "ListItem", "position": 3, "name": "Looks argentiques", "item": "https://dih-labs.com/halation/fr/look-argentique-lut-explique.html"}]}
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/halation/fr/look-argentique-lut-explique.html">
+    <meta property="og:title" content="Ce qu&#x27;est vraiment un look argentique : les LUT 3D, et pourquoi un filtre n&#x27;est pas la même chose">
+    <meta property="og:description" content="La différence entre une transformation de couleur et un filtre, et comment 24 looks sont cuits dans des cubes.">
+    <meta property="og:image" content="https://dih-labs.com/halation/img/og-card.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(138, 100, 32, 0.10); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box, .warn-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .warn-box { border-left: 3px solid var(--primary); }
+        .source-box a { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil Halation</a></li>
+                <li><a href="album-photo-partage-mariage.html">Album mariage</a></li>
+                <li><a href="album-photo-capsule-temporelle.html">Capsule temporelle</a></li>
+                <li><a href="look-argentique-lut-explique.html">Looks argentiques</a></li>
+                <li><a href="https://apps.apple.com/fr/app/halation-shared-photo-albums/id6809901589">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Accueil</a> &rarr; <a href="index.html">Halation</a> &middot; <a href="https://dih-labs.com/halation/en/film-look-lut-explained.html" hreflang="en">English version</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>Un look est une transformation,<span> pas une couche.</span></h1>
+                <p class="article-meta">DIH LABS &middot; Mis à jour le 11 octobre 2026</p>
+                <p>Deux photographies peuvent s'appeler « look argentique » et être faites de façons opposées. L'une est une teinte posée par-dessus. L'autre réécrit la façon dont chaque couleur de l'image est transformée.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>En bref :</strong> une LUT 3D est une <span class="highlight">table qui associe à chaque couleur d'entrée une couleur de sortie</span>. L'appliquer modifie séparément les ombres, les tons moyens et les hautes lumières, comme l'étalonnage en post-production de cinéma. Un filtre simple ajoute en général une seule teinte ou courbe sur l'ensemble.</p>
+            </div>
+
+<h2>Ce qu'est une LUT</h2>
+<p>LUT signifie <em>lookup table</em>, table de correspondance. Une LUT 3D est un cube : ses trois axes sont les valeurs rouge, verte et bleue d'un pixel, et à chaque point de la grille le cube stocke la couleur que cette entrée doit devenir. Pour étalonner un pixel, le logiciel repère où se situe sa couleur dans le cube et interpole entre les points stockés les plus proches.</p>
+<p>Comme la correspondance est définie par couleur et non par image, un seul cube peut faire ce qu'une teinte uniforme ne peut pas : pousser les ombres vers le bleu-vert en laissant les teintes de peau tranquilles, relever les noirs, adoucir les hautes lumières, décaler une teinte sans toucher à ses voisines.</p>
+
+<h2>LUT ou filtre</h2>
+<table class="comp-table">
+  <thead><tr><th></th><th>Filtre simple</th><th>LUT 3D</th></tr></thead>
+  <tbody>
+    <tr><td class="highlight">Agit sur</td><td>L'image entière, souvent un seul réglage.</td><td>Chaque couleur, séparément.</td></tr>
+    <tr><td class="highlight">Ombres et hautes lumières</td><td>Bougent ensemble.</td><td>Peuvent bouger séparément.</td></tr>
+    <tr><td class="highlight">Utilisé dans</td><td>Les préréglages rapides.</td><td>La post-production cinéma et vidéo.</td></tr>
+  </tbody>
+</table>
+<p>Aucun des deux n'est meilleur dans l'absolu. La LUT est simplement l'outil conçu pour une transformation complète des couleurs, et c'est celui qu'utilisent les étalonneurs.</p>
+
+<h2>Calculé une fois, hors ligne</h2>
+<p>Les 24 looks d'Halation — Aurora, Nightfall, Vision, Bleach, Anamorphic, Noir, Flash Night, Funtime, Overexposed, Green Room, Expired, Party, Portrait, Gold, Vivid, Tri-Grain, Tungsten, Meadow, Fade, Clean, Mono, Warm Air, Steel et Amber — sont chacun définis comme une liste ordonnée d'opérations de couleur puis <strong>cuits une fois, hors ligne,</strong> dans un cube de 33×33×33 d'environ 108 Ko. L'application ne calcule pas un look à l'exécution : elle charge le cube.</p>
+<p>La conséquence est concrète : un iPhone et un Pixel ne peuvent pas se contredire sur ce qu'un look signifie, car aucun des deux ne le calcule. Tous deux lisent le même fichier. Un moteur de référence écrit séparément fait office de spécification, et les shaders de chaque plateforme sont mesurés par rapport à lui — le chemin des couleurs concorde à quelques unités sur 255.</p>
+
+<h2>Ce qu'un cube ne peut pas porter</h2>
+<p>Un cube contient de la couleur. Il ne peut pas contenir le grain, l'halation ni la vignette, car ils dépendent de l'<em>endroit</em> où se trouve un pixel et de la taille du cadre. Ils voyagent comme paramètres séparés et sont dessinés par le shader — voir <a href="grain-halation-fuites-de-lumiere.html">grain, halation et fuites de lumière</a>.</p>
+
+<h2>Un seul curseur</h2>
+<p>Chaque look a un curseur d'intensité, de rien à l'effet complet, pour que vous vous arrêtiez là où l'image vous ressemble encore. Les mêmes 24 looks s'appliquent aux vidéos, ré-encodées à la résolution et à la fréquence d'images enregistrées par votre téléphone.</p>
+
+<div class="source-box">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/3D_lookup_table">« 3D lookup table », Wikipédia (anglais)</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Color_grading">« Color grading », Wikipédia (anglais)</a></li>
+  </ul>
+</div>
+
+            <div class="cta-section">
+                <h2>Un étalonnage de cinéma pour les photos que vous avez déjà</h2>
+                <p>Gratuit, sans compte, sans publicité, sans filigrane. La retouche fonctionne hors ligne.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/fr/app/halation-shared-photo-albums/id6809901589" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Télécharger sur l'</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.dihlabs.halation" class="store-btn android">
+                        <div class="btn-text"><span class="btn-text-top">Disponible sur</span><span class="btn-text-main">Google Play</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>Guides liés</h2>
+            <div class="related-grid">
+                <a class="related-card" href="grain-halation-fuites-de-lumiere.html"><h3>Grain argentique, halation et fuites de lumière : ce qu&#x27;est chaque effet et quand l&#x27;utiliser</h3></a>
+                <a class="related-card" href="partage-photos-prive-sans-cloud.html"><h3>Comment juger une application de partage de photos privée en cinq minutes</h3></a>
+                <a class="related-card" href="album-photo-partage-mariage.html"><h3>Les photos de mariage de tous les invités, dans un seul album, sans inscription</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Halation est un outil de création et de partage. Cet article est informatif, il ne constitue pas un conseil juridique ou de sécurité.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer-to-peer photo sharing: how photos move between phones with no server | Halation</title>
+    <meta name="description" content="How a photo album can sync directly between phones with no server holding the photos: discovery on Wi-Fi and over the internet, encrypted transfer, the relay fallback, and the trade-off of two phones never being online together.">
+    <meta name="keywords" content="peer to peer photo sharing, share photos without cloud, serverless photo album, iroh p2p app, photo sync between phones, mDNS local sharing, NAT relay explained">
+    <link rel="canonical" href="https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/halation/fr/partage-photos-pair-a-pair.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Peer-to-peer photo sharing: how photos move between phones with no server",
+  "description": "How a photo album can sync directly between phones with no server holding the photos: discovery on Wi-Fi and over the internet, encrypted transfer, the relay fallback, and the trade-off of two phones never being online together.",
+  "author": {
+    "@type": "Organization",
+    "name": "DIH LABS"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DIH LABS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dih-labs.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "image": "https://dih-labs.com/halation/img/og-card-en.png",
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": "https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a server that stores my photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Photos live on the phones in the album and move directly between them, encrypted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the relay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A public machine that forwards encrypted traffic when two phones cannot connect directly, which happens in roughly 10–30% of cases. It cannot read the photographs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did a photo not arrive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A photo only moves when the phone that has it and another phone are online at about the same time. Opening the app on Wi-Fi once or twice usually completes the sync."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work without internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Phones on the same Wi-Fi network can find each other locally. Albums need a connection between phones, though editing photos does not need one at all."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Halation", "item": "https://dih-labs.com/halation/en/"}, {"@type": "ListItem", "position": 3, "name": "Peer-to-peer", "item": "https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html"}]}
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/halation/en/peer-to-peer-photo-sharing.html">
+    <meta property="og:title" content="Peer-to-peer photo sharing: how photos move between phones with no server">
+    <meta property="og:description" content="Direct phone-to-phone photo sync: how it works, what the relay is, and the one trade-off you should know.">
+    <meta property="og:image" content="https://dih-labs.com/halation/img/og-card-en.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(138, 100, 32, 0.10); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box, .warn-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .warn-box { border-left: 3px solid var(--primary); }
+        .source-box a { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Halation home</a></li>
+                <li><a href="shared-wedding-photo-album.html">Wedding album</a></li>
+                <li><a href="photo-time-capsule-album.html">Time capsule</a></li>
+                <li><a href="film-look-lut-explained.html">Film looks</a></li>
+                <li><a href="https://apps.apple.com/us/app/halation-shared-photo-albums/id6809901589">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rarr; <a href="index.html">Halation</a> &middot; <a href="https://dih-labs.com/halation/fr/partage-photos-pair-a-pair.html" hreflang="fr">Version française</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>Phones talk<span> to phones.</span></h1>
+                <p class="article-meta">DIH LABS &middot; Updated 11 October 2026</p>
+                <p>Photo-sharing apps usually work by uploading to somebody's machine and downloading from it. A peer-to-peer album skips the middle.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>Short answer:</strong> every phone in the album is a node. Phones <span class="highlight">find each other</span> on the local network or over the internet, then send photos <span class="highlight">directly</span>, encrypted. A public relay is used only when two phones cannot reach each other. The trade-off: <span class="highlight">two phones must be online around the same time</span> for a photo to pass between them.</p>
+            </div>
+
+<h2>Server or no server</h2>
+<p>A cloud album has a company's server in the middle. Photos go up, photos come down, and the company stores them, pays for the storage, and decides how long it keeps them. A peer-to-peer album has no middle: each phone holds copies and hands them to the others.</p>
+<p>The benefits follow from the architecture. There is no photo store to breach, no hosting bill that rises with popularity — so the app can be free without a catch — and no company that can be asked to hand over an album, because it does not have one.</p>
+
+<h2>How phones find each other</h2>
+<p>Two phones cannot exchange photos until they know where each other is. Halation uses two ways of finding a peer, neither of which is a server run by the app's makers:</p>
+<ul>
+  <li><strong>On the same Wi-Fi:</strong> local discovery (mDNS). Phones in the same room find each other with no internet connection needed.</li>
+  <li><strong>Over the internet:</strong> the BitTorrent Mainline DHT, a large distributed directory that already exists, used to look up where a peer can currently be reached.</li>
+</ul>
+<p>The peer-to-peer layer is built on <a href="https://iroh.computer">iroh</a>, which establishes direct encrypted connections between devices and addresses data by its hash.</p>
+
+<h2>The relay, said plainly</h2>
+<p>Home routers and mobile networks often block incoming connections, so two phones cannot always connect directly. In those cases the connection falls back to a <strong>public relay</strong> — a machine somebody else runs that forwards encrypted packets. For roughly 10–30% of connections this is the only route.</p>
+<table class="comp-table">
+  <thead><tr><th>What the relay can do</th><th>What it cannot do</th></tr></thead>
+  <tbody>
+    <tr><td>Forward encrypted traffic between two phones.</td><td>Read the photographs, which are encrypted before they leave the phone.</td></tr>
+    <tr><td>See that two devices are talking.</td><td>Store the album.</td></tr>
+  </tbody>
+</table>
+<p>This is the one third-party machine in the picture, and the reason Halation does not claim that "nothing ever leaves the phone". Photos do leave the phone — to the other members' phones, encrypted.</p>
+
+<h2>The trade-off: being online together</h2>
+<p>With no server to wait at, a photo can only move when the phone that has it and a phone that wants it are reachable at the same time. For a group that opens the app regularly this happens constantly. For two people who open it for five minutes a day at random, the overlap is small. Practically: after an event, open the app once or twice on Wi-Fi, and the more phones hold a photo, the likelier everyone gets it.</p>
+
+<h2>Is it encrypted?</h2>
+<p>Yes. Each photograph is sealed before it is shared, and connections between devices are encrypted. Photographs are encrypted with a key derived from the content itself, so identical bytes seal identically and every key is used once.</p>
+
+<div class="source-box">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://docs.iroh.computer/">iroh documentation</a></li>
+    <li><a href="https://www.bittorrent.org/beps/bep_0005.html">BEP 5, "DHT Protocol" (BitTorrent Enhancement Proposals)</a></li>
+    <li><a href="https://www.rfc-editor.org/rfc/rfc6762">RFC 6762, "Multicast DNS"</a></li>
+  </ul>
+</div>
+
+            <div class="cta-section">
+                <h2>An album that does not live on anybody&#x27;s server</h2>
+                <p>Free, no account, no ads. iPhone and Android.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/us/app/halation-shared-photo-albums/id6809901589" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Download on the</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.dihlabs.halation" class="store-btn android">
+                        <div class="btn-text"><span class="btn-text-top">Get it on</span><span class="btn-text-main">Google Play</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>Related guides</h2>
+            <div class="related-grid">
+                <a class="related-card" href="private-photo-sharing-without-cloud.html"><h3>How to judge a private photo-sharing app in five minutes</h3></a>
+                <a class="related-card" href="share-photos-iphone-android.html"><h3>Sharing photos between iPhone and Android: one album both can join</h3></a>
+                <a class="related-card" href="how-time-lock-encryption-works.html"><h3>How time-lock encryption works: locking data until a future moment</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Halation is a creative and sharing tool. This article is information, not legal or security advice.</p>
+        </div>
+    </footer>
+</body>
+</html>

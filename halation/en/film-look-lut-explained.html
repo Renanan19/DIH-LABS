@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What a film look really is: 3D LUTs, and why filters are not the same thing | Halation</title>
+    <meta name="description" content="How a 3D lookup table (LUT) gives a photo a cinema colour grade, why it differs from a filter laid over the top, and how Halation&#x27;s 24 looks are baked once so an iPhone and a Pixel agree.">
+    <meta name="keywords" content="3D LUT explained, film look photo app, cinema colour grade photos, LUT vs filter, film emulation iPhone, colour grading photos phone, Halation film looks">
+    <link rel="canonical" href="https://dih-labs.com/halation/en/film-look-lut-explained.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/halation/en/film-look-lut-explained.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/halation/fr/look-argentique-lut-explique.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What a film look really is: 3D LUTs, and why filters are not the same thing",
+  "description": "How a 3D lookup table (LUT) gives a photo a cinema colour grade, why it differs from a filter laid over the top, and how Halation's 24 looks are baked once so an iPhone and a Pixel agree.",
+  "author": {
+    "@type": "Organization",
+    "name": "DIH LABS"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DIH LABS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dih-labs.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "image": "https://dih-labs.com/halation/img/og-card-en.png",
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": "https://dih-labs.com/halation/en/film-look-lut-explained.html"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a 3D LUT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cube of stored colours: for every input red, green and blue value it stores the output colour. Grading a photo means looking each pixel up in the cube and interpolating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a LUT the same as an Instagram-style filter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. A filter often applies one tint or curve across the image; a LUT can change shadows, mid-tones and highlights independently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many looks does Halation have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "24, each baked into its own 3D LUT, with one intensity slider."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do looks work on video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The same 24 looks and texture layers apply to clips, re-encoded with the grade baked in."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Halation", "item": "https://dih-labs.com/halation/en/"}, {"@type": "ListItem", "position": 3, "name": "Film looks", "item": "https://dih-labs.com/halation/en/film-look-lut-explained.html"}]}
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/halation/en/film-look-lut-explained.html">
+    <meta property="og:title" content="What a film look really is: 3D LUTs, and why filters are not the same thing">
+    <meta property="og:description" content="The difference between a colour transform and a filter, and how 24 looks are baked into cubes.">
+    <meta property="og:image" content="https://dih-labs.com/halation/img/og-card-en.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(138, 100, 32, 0.10); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box, .warn-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .warn-box { border-left: 3px solid var(--primary); }
+        .source-box a { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Halation home</a></li>
+                <li><a href="shared-wedding-photo-album.html">Wedding album</a></li>
+                <li><a href="photo-time-capsule-album.html">Time capsule</a></li>
+                <li><a href="film-look-lut-explained.html">Film looks</a></li>
+                <li><a href="https://apps.apple.com/us/app/halation-shared-photo-albums/id6809901589">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> &rarr; <a href="index.html">Halation</a> &middot; <a href="https://dih-labs.com/halation/fr/look-argentique-lut-explique.html" hreflang="fr">Version française</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>A look is a transform,<span> not a layer.</span></h1>
+                <p class="article-meta">DIH LABS &middot; Updated 11 October 2026</p>
+                <p>Two photographs can both be called "film look" and be made in opposite ways. One is a tint dropped on top. The other is a rewrite of how every colour in the picture is mapped.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>Short answer:</strong> a 3D LUT is a <span class="highlight">table that maps every input colour to an output colour</span>. Applying it changes shadows, mid-tones and highlights independently, which is how colour grading works in film post-production. A simple filter usually adds one tint or curve over everything.</p>
+            </div>
+
+<h2>What a LUT is</h2>
+<p>LUT stands for <em>lookup table</em>. A 3D LUT is a cube: its three axes are the red, green and blue values of a pixel, and at each grid point the cube stores the colour that input should become. To grade a pixel, the software finds where its colour sits in the cube and interpolates between the nearest stored points.</p>
+<p>Because the mapping is defined per colour, not per image, a single cube can do things a flat tint cannot: push the shadows toward teal while leaving skin tones alone, lift the blacks, roll off the highlights, shift one hue without touching its neighbours.</p>
+
+<h2>LUT versus filter</h2>
+<table class="comp-table">
+  <thead><tr><th></th><th>Simple filter</th><th>3D LUT</th></tr></thead>
+  <tbody>
+    <tr><td class="highlight">Operates on</td><td>The whole image, usually one adjustment.</td><td>Every colour, separately.</td></tr>
+    <tr><td class="highlight">Shadows and highlights</td><td>Move together.</td><td>Can move apart.</td></tr>
+    <tr><td class="highlight">Used in</td><td>Quick presets.</td><td>Film and video post-production.</td></tr>
+  </tbody>
+</table>
+<p>Neither is better in the abstract. A LUT is simply the tool built for a full-colour transform, and it is the one colourists use.</p>
+
+<h2>Baked once, offline</h2>
+<p>Halation's 24 looks — Aurora, Nightfall, Vision, Bleach, Anamorphic, Noir, Flash Night, Funtime, Overexposed, Green Room, Expired, Party, Portrait, Gold, Vivid, Tri-Grain, Tungsten, Meadow, Fade, Clean, Mono, Warm Air, Steel and Amber — are each defined as an ordered list of colour operations and <strong>baked once, offline,</strong> into a 33×33×33 cube of about 108 KB. The app does not compute a look at run time; it loads the cube.</p>
+<p>That has a practical consequence: an iPhone and a Pixel cannot disagree about what a look means, because neither of them works it out. Both read the same file. A reference renderer written separately is the specification, and the shaders on each platform are measured against it — the colour path agrees to within a few units out of 255.</p>
+
+<h2>What a cube cannot carry</h2>
+<p>A cube holds colour. It cannot hold grain, halation or vignetting, because those depend on <em>where</em> a pixel sits and how big the frame is. Those travel as separate parameters and are drawn by the shader — see <a href="film-grain-halation-light-leaks.html">grain, halation and light leaks</a>.</p>
+
+<h2>One slider</h2>
+<p>Every look has one intensity slider, from nothing to the full effect, so you can stop where the picture still feels like yours. The same 24 looks apply to video clips, re-encoded at the resolution and frame rate your phone recorded.</p>
+
+<div class="source-box">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/3D_lookup_table">"3D lookup table", Wikipedia</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Color_grading">"Color grading", Wikipedia</a></li>
+  </ul>
+</div>
+
+            <div class="cta-section">
+                <h2>Cinema colour for photos you already have</h2>
+                <p>Free, no account, no ads, no watermark. Editing works offline.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/us/app/halation-shared-photo-albums/id6809901589" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Download on the</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.dihlabs.halation" class="store-btn android">
+                        <div class="btn-text"><span class="btn-text-top">Get it on</span><span class="btn-text-main">Google Play</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>Related guides</h2>
+            <div class="related-grid">
+                <a class="related-card" href="film-grain-halation-light-leaks.html"><h3>Film grain, halation and light leaks: what each one is and when to use it</h3></a>
+                <a class="related-card" href="private-photo-sharing-without-cloud.html"><h3>How to judge a private photo-sharing app in five minutes</h3></a>
+                <a class="related-card" href="shared-wedding-photo-album.html"><h3>Wedding photos from every guest, in one album, with no sign-up</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Halation is a creative and sharing tool. This article is information, not legal or security advice.</p>
+        </div>
+    </footer>
+</body>
+</html>

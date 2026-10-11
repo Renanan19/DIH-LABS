@@ -1,0 +1,34 @@
+/* Halation — film-gold accent override on the shared Venice master.
+   Taken from the app icon's gold ring and deepened so it clears 4.5:1
+   against the warm paper canvas. Distinct from Sun Day's orange (#D97E06):
+   duller, browner, closer to brass than to amber. */
+@import url('../streamvision/style.css');
+
+:root {
+    --primary: #8A6420;
+    --primary-light: #7A5818;
+    --primary-dark: #5E4312;
+    --accent: #8A6420;
+    --primary-tint: rgba(138, 100, 32, 0.10);
+}
+
+/* Inline links inside guide bodies — same treatment as Pulse and Sillon. */
+.article-body p a,
+.article-body li a,
+.article-body td a {
+    color: var(--primary-light);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(122, 88, 24, 0.4);
+    transition:
+        color 0.3s var(--ease),
+        text-decoration-color 0.3s var(--ease);
+}
+
+.article-body p a:hover,
+.article-body li a:hover,
+.article-body td a:hover {
+    color: var(--primary-dark);
+    text-decoration-color: currentColor;
+}

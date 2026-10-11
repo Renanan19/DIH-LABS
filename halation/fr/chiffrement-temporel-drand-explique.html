@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment fonctionne le chiffrement temporel : verrouiller des données jusqu&#x27;à un moment futur | Halation</title>
+    <meta name="description" content="Le chiffrement temporel expliqué sans maths : comment une balise publique d&#x27;aléa (drand) permet de chiffrer vers un tour futur, pourquoi personne ne peut ouvrir avant, et quelles sont les vraies hypothèses.">
+    <meta name="keywords" content="chiffrement temporel, tlock expliqué, drand timelock, chiffrer jusqu&#x27;à une date, balise d&#x27;aléa, League of Entropy, chiffrement temporel photos">
+    <link rel="canonical" href="https://dih-labs.com/halation/fr/chiffrement-temporel-drand-explique.html">
+    <link rel="alternate" hreflang="fr" href="https://dih-labs.com/halation/fr/chiffrement-temporel-drand-explique.html">
+    <link rel="alternate" hreflang="en" href="https://dih-labs.com/halation/en/how-time-lock-encryption-works.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Comment fonctionne le chiffrement temporel : verrouiller des données jusqu'à un moment futur",
+  "description": "Le chiffrement temporel expliqué sans maths : comment une balise publique d'aléa (drand) permet de chiffrer vers un tour futur, pourquoi personne ne peut ouvrir avant, et quelles sont les vraies hypothèses.",
+  "author": {
+    "@type": "Organization",
+    "name": "DIH LABS"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DIH LABS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dih-labs.com/favicon.svg"
+    }
+  },
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "image": "https://dih-labs.com/halation/img/og-card.png",
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": "https://dih-labs.com/halation/fr/chiffrement-temporel-drand-explique.html"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Le chiffrement temporel, est-ce un simple minuteur ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Un minuteur est une règle qu'un logiciel applique et qu'une personne peut modifier. Le chiffrement temporel fait que la clé n'existe pas avant la publication d'une valeur publique : il n'y a rien à contourner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que drand ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "drand est une balise d'aléa distribuée, exploitée par un groupe d'organisations indépendantes. Elle publie une valeur aléatoire signée selon un calendrier fixe, que chacun peut vérifier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les exploitants peuvent-ils ouvrir avant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas seuls. Produire une valeur future demande qu'un seuil du groupe signe ensemble : la sécurité repose sur le fait que suffisamment d'exploitants indépendants ne s'entendent pas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Halation s'appuie-t-elle dessus pour chaque album ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seulement pour les albums que vous scellez. Un album ouvert fonctionne sans aucun verrou temporel."
+      }
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://dih-labs.com/"}, {"@type": "ListItem", "position": 2, "name": "Halation", "item": "https://dih-labs.com/halation/fr/"}, {"@type": "ListItem", "position": 3, "name": "Chiffrement temporel", "item": "https://dih-labs.com/halation/fr/chiffrement-temporel-drand-explique.html"}]}
+    </script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dih-labs.com/halation/fr/chiffrement-temporel-drand-explique.html">
+    <meta property="og:title" content="Comment fonctionne le chiffrement temporel : verrouiller des données jusqu&#x27;à un moment futur">
+    <meta property="og:description" content="Comment un album peut être verrouillé jusqu&#x27;à une date par les mathématiques plutôt que par une règle serveur, et ce qu&#x27;il faut tout de même croire.">
+    <meta property="og:image" content="https://dih-labs.com/halation/img/og-card.png">
+    <meta property="og:site_name" content="DIH LABS">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <style>
+        .article-body { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; line-height: 1.8; color: var(--text-muted); }
+        .article-body h2 { color: var(--white); margin: 3rem 0 1.2rem; font-size: 2rem; }
+        .article-body h3 { color: var(--primary-light); margin: 2rem 0 0.8rem; font-size: 1.35rem; }
+        .article-body p, .article-body li { margin-bottom: 1.08rem; font-size: 1.08rem; }
+        .comp-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--bg-card); border-radius: 15px; overflow: hidden; }
+        .comp-table th, .comp-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--glass-border); vertical-align: top; }
+        .comp-table th { background: rgba(138, 100, 32, 0.10); color: var(--white); }
+        .highlight { color: var(--primary-light); font-weight: 700; }
+        .answer-box, .source-box, .warn-box { background: var(--bg-card); border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 18px; margin: 2rem 0; }
+        .warn-box { border-left: 3px solid var(--primary); }
+        .source-box a { color: var(--primary-light); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../../" class="logo">DIH <span>LABS</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil Halation</a></li>
+                <li><a href="album-photo-partage-mariage.html">Album mariage</a></li>
+                <li><a href="album-photo-capsule-temporelle.html">Capsule temporelle</a></li>
+                <li><a href="look-argentique-lut-explique.html">Looks argentiques</a></li>
+                <li><a href="https://apps.apple.com/fr/app/halation-shared-photo-albums/id6809901589">App Store</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Accueil</a> &rarr; <a href="index.html">Halation</a> &middot; <a href="https://dih-labs.com/halation/en/how-time-lock-encryption-works.html" hreflang="en">English version</a></nav>
+        <section class="hero" style="padding: 10rem 0 4rem;">
+            <div class="container">
+                <h1>Verrouillé par l&#x27;horloge,<span> pas par une règle.</span></h1>
+                <p class="article-meta">DIH LABS &middot; Mis à jour le 11 octobre 2026</p>
+                <p>« Personne ne peut regarder avant » est une phrase forte. Cette page explique le mécanisme qui la rend vraie, et où il s'arrête.</p>
+            </div>
+        </section>
+
+        <article class="article-body">
+            <div class="answer-box">
+                <p><strong>En bref :</strong> une balise publique appelée <span class="highlight">drand</span> publie une valeur aléatoire signée selon un calendrier fixe. Le chiffrement temporel permet de chiffrer vers une valeur <span class="highlight">future</span>, impossible à calculer avant sa publication. La clé d'ouverture <span class="highlight">n'existe donc pas</span> avant le moment choisi.</p>
+            </div>
+
+<h2>Le problème de « s'ouvre à une date »</h2>
+<p>Pour qu'un secret s'ouvre à une date, la solution évidente est un serveur qui le détient et le libère à l'heure. Cela fonctionne exactement tant que l'on fait confiance au serveur, à son exploitant, à son personnel, à ses sauvegardes et à chaque tribunal qui pourrait lui ordonner de parler. Le chiffrement temporel retire le serveur de l'histoire : rien ne détient la clé en avance, puisque la clé ne peut pas encore être fabriquée.</p>
+
+<h2>La balise</h2>
+<p><a href="https://drand.love">drand</a> est une balise d'aléa distribuée, exploitée par un groupe d'organisations indépendantes. À intervalles fixes, elle publie une nouvelle valeur aléatoire, signée conjointement par le groupe. Deux propriétés comptent ici :</p>
+<ul>
+  <li><strong>Elle est publique.</strong> Tout le monde voit la même valeur au même moment.</li>
+  <li><strong>Elle est imprévisible tant qu'elle n'est pas publiée.</strong> La valeur d'un tour futur n'existe pas, et aucun exploitant ne peut la produire seul — un seuil du groupe doit la signer.</li>
+</ul>
+<p>Le réseau qu'utilise Halation s'appelle <em>quicknet</em> : il publie une nouvelle valeur toutes les <span class="highlight">3 secondes</span>, selon un calendrier connu des années à l'avance, avec des signatures BLS sur la courbe BLS12-381. La chaîne à laquelle l'application fait confiance est figée par son empreinte dans le code source.</p>
+
+<h2>Chiffrer vers un tour</h2>
+<p>Le schéma s'appelle <em>tlock</em>. En résumé : la signature que la balise publiera pour un tour futur sert de clé de déchiffrement pour tout ce qui a été chiffré vers ce tour. Le chiffrement se fait dès aujourd'hui, avec des informations publiques seulement. Le déchiffrement devient possible à l'instant où la balise publie la signature de ce tour — pour tout le monde, simultanément.</p>
+<table class="comp-table">
+  <thead><tr><th>Qui</th><th>Avant le tour</th><th>Après le tour</th></tr></thead>
+  <tbody>
+    <tr><td class="highlight">Les membres de l'album</td><td>Peuvent ajouter des photos, pas les ouvrir.</td><td>Ouvrent tout.</td></tr>
+    <tr><td class="highlight">La personne qui l'a créé</td><td>Aucune clé particulière.</td><td>Comme tout le monde.</td></tr>
+    <tr><td class="highlight">Les concepteurs de l'app</td><td>Aucune clé à fournir.</td><td>Comme tout le monde.</td></tr>
+  </tbody>
+</table>
+
+<h2>Ce qu'il faut tout de même croire</h2>
+<p>Une affirmation honnête nomme ses hypothèses.</p>
+<ul>
+  <li><strong>Le seuil de la balise.</strong> La sécurité repose sur le fait que suffisamment d'exploitants drand indépendants ne s'entendent pas pour signer un tour futur en avance. C'est bien moins exigeant que de croire le serveur d'une entreprise, mais ce n'est pas rien.</li>
+  <li><strong>La cryptographie.</strong> Le schéma est publié et évalué par des pairs ; l'implémentation est un code unique partagé par les applications iPhone et Android, il n'y a donc pas deux versions du verrou susceptibles de diverger.</li>
+  <li><strong>Le lien.</strong> Le verrou temporel protège les photographies avant la date. Il n'empêche pas une personne qui possède le lien de rejoindre l'album.</li>
+</ul>
+
+<div class="source-box">
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://github.com/drand/tlock">drand/tlock — bibliothèque et outil tle de chiffrement temporel</a></li>
+    <li><a href="https://eprint.iacr.org/2023/189">Gailly N., Melissaris K., Romailler Y., « tlock: Practical Timelock Encryption from Threshold BLS » (IACR ePrint 2023/189)</a></li>
+    <li><a href="https://drand.love">drand — balise d'aléa distribuée</a></li>
+  </ul>
+</div>
+
+            <div class="cta-section">
+                <h2>Un verrou auquel il n&#x27;est pas nécessaire de croire sur parole</h2>
+                <p>Gratuit, sans compte, sans publicité. iPhone et Android.</p>
+                <div class="store-buttons">
+                    <a href="https://apps.apple.com/fr/app/halation-shared-photo-albums/id6809901589" class="store-btn">
+                        <div class="btn-text"><span class="btn-text-top">Télécharger sur l'</span><span class="btn-text-main">App Store</span></div>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.dihlabs.halation" class="store-btn android">
+                        <div class="btn-text"><span class="btn-text-top">Disponible sur</span><span class="btn-text-main">Google Play</span></div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <section class="related-articles">
+            <h2>Guides liés</h2>
+            <div class="related-grid">
+                <a class="related-card" href="album-photo-capsule-temporelle.html"><h3>Une capsule temporelle de photos : un album qui s&#x27;ouvre à une date que personne ne peut avancer</h3></a>
+                <a class="related-card" href="partage-photos-pair-a-pair.html"><h3>Partage de photos en pair-à-pair : comment les photos passent d&#x27;un téléphone à l&#x27;autre sans serveur</h3></a>
+                <a class="related-card" href="partage-photos-prive-sans-cloud.html"><h3>Comment juger une application de partage de photos privée en cinq minutes</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">&copy; 2026 DIH LABS. Halation est un outil de création et de partage. Cet article est informatif, il ne constitue pas un conseil juridique ou de sécurité.</p>
+        </div>
+    </footer>
+</body>
+</html>
